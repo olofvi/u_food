@@ -5,4 +5,4 @@ Feature: The welcome page
 
   Scenario: User visits the site
     Given I navigate to the index page
-    Then I should see welcome message "What do you feel like tonight?"
+    Then I should see message "What do you feel like tonight?"
