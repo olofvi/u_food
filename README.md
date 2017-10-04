@@ -4,7 +4,8 @@
 
 Prerequisites
 
-* ruby rails 5.1.4 
+* ruby rails 5.1.4
+* ruby 2.4.0
 
 Installing
 Ensure that the gem versions on your local machine are as specified in the Gemfile. Run bundle install to install dependencies.
@@ -19,7 +20,7 @@ Rails
 
 Authors
 * Olofvi
-* Nurlanemir
+* NurlanEmir
 * Magnus-thor
 * BasilMawejje
 * Sajaas
@@ -32,4 +33,3 @@ Built with help from the coaches and some cool gems. Thanks a lot! Coaches:
 * Tochman
 * Diraoulo
 * Faraznaeem
-
