@@ -4,5 +4,5 @@ Feature: The welcome page
   I need to visit a landing page
 
   Scenario: User visits the site
-    Given I visit the "index" page
+    Given I navigate to the index page
     Then I should see welcome message "What do you feel like tonight?"

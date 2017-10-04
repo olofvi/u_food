@@ -1,5 +1,5 @@
-Given("I visit the {string} page") do |page|
-  visit page
+Given("I navigate to the index page") do
+  visit root_path
 end
 
 Then("I should see welcome message {string}") do |message|
