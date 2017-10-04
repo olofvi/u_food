@@ -1,3 +1,6 @@
+# Ufoods app
+August 2017 Craft Academy Course Project
+
 ##Getting Started
 ###$Under the repository name, click Clone or download. Copy the clone URL for the repository. Open Terminal. Change the current working directory to the location where you want the cloned directory to be made. git clone https://github.com/CraftAcademy/u_food.git
 ---
@@ -5,7 +8,7 @@
 Prerequisites
 
 * ruby rails 5.1.4
-* ruby 2.4.0
+* ruby 2.4.1
 
 Installing
 Ensure that the gem versions on your local machine are as specified in the Gemfile. Run bundle install to install dependencies.
