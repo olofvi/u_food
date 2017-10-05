@@ -15,7 +15,7 @@ git clone https://github.com/CraftAcademy/u_foods.git
 * ruby 2.4.0
 * ruby rails 5.1.4
 
-Installing
+###Installing
 Ensure that the gem versions on your local machine are as specified in the Gemfile. 
 Run bundle install to install dependencies.
 
