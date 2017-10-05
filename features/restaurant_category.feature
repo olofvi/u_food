@@ -4,12 +4,12 @@ Feature: User can view restaurants with chosen category
   I should be able to see a list of available restaurants with my chosen category
 
   Given the following category exists
-    | name | description        |
-    | Thai | Sample description |
+    | category | name    | description        |
+    |  Thai    | My_thai | Sample description |
 
 Scenario: User can view categories on index page
   Given I navigate to the index page
-  And I see "Thai" category
-  Then I should see "Sample Thai restaurant" under the category title
-  Then I should see "Sample description" under the category
+  Then I click "Thai" button
+  And I should see "My_thai"
+  And I should see "Sample description"
   # Then show me the page
