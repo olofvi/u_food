@@ -2,3 +2,5 @@
 %p What do you feel like tonight?
 - @restaurants.each do |restaurant|
   %h2= restaurant.category
+  %h5= restaurant.name
+  %p= restaurant.description
