@@ -3,3 +3,7 @@ Given("the following dishes exists") do |table|
     Dish.create!(hash)
   end
 end
+
+Given("I visit the dish page") do
+  visit restaurants_path
+end

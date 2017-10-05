@@ -7,6 +7,7 @@ Feature: user can see dishes and their info
     Given the following dishes exists
       | name           | description           | price  |  pic_url                | restaurant | category |
       | Sushi rolls    | Tasty Japanese food   | 10     |  https://goo.gl/fH7P5F  | Ai         | Main     |
+    #And I am on the index page
 
   Scenario: user can view dish names
     Given I visit the dish page
