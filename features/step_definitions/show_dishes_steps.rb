@@ -1,6 +1,6 @@
 Given("the following dishes exists") do |table|
   table.hashes.each do |hash|
-    Dish.create!(hash)
+    FactoryGirl.create(:dish, hash)
   end
 end
 
