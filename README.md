@@ -1,14 +1,14 @@
 # Ufoods app
 August 2017 Craft Academy Course Project
 
-We created an app which allows users to order a food in a various restaurants nearby. 
-You sign up by creating an account with an email and password. 
+We created an app which allows users to order a food in a various restaurants nearby.
+You sign up by creating an account with an email and password.
 After logging in you will be allowed to choose a restaurant and order a food with delivery.
 
 ## Getting Started
-Under the repository name, click Clone or download. 
-Copy the clone URL for the repository. Open Terminal. 
-Change the current working directory to the location where you want the cloned directory to be made. 
+Under the repository name, click Clone or download.
+Copy the clone URL for the repository. Open Terminal.
+Change the current working directory to the location where you want the cloned directory to be made.
 git clone https://github.com/CraftAcademy/u_foods.git
 
 ## Prerequisites
@@ -16,11 +16,11 @@ git clone https://github.com/CraftAcademy/u_foods.git
 * ruby rails 5.1.4
 
 ### Installing
-Ensure that the gem versions on your local machine are as specified in the Gemfile. 
+Ensure that the gem versions on your local machine are as specified in the Gemfile.
 Run bundle install to install dependencies.
 
 ## Running the tests
-We used Rspec for unit tests, and Cucumber for feature tests. 
+We used Rspec for unit tests, and Cucumber for feature tests.
 Run rake to see all the tests pass.
 
 ## Deployment
