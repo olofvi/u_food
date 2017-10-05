@@ -5,5 +5,9 @@ Given("the following dishes exists") do |table|
 end
 
 Given("I visit the dish page") do
-  visit restaurants_path
+  visit '/restaurants/show'
+end
+
+Then("I should see the text {string}") do |text|
+  expect(page).to have_content text
 end

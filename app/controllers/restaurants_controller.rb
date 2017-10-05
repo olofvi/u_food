@@ -3,5 +3,6 @@ class RestaurantsController < ApplicationController
   end
 
   def show
+    @dishes = Dish.all
   end
 end
