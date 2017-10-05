@@ -15,6 +15,7 @@ gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem "haml-rails", "~> 1.0"
+gem 'acts_as_shopping_cart', '~> 0.4.1'
 
 group :development, :test do
   gem 'pry-byebug'
