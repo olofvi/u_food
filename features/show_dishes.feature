@@ -5,8 +5,8 @@ Feature: user can see dishes and their info
 
   Background:
     Given the following dishes exists
-      | name           | description           | price  |  pic_url                |
-      | Sushi rolls    | Tasty Japanese food   | 10     |  https://goo.gl/fH7P5F  |
+      | name           | description           | price  |  pic_url                | restaurant | category |
+      | Sushi rolls    | Tasty Japanese food   | 10     |  https://goo.gl/fH7P5F  | Ai         | Main     |
 
   Scenario: user can view dish names
     Given I visit the dish page
@@ -14,3 +14,5 @@ Feature: user can see dishes and their info
     And I should see the text "Tasty Japanese food"
     And I should see the text "10"
     And I should see the picture "https://goo.gl/fH7P5F"
+    And I should see the text "Ai"
+    And I should see the text "Main"
