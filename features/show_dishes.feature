@@ -16,4 +16,3 @@ Feature: user can see dishes and their info
     And I should see the picture "https://goo.gl/fH7P5F"
     And I should see the text "Ai"
     And I should see the text "Main"
-    And show me the page
