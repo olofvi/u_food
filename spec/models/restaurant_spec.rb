@@ -1,7 +1,16 @@
 require 'rails_helper'
 
 RSpec.describe Restaurant, type: :model do
-  subject do
-    create(:restaurant)
+  describe 'factory' do
+    it 'is valid' do
+      expect(FactoryGirl.create(:restaurant)).to be_valid
+    end
+  end
+
+  describe 'DB table' do
+    it { is_expected.to have_db_column :id }
+    it { is_expected.to have_db_column :restaurant_category }
+    it { is_expected.to have_db_column :name }
+    it { is_expected.to have_db_column :description }
   end
 end
