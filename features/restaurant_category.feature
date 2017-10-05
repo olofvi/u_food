@@ -3,13 +3,13 @@ Feature: User can view restaurants with chosen category
   In order to pick a restaurant
   I should be able to see a list of available restaurants with my chosen category
 
-  Given the following category exists
-    | category | name    | description        |
-    |  Thai    | My_thai | Sample description |
+  Background:
+    Given the following table exists
+      | category | name    | description        |
+      |  Thai    | My_thai | Sample description |
 
-Scenario: User can view categories on index page
-  Given I navigate to the index page
-  Then I click "Thai" button
-  And I should see "My_thai"
-  And I should see "Sample description"
-  # Then show me the page
+  Scenario: User can view categories on index page
+    Given I navigate to the index page
+    Then I should see "Thai"
+    And I should see "My_thai"
+    And I should see "Sample description"

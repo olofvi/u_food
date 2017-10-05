@@ -1,7 +1,6 @@
-Then("I click {string} button") do |button|
-  click_link_or_button button
+Given("the following table exists") do |table|
+  table.hashes.each do |item|
+    Restaurant.create!(item)
+  end
 end
 
-Then("show me the page") do
-  save_and_open_page
-end
