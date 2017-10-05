@@ -5,7 +5,7 @@ Given("the following dishes exists") do |table|
 end
 
 Given("I visit the dish page") do
-  visit '/restaurants/show'
+  visit restaurant_path(:id)
 end
 
 Then("I should see the text {string}") do |text|
