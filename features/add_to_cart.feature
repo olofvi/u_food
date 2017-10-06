@@ -12,6 +12,5 @@ Feature: user can can add dish to order
     Given I visit the restaurant page
     Then I should see the text "Sushi rolls"
     And I click on "Add to cart"
-    # And show me the page
     Then I should see the text "Sushi rolls added to cart"
     And I should see the text "Cart: 1"

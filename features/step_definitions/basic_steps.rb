@@ -9,7 +9,3 @@ end
 Then("I click on {string}") do |string|
   click_link_or_button string
 end
-
-And(/^show me the page$/) do
-  save_and_open_page
-end
