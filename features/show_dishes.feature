@@ -9,7 +9,7 @@ Feature: user can see dishes and their info
       | Sushi rolls    | Tasty Japanese food   | 10     |  https://goo.gl/fH7P5F  | Ai         | Main     |
 
   Scenario: user can view dish names
-    Given I visit the dish page
+    Given I visit the restaurant page
     Then I should see the text "Sushi rolls"
     And I should see the text "Tasty Japanese food"
     And I should see the text "10"
