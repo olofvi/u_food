@@ -5,8 +5,8 @@ Feature: User can view restaurants with chosen category
 
   Background:
     Given the following table exists
-      | category | name    | description        |
-      |  Thai    | My_thai | Sample description |
+      | name    | description        |
+      | Thai    | Sample description |
 
   Scenario: User can view categories on index page
     Given I navigate to the index page
