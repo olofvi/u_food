@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  factory :category do
+  factory :restaurant_category do
     name "MyString"
     description "MyText"
   end

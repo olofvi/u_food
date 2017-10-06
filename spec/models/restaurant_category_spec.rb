@@ -1,9 +1,9 @@
 require 'rails_helper'
 
-RSpec.describe Category, type: :model do
+RSpec.describe RestaurantCategory, type: :model do
   describe 'factory' do
     it 'is valid' do
-      expect(FactoryGirl.create(:category)).to be_valid
+      expect(FactoryGirl.create(:restaurant_category)).to be_valid
     end
   end
 
