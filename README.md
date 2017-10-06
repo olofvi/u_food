@@ -12,16 +12,22 @@ Change the current working directory to the location where you want the cloned d
 git clone https://github.com/CraftAcademy/u_foods.git
 
 ## Prerequisites
-* ruby 2.4.0
-* ruby rails 5.1.4
+- ruby 2.4.0
+- ruby rails 5.1.4
 
 ### Installing
 Ensure that the gem versions on your local machine are as specified in the Gemfile.
 Run bundle install to install dependencies.
 
 ## Running the tests
-We used Rspec for unit tests, and Cucumber for feature tests.
-Run rake to see all the tests pass.
+
+For acceptance test we use Cucumber
+- It runs automated acceptance tests written in a behavior-driven development (BDD) style. Central to the Cucumber BDD approach is its plain language parser called Gherkin. It allows expected software behaviors to be specified in a logical language that customers can understand.  
+
+For unit tests we use Rspec
+- It is a behavior-driven development (BDD) framework which is extensively used in the production applications. The basic idea behind this concept is that of Test Driven Development(TDD) where the tests are written first and the development is based on writing just enough code that will fulfill those tests followed by refactoring.  
+
+Run rake to see all the tests pass.  
 
 ## Deployment
 We automatically deploy this app with [Heroku](https://www.heroku.com/).
