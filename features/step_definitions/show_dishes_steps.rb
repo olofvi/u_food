@@ -4,6 +4,6 @@ Given("the following dishes exists") do |table|
   end
 end
 
-Given("I visit the dish page") do
+Given("I visit the restaurant page") do
   visit restaurant_path(:id)
 end

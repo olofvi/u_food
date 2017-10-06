@@ -9,7 +9,7 @@ Feature: user can can add dish to order
       | Sushi rolls    | Tasty Japanese food   | 10     |  https://goo.gl/fH7P5F  | Ai         | Main     |
 
   Scenario: User can add dish to order
-    Given I visit the dish page
+    Given I visit the restaurant page
     Then I should see the text "Sushi rolls"
     And I click on "Add to cart"
     And show me the page
