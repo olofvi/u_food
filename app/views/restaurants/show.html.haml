@@ -1,3 +1,8 @@
+- if @cart
+  %p
+    Cart:
+    = @cart.shopping_cart_items.count
+
 - @dishes.each do |dish|
   %p
     Dish:
@@ -16,3 +21,5 @@
     = dish.price
     $
   %img{alt: dish.name, src: dish.pic_url}/
+
+  = link_to ('Add to cart'), add_to_cart_path(dish)
