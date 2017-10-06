@@ -1,6 +1,5 @@
 %h1 Ufoods
 %p What do you feel like tonight?
-- @restaurants.each do |restaurant|
-  %h2= restaurant.category
-  %h5= restaurant.name
-  %p= restaurant.description
+- @categories.each do |category|
+  %h5= category.name
+  %p= category.description
