@@ -1,0 +1,18 @@
+- @dishes.each do |dish|
+  %p
+    Dish:
+    = dish.name
+  %p
+    Description:
+    = dish.description
+  %p
+    Category:
+    = dish.category
+  %p
+    Restaurant:
+    = dish.restaurant
+  %p
+    Price:
+    = dish.price
+    $
+  %img{alt: dish.name, src: dish.pic_url}/

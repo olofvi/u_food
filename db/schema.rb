@@ -22,4 +22,15 @@ ActiveRecord::Schema.define(version: 20171005161837) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "dishes", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.integer "price"
+    t.string "pic_url"
+    t.string "restaurant"
+    t.string "category"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
 end
