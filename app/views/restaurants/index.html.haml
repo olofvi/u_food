@@ -1,6 +1,7 @@
 %h1 Ufoods
 %p What do you feel like tonight?
 - @categories.each do |category|
+  -#TODO make this a link_to a method that sorts restaurants into groups by category
   %h5= category.name
   %p= category.description
 - @restaurants.each do |restaurant|

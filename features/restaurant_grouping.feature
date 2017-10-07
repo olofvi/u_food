@@ -4,15 +4,14 @@ Feature: User can select restaurant by category
   I would like to see a restaurant by category
 
   Background:
-    Given the following restaurants exist
-      | name       | address       |
-      | My Thai    | Stockholm     |
-      | My Mexican | Mexico city   |
-
     Given the following category exists
       | name    | description  |
       | Thai    | Thai food    |
       | Mexican | Mexican food |
+    And the following restaurants exist
+      | name       | address       |
+      | My Thai    | Stockholm     |
+      | My Mexican | Mexico city   |
     And I navigate to the index page
 
     Scenario: User can see restaurant by category
