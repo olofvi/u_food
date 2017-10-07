@@ -36,8 +36,10 @@ ActiveRecord::Schema.define(version: 20171006145557) do
   create_table "restaurants", force: :cascade do |t|
     t.string "name"
     t.string "address"
+    t.bigint "restaurant_category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["restaurant_category_id"], name: "index_restaurants_on_restaurant_category_id"
   end
 
 end
