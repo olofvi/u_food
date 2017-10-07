@@ -3,6 +3,8 @@
     Cart:
     = @cart.shopping_cart_items.count
 
+%p= @restaurant.name
+%p= @restaurant.address
 - @dishes.each do |dish|
   %p
     Dish:
