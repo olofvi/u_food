@@ -1,6 +1,11 @@
 FactoryGirl.define do
   factory :restaurant do
-    name 'MyString'
-    address 'MyText'
+    sequence :name do |n|
+      "person#{n}"
+    end
+    sequence :address do |n|
+      "street #{n}"
+    end
+    association :restaurant_category
   end
 end
