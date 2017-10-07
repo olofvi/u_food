@@ -4,6 +4,3 @@ Given("the following restaurants exist") do |table|
   end
 end
 
-Given("I click {string}") do |link|
-  click_link_or_button link
-end
