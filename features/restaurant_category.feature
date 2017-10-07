@@ -4,7 +4,7 @@ Feature: User can view restaurants with chosen category
   I should be able to see a list of available restaurants with my chosen category
 
   Background:
-    Given the following table exists
+    Given the following category exists
       | name    | description        |
       | Thai    | Sample description |
 
