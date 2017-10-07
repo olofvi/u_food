@@ -1,3 +1,8 @@
+- if @cart
+  %p
+    Cart:
+    = @cart.shopping_cart_items.count
+
 %p= @restaurant.name
 %p= @restaurant.address
 - @dishes.each do |dish|
@@ -18,3 +23,5 @@
     = dish.price
     $
   %img{alt: dish.name, src: dish.pic_url}/
+
+  = link_to "Add #{dish.name} to cart" , add_to_cart_path(dish, restaurant_id: @restaurant.id)
