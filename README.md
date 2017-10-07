@@ -4,6 +4,7 @@ August 2017 Craft Academy Course Project
 We created an app which allows users to order a food in a various restaurants nearby.
 You sign up by creating an account with an email and password.
 After logging in you will be allowed to choose a restaurant and order food with delivery.
+A user sees restaurants within their proximity which they can choose by category e.g Thai, Mexican, etc.
 
 ## Getting Started
 Change the current working directory to the location where you want the cloned directory to be made.
