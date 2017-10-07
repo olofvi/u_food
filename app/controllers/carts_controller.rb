@@ -1,5 +1,5 @@
 class CartsController < ApplicationController
-  def add
+  def add_to_cart
     dish = Dish.find(params[:id])
     if Cart.any?
       @cart = Cart.last
