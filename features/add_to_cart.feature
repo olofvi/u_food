@@ -12,8 +12,9 @@ Feature: user can can add dish to order
       | My Thai | Stockholm |
     And I navigate to the index page
     And I click "My Thai"
+
   Scenario: User can add dish to order
     Then I should see the text "Sushi rolls"
-    And I click on "Add to cart"
+    And I click "Add to cart"
     Then I should see the text "Sushi rolls added to cart"
     And I should see the text "Cart: 1"
