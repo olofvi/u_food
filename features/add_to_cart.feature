@@ -16,7 +16,6 @@ Feature: user can can add dish to order
 
   Scenario: User can add dish to order
     Then I should see the text "Sushi rolls"
-    And show me the page
     And I click "Add Sushi rolls to cart"
     Then I should see the text "Sushi rolls added to cart"
     And I should see the text "Cart: 1"

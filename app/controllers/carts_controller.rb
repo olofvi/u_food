@@ -1,14 +1,14 @@
 class CartsController < ApplicationController
   def add
     dish = Dish.find(params[:id])
-    if @cart == nil
-      @cart = Cart.create
+    if Cart.any?
+      @cart = Cart.last
       session[:cart_id] = @cart.id
       @cart.add(dish, dish.price)
       flash[:notice] = "#{dish.name} added to cart"
       redirect_to restaurant_path(params[:restaurant_id])
     else
-      @cart = Cart.last
+      @cart = Cart.create
       session[:cart_id] = @cart.id
       @cart.add(dish, dish.price)
       flash[:notice] = "#{dish.name} added to cart"
