@@ -7,3 +7,7 @@ end
 Given("I visit the restaurant page") do
   visit restaurant_path(:id)
 end
+
+And(/^show me the page$/) do
+  save_and_open_page
+end
