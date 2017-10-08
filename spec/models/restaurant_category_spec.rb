@@ -14,6 +14,6 @@ RSpec.describe RestaurantCategory, type: :model do
   end
 
   context `validations` do
-    it { should have_many(:restaurants) }
+    it { is_expected.to have_many(:restaurants) }
   end
 end
