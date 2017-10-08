@@ -4,6 +4,9 @@ Feature: View a restaurant page
   I should be able to go to the restaurant page
 
   Background:
+    Given the following category exists
+      | name    | description  |
+      | Thai    | Thai food    |
     Given the following restaurants exist
       | name    | address   |
       | My Thai | Stockholm |

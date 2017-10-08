@@ -4,6 +4,9 @@ Feature: user can see dishes and their info
   I would like to see a list of dishes and info about them
 
   Background:
+    Given the following category exists
+      | name    | description  |
+      | Thai    | Thai food    |
     Given the following dishes exists
       | name        | description         | price | pic_url               | restaurant | category |
       | Sushi rolls | Tasty Japanese food | 10    | https://goo.gl/fH7P5F | Ai         | Main     |
