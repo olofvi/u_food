@@ -12,9 +12,8 @@ Feature: User can select restaurant by category
       | name       | address     |
       | My Thai    | Stockholm   |
       | My Mexican | Mexico city |
-    And I navigate to the index page
 
   Scenario: User can see restaurant by category
-    Given I click "Thai"
+    Given I navigate to the index page
     Then I should see "My Thai"
     And I should see "Stockholm"

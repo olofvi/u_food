@@ -13,10 +13,3 @@
  *= require_tree .
  *= require_self
  */
-
-.temp_box {
-    border: solid;
-}
-.temp_box2 {
-    border: dotted;
-}
