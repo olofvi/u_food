@@ -1,5 +1,4 @@
 class CartsController < ApplicationController
-  helper_method :show
 
   def add
     dish = Dish.find(params[:id])
