@@ -11,6 +11,6 @@ Given("I click {string}") do |link|
 end
 
 Given("I visit {string} page") do |page|
-  visit cart_path(:id)
+  visit "#{page}"
 end
 
