@@ -15,8 +15,4 @@ class CartsController < ApplicationController
   def find_cart
     @cart = Cart.find(session[:cart_id])
   end
-
-  #def show
-    #@cart = Cart.find(session[:cart_id])
-  #end
 end

@@ -1,9 +1,6 @@
-- if @cart
-
-  %P
-    Cart:
-    = @cart.shopping_cart_items.print
-  %p
-    Cart:
-    = @cart.each do |item|
-      = item.name
+%Cart:
+  - @cart = Cart.find(session[:cart_id])
+    - @cart.each do |dish|
+    %p
+      Dish:
+      = dish.name
