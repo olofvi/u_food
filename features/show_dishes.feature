@@ -11,8 +11,8 @@ Feature: user can see dishes and their info
       | name        | description         | price | pic_url               | restaurant | category |
       | Sushi rolls | Tasty Japanese food | 10    | https://goo.gl/fH7P5F | Ai         | Main     |
     And the following restaurants exist
-      | name    | address   |
-      | My Thai | Stockholm |
+      | name    | address   | restaurant_category |
+      | My Thai | Stockholm | Thai                |
     And I navigate to the index page
     And I click "My Thai"
 

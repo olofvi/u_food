@@ -5,11 +5,11 @@ Feature: View a restaurant page
 
   Background:
     Given the following category exists
-      | name    | description  |
-      | Thai    | Thai food    |
+      | name | description |
+      | Thai | Thai food   |
     Given the following restaurants exist
-      | name    | address   |
-      | My Thai | Stockholm |
+      | name    | address   | restaurant_category |
+      | My Thai | Stockholm | Thai                |
     And I navigate to the index page
 
   Scenario: User can view a restaurant page
