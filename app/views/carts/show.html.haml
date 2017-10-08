@@ -1,0 +1,5 @@
+- if @cart
+  %p
+    Cart:
+    = @cart.each do |item|
+      = item.name
