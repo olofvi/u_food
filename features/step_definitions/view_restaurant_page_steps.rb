@@ -1,11 +1,9 @@
 Given("the following restaurants exist") do |table|
-  x = 0
-  @res_category = RestaurantCategory.all
   table.hashes.each do |hash|
-    FactoryGirl.create(:restaurant, hash)
-    restaurant = Restaurant.all[x]
-    @res_category.all[x].update(restaurants: [restaurant])
-    x += 1
+    restaurant = FactoryGirl.create(:restaurant, hash)
+    binding.pry
+    @res_category = RestaurantCategory.find { |category| category.name == hash[:name]}
+    @res_category.update(restaurants: [restaurant])
   end
 end
 
