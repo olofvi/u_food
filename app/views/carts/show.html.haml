@@ -1,4 +1,8 @@
 - if @cart
+
+  %P
+    Cart:
+    = @cart.shopping_cart_items.print
   %p
     Cart:
     = @cart.each do |item|
