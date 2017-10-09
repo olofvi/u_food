@@ -4,13 +4,16 @@ Feature: user can can add dish to order
   I would like to able to add dish to order
 
   Background:
-    Given the following dishes exists
-      | name           | description           | price  |  pic_url                | restaurant | category |
-      | Sushi rolls    | Tasty Japanese food   | 10     |  https://goo.gl/fH7P5F  | Ai         | Main     |
-      | Dumplings      | Tasty Japanese food   | 15     |  https://goo.gl/qKCyL5  | Ai         | Main     |
-    And the following restaurants exist
-      | name    | address   |
-      | My Thai | Stockholm |
+    Given the following category exists
+      | name | description |
+      | Thai | Thai food   |
+    Given the following restaurants exist
+      | name    | address   | restaurant_category |
+      | My Thai | Stockholm | Thai                |
+    And the following dishes exists
+      | name        | description         | price | pic_url               | restaurant | category |
+      | Sushi rolls | Tasty Japanese food | 10    | https://goo.gl/fH7P5F | Ai         | Main     |
+      | Dumplings   | Tasty Japanese food | 15    | https://goo.gl/qKCyL5 | Ai         | Main     |
     And I navigate to the index page
     And I click "My Thai"
 
