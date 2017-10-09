@@ -1,0 +1,2 @@
+class DishCategory < ApplicationRecord
+end
