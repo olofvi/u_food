@@ -6,6 +6,10 @@
     = csrf_meta_tags
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    #map{style: 'width: 800px; height: 400px'}
+    %script(src="https://maps.googleapis.com/maps/api/js?libraries=places&callback=initiateMap" async defer)
+    = javascript_include_tag 'app/assets/javascripts/gmaps.js'
+    = javascript_include_tag 'app/assets/javascripts/landing_page.js'
   %body
     - if flash[:notice]
       .notice= flash[:notice]
