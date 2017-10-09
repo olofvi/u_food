@@ -16,6 +16,7 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem "haml-rails", "~> 1.0"
 gem 'acts_as_shopping_cart'
+gem 'jquery-rails'
 
 group :development, :test do
   gem 'pry-byebug'
@@ -26,6 +27,8 @@ group :development, :test do
   gem 'coveralls', require: false
   gem 'database_cleaner'
   gem 'launchy'
+  gem 'poltergeist'
+  gem 'capybara-webkit'
 end
 
 group :development do
