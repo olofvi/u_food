@@ -26,7 +26,6 @@ Feature: user can can add dish to order
     And I click "Add Dumplings to cart"
     Then I should see the text "Dumplings added to cart"
     And I should see the text "Cart: 2"
-    And show me the page
     And I click "Show cart"
     Then I should be on cart page
     And I should see the text "Sushi rolls"
