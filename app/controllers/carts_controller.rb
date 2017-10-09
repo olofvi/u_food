@@ -17,13 +17,8 @@ class CartsController < ApplicationController
     @cart = Cart.find(session[:cart_id])
   end
 
-  def show
-     binding.pry
-     @cart = Cart.find(session[:cart_id])
-  end
-
-  def show
+   def show
      @cart = Cart.find(session[:cart_id])
      @shopping_cart_items = @cart.shopping_cart_items
-  end
+   end
 end
