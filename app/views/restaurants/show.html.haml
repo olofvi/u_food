@@ -4,13 +4,20 @@
   (
   = link_to "Show cart" , cart_path(@cart)
   )
-    
+
 %p= @restaurant.name
 %p= @restaurant.address
 
 .btn-group
   - @category.each do |section|
     = link_to section.name, restaurant_path(section_id: section.id), class: 'btn btn-secondary'
+
+  = if @current_dish_category
+    - @current_dish_category.dishes.each do |item|
+      = item.name
+      = item.description
+      = image_tag item.pic_url
+      = item.price
 
 - @dishes.each do |dish|
   %p
