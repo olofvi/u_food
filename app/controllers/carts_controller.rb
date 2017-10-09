@@ -1,4 +1,5 @@
 class CartsController < ApplicationController
+
   def add
     dish = Dish.find(params[:id])
     if session[:cart_id]
@@ -14,5 +15,9 @@ class CartsController < ApplicationController
 
   def find_cart
     @cart = Cart.find(session[:cart_id])
+  end
+
+  def cart_item_show
+    @shopping_cart_items = find_cart.shopping_cart_items
   end
 end
