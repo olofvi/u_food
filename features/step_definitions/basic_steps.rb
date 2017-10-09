@@ -11,5 +11,6 @@ Given("I click {string}") do |link|
 end
 
 Then("I visit cart page") do
-  visit cart_path(:id)
+  @cart = Cart.last
+  visit cart_path(@cart)
 end
