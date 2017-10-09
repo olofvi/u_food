@@ -1,8 +1,9 @@
 class CartsController < ApplicationController
+
   def add
     dish = Dish.find(params[:id])
     if session[:cart_id]
-      find_cart
+      show
     else
       @cart = Cart.create
       session[:cart_id] = @cart.id
@@ -12,7 +13,7 @@ class CartsController < ApplicationController
     redirect_to restaurant_path(params[:restaurant_id])
   end
 
-  def find_cart
+  def show
     @cart = Cart.find(session[:cart_id])
   end
 end
