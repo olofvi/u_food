@@ -1,6 +1,14 @@
-%p Cart
-  Items in cart:
+In cart:
+- @cart.shopping_cart_items.each do |cart_item|
+  %p
+    = cart_item.item.name
+    = cart_item.price
+    $
+%br
+%p
+  Total items:
   = @cart.shopping_cart_items.count
 %p
   Total cost:
   = @cart.total
+  $
