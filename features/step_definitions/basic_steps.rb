@@ -13,4 +13,3 @@ end
 Given("I visit cart page") do
   visit cart_path(:id)
 end
-
