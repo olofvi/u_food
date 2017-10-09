@@ -4,6 +4,6 @@ Feature: Show a map
   I would like to see a map of my area
 
   @javascript
-  Scenario: User can see a map, js: true
+  Scenario: User can see a map
     Given I navigate to the index page
     And the map has been loaded
