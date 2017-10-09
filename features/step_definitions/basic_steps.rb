@@ -10,7 +10,6 @@ Given("I click {string}") do |link|
   click_link_or_button link
 end
 
-Given("I visit cart page") do
+Then("I visit cart page") do
   visit cart_path(:id)
 end
-
