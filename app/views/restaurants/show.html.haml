@@ -8,7 +8,7 @@
 %p= @restaurant.name
 %p= @restaurant.address
 
-.btn-group{"aria-label" => "Basic example", :role => "group"}
+.btn-group
   - @category.each do |section|
     = link_to section.name, restaurant_path(section_id: section.id), class: 'btn btn-secondary'
 
