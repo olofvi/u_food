@@ -8,11 +8,12 @@ Feature: View a restaurant page
       | name | description |
       | Thai | Thai food   |
     Given the following restaurants exist
-      | name    | address   | restaurant_category |
-      | My Thai | Stockholm | Thai                |
+      | name    | address   | restaurant_category |  description          |
+      | My Thai | Stockholm | Thai                |  Some hip thai place  |
     And I navigate to the index page
 
   Scenario: User can view a restaurant page
     Given I click "My Thai"
     Then I should see "My Thai"
     And I should see "Stockholm"
+    And I should see "Some hip thai place"

@@ -9,9 +9,9 @@ Feature: User can select restaurant by category
       | Thai    | Thai food    |
       | Mexican | Mexican food |
     And the following restaurants exist
-      | name       | address     | restaurant_category |
-      | My Thai    | Stockholm   | Thai                |
-      | My Mexican | Mexico city | Mexican             |
+      | name       | address     | restaurant_category |  description              |
+      | My Thai    | Stockholm   | Thai                |  Some hip thai place      |
+      | My Mexican | Mexico city | Mexican             |  Some nice mexican place  |
 
   Scenario: User can see restaurant by category
     Given I navigate to the index page
