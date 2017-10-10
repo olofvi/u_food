@@ -14,3 +14,7 @@ Then("I should be on cart page") do
   @cart = Cart.last
   expect(page).to have_current_path cart_path(@cart)
 end
+
+Then("I fill in field {string} with {string}") do |field, input|
+  fill_in field, with: input
+end

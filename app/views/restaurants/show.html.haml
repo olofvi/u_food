@@ -1,6 +1,6 @@
 - if @cart
   Cart:
-  = @cart.shopping_cart_items.count
+  = @cart.total_unique_items
   (
   = link_to "Show cart" , cart_path(@cart)
   )

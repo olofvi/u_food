@@ -27,8 +27,9 @@ Feature: user can can add dish to order
     Then I should see the text "Dumplings added to cart"
     And I should see the text "Cart: 2"
     And I click "Add Dumplings to cart"
+    And I fill in field "Amount" with "2"
     Then I should see the text "Dumplings added to cart"
-    And I should see the text "Cart: 2"
+    And I should see the text "Cart: 3"
     And I click "Show cart"
     Then I should be on cart page
     And I should see the text "1"
