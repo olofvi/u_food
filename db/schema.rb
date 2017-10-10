@@ -58,6 +58,7 @@ ActiveRecord::Schema.define(version: 20171009084542) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "restaurant_category_id"
+    t.text "description"
     t.index ["restaurant_category_id"], name: "index_restaurants_on_restaurant_category_id"
   end
 
