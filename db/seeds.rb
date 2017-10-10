@@ -9,5 +9,20 @@ Dish.create([{
   name: Faker::Food.dish,
   description: Faker::Lorem.paragraph,
   price: Faker::Number.between(5, 60),
-  pic_url: Faker::LoremPixel.image("50x60", false, 'food')
+  pic_url: Faker::LoremPixel.image("80x60", false, 'food')
   }])
+
+3.times do
+  RestaurantCategory.create([{
+      name: Faker::Commerce.department,
+      description: Faker::Lorem.paragraph
+      }])
+
+  Restaurant.create([{
+      name: Faker::Company.name,
+      address: Faker::HitchhikersGuideToTheGalaxy.location
+                      }])
+  rest = Restaurant.last
+  res_cat = RestaurantCategory.last
+  rest.update_attribute(:restaurant_category, res_cat)
+end
