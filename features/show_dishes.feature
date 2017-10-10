@@ -9,7 +9,7 @@ Feature: user can see dishes and their info
       | Japanese    | Japanese food    |
     Given the following dishes exists
       | name        | description         | price | pic_url                      |
-      | Sushi rolls | Tasty Japanese food | 10    | https://goo.gl/images/JBS5Rj |
+      | Sushi rolls | Tasty Japanese food | 10    | https://goo.gl/images/hpTGCV |
     And the following restaurants exist
       | name    | address   | restaurant_category |
       | Yappi   | Stockholm | Japanese                |
@@ -21,4 +21,4 @@ Feature: user can see dishes and their info
     Then I should see the text "Sushi rolls"
     And I should see the text "Tasty Japanese food"
     And I should see the text "10"
-    And I should see the picture "https://goo.gl/images/JBS5Rj"
+    And I should see the picture "https://goo.gl/images/hpTGCV"

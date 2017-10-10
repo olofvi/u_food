@@ -4,10 +4,13 @@
   (
   = link_to "Show cart" , cart_path(@cart)
   )
+.br
 
-%p= @restaurant.name
-%p= @restaurant.address
-
+.btn
+  %p
+  = link_to @restaurant.name, root_path, class: 'btn btn-primary'
+  %p= @restaurant.address
+.br
 .btn-group
   - @category.each do |section|
     = link_to section.name, restaurant_path(section_id: section.id), class: 'btn btn-secondary'
@@ -30,6 +33,9 @@
     Price:
     = dish.price
     $
-  %img{alt: dish.name, src: dish.pic_url}/
 
-  = link_to "Add #{dish.name} to cart" , add_to_cart_path(dish, restaurant_id: @restaurant.id)
+  = image_tag dish.pic_url
+
+  .br
+  .btn
+  = link_to "Add #{dish.name} to cart" , add_to_cart_path(dish, restaurant_id: @restaurant.id), class: 'btn btn-secondary'
