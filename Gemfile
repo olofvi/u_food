@@ -28,7 +28,6 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'launchy'
   gem 'poltergeist'
-  gem 'capybara-webkit'
 end
 
 group :development do
