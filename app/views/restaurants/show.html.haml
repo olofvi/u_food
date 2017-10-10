@@ -28,5 +28,5 @@
       $
     %img{alt: dish.name, src: dish.pic_url}/
     %form
-      %input{type: 'number', placeholder: 'amount', value: '1'}/
-    = link_to "Add #{dish.name} to cart" , add_to_cart_path(dish, restaurant_id: @restaurant.id)
+      %input{type: 'number', placeholder: 'amount', min: 1, value: '1'}/
+      = link_to "Add #{dish.name} to cart" , add_to_cart_path(dish, restaurant_id: @restaurant.id)
