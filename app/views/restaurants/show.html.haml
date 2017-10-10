@@ -26,5 +26,6 @@
     = dish.price
     $
   %img{alt: dish.name, src: dish.pic_url}/
-
+  %form
+    %input{name: 'Amount', type: 'number', placeholder: 'amount'}/
   = link_to "Add #{dish.name} to cart" , add_to_cart_path(dish, restaurant_id: @restaurant.id)
