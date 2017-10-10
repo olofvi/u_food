@@ -20,22 +20,60 @@ end
       description: Faker::FamilyGuy.quote
       }])
 
-2.times do
-    Restaurant.create([{
-        name: Faker::StarWars.character,
-        address: Faker::HitchhikersGuideToTheGalaxy.location
-                        }])
-    rest = Restaurant.last
-    res_cat = RestaurantCategory.last
-    rest.update_attribute(:restaurant_category, res_cat)
-  end
+  2.times do
+      Restaurant.create([{
+          name: Faker::StarWars.character,
+          address: Faker::HitchhikersGuideToTheGalaxy.location
+                          }])
+      rest = Restaurant.last
+      res_cat = RestaurantCategory.last
+      rest.update_attribute(:restaurant_category, res_cat)
+    end
+end
+
+
+DishCategory.create([{
+    name: "Starter"
+}])
+DishCategory.create([{
+    name: "Main"
+}])
+DishCategory.create([{
+    name: "Dessert"
+}])
+
+5.times do
+  Dish.create([{
+      name: Faker::Food.dish,
+      description: Faker::Hobbit.quote,
+      price: Faker::Number.between(5, 25),
+      pic_url: Faker::LoremPixel.image("200x200", false, 'food')
+      }])
+  dish = Dish.last
+  dish_cat = DishCategory.find_by(name: "Starter")
+  dish.update_attribute(:dish_category, dish_cat)
 end
 
 5.times do
   Dish.create([{
                    name: Faker::Food.dish,
-                   description: Faker::Hobbit.quote,
+                   description: Faker::HarryPotter.quote,
+                   price: Faker::Number.between(20, 60),
+                   pic_url: Faker::Placeholdit.image("50x50", 'jpg')
+               }])
+  dish = Dish.last
+  dish_cat = DishCategory.find_by(name: "Main")
+  dish.update_attribute(:dish_category, dish_cat)
+end
+
+5.times do
+  Dish.create([{
+                   name: Faker::Dessert.variety,
+                   description: Faker::Coffee.notes,
                    price: Faker::Number.between(5, 60),
                    pic_url: Faker::LoremPixel.image("200x200", false, 'food')
                }])
+  dish = Dish.last
+  dish_cat = DishCategory.find_by(name: "Dessert")
+  dish.update_attribute(:dish_category, dish_cat)
 end
