@@ -31,7 +31,9 @@ Feature: user can can add dish to order
     And I should see the text "Cart: 2"
     And I click "Show cart"
     Then I should be on cart page
+    And I should see the text "1"
     And I should see the text "Sushi rolls"
+    And I should see the text "2"
     And I should see the text "Dumplings"
     And I should see the text "Total items: 3"
     And I should see the text "Total cost: 40.00 $"
