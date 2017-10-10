@@ -16,7 +16,7 @@ Then("I should be on cart page") do
 end
 
 Then("I fill in field {string} and id {string} with {string}") do |field, id, input|
-  within(id) do
+  within("//div[@id='#{id}']") do
     fill_in field, with: input
   end
 end
