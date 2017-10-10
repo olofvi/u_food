@@ -5,24 +5,28 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-Dish.create([{
-  name: Faker::Food.dish,
-  description: Faker::Lorem.paragraph,
-  price: Faker::Number.between(5, 60),
-  pic_url: Faker::LoremPixel.image("80x60", false, 'food')
-  }])
+5.times do
+  Dish.create([{
+    name: Faker::Food.dish,
+    description: Faker::Lorem.paragraph,
+    price: Faker::Number.between(5, 60),
+    pic_url: Faker::LoremPixel.image("200x200", false, 'food')
+    }])
+end
 
 3.times do
   RestaurantCategory.create([{
-      name: Faker::Commerce.department,
+      name: Faker::Simpsons.character,
       description: Faker::Lorem.paragraph
       }])
 
-  Restaurant.create([{
-      name: Faker::Company.name,
-      address: Faker::HitchhikersGuideToTheGalaxy.location
-                      }])
-  rest = Restaurant.last
-  res_cat = RestaurantCategory.last
-  rest.update_attribute(:restaurant_category, res_cat)
+2.times do
+    Restaurant.create([{
+        name: Faker::Company.name,
+        address: Faker::HitchhikersGuideToTheGalaxy.location
+                        }])
+    rest = Restaurant.last
+    res_cat = RestaurantCategory.last
+    rest.update_attribute(:restaurant_category, res_cat)
+  end
 end
