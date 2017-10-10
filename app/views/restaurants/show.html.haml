@@ -10,6 +10,7 @@
   %p
   = link_to @restaurant.name, root_path, class: 'btn btn-primary'
   %p= @restaurant.address
+  %p= @restaurant.description
 .br
 .btn-group
   - @category.each do |section|
@@ -27,4 +28,4 @@
       .br
       = image_tag item.pic_url
       .br
-      = link_to "Add #{item.name} to cart" , add_to_cart_path(item, restaurant_id: @restaurant.id), class: 'btn btn-secondary'
+      = link_to "Add #{item.name} to cart" , add_to_cart_path(item, restaurant_id: @restaurant.id, dish_category_id: @current_dish_category.id), class: 'btn btn-secondary'
