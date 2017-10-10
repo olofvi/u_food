@@ -14,5 +14,5 @@ Feature: As a user
     And I click "Log In"
     And I fill in "Email" with "example@example.com"
     And I fill in "Password" with "password"
-    And I click "Log In"
-    And I should see the text "Welcome! You have signed up successfully."
+    And I click "Log in"
+    And I should see the text "Welcome, you have logged in succesfully"
