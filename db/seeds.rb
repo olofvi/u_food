@@ -8,7 +8,7 @@
 5.times do
   Dish.create([{
     name: Faker::Food.dish,
-    description: Faker::Lorem.paragraph,
+    description: Faker::Hobbit.quote,
     price: Faker::Number.between(5, 60),
     pic_url: Faker::LoremPixel.image("200x200", false, 'food')
     }])
@@ -17,12 +17,12 @@ end
 3.times do
   RestaurantCategory.create([{
       name: Faker::Simpsons.character,
-      description: Faker::Lorem.paragraph
+      description: Faker::FamilyGuy.quote
       }])
 
 2.times do
     Restaurant.create([{
-        name: Faker::Company.name,
+        name: Faker::StarWars.character,
         address: Faker::HitchhikersGuideToTheGalaxy.location
                         }])
     rest = Restaurant.last
