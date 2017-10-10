@@ -15,8 +15,8 @@ Then("I should be on cart page") do
   expect(page).to have_current_path cart_path(@cart)
 end
 
-Then("I fill in field {string} with {string}") do |field, input|
-  within_fieldset('') do
+Then("I fill in field {string} and id {string} with {string}") do |field, id, input|
+  within(id) do
     fill_in field, with: input
   end
 end
