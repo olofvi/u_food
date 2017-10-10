@@ -29,6 +29,7 @@ group :development, :test do
   gem 'launchy'
   gem 'poltergeist'
   gem 'capybara-webkit'
+  gem 'faker'
 end
 
 group :development do

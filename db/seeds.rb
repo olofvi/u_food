@@ -5,3 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Dish.create([{
+  name: Faker::Food.dish,
+  description: Faker::Lorem.paragraph,
+  price: Faker::Number.between(5, 60),
+  pic_url: Faker::LoremPixel.image("50x60", false, 'food')
+  }])

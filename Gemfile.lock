@@ -110,6 +110,8 @@ GEM
     factory_girl_rails (4.8.0)
       factory_girl (~> 4.8.0)
       railties (>= 3.0.0)
+    faker (1.8.4)
+      i18n (~> 0.5)
     ffi (1.9.18)
     gherkin (4.1.3)
     globalid (0.4.0)
@@ -309,6 +311,7 @@ DEPENDENCIES
   cucumber-rails
   database_cleaner
   factory_girl_rails
+  faker
   haml-rails (~> 1.0)
   jbuilder (~> 2.5)
   jquery-rails
