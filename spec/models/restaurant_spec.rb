@@ -11,6 +11,7 @@ RSpec.describe Restaurant, type: :model do
     it { is_expected.to have_db_column :id }
     it { is_expected.to have_db_column :name }
     it { is_expected.to have_db_column :address }
+    it { is_expected.to have_db_column :description }
   end
 
   context `validations` do

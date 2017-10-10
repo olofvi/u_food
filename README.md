@@ -1,3 +1,5 @@
+[![Coverage Status](https://coveralls.io/repos/github/CraftAcademy/ufoods/badge.svg?branch=develop)](https://coveralls.io/github/CraftAcademy/ufoods?branch=develop)
+
 # Ufoods app
 August 2017 Craft Academy Course Project
 
@@ -37,8 +39,8 @@ Feature: user can see dishes and their info
 
   Background:
     Given the following dishes exists
-      | name           | description           | price  |  pic_url                | restaurant | category |
-      | Sushi rolls    | Tasty Japanese food   | 10     |  https://goo.gl/fH7P5F  | Ai         | Main     |
+      | name           | description           | price  |  pic_url                |
+      | Sushi rolls    | Tasty Japanese food   | 10     |  https://goo.gl/fH7P5F  |
 
   Scenario: user can view dish names
     Given I visit the dish page
@@ -46,8 +48,6 @@ Feature: user can see dishes and their info
     And I should see the text "Tasty Japanese food"
     And I should see the text "10"
     And I should see the picture "https://goo.gl/fH7P5F"
-    And I should see the text "Ai"
-    And I should see the text "Main"
 ```
 ### For unit tests we use Rspec
 It is a behavior-driven development (BDD) framework which is extensively used in the production applications. The basic idea behind this concept is that of Test Driven Development(TDD) where the tests are written first and the development is based on writing just enough code that will fulfill those tests followed by refactoring.  
@@ -60,8 +60,6 @@ RSpec.describe Dish, type: :model do
     it { is_expected.to have_db_column :description }
     it { is_expected.to have_db_column :price }
     it { is_expected.to have_db_column :pic_url }
-    it { is_expected.to have_db_column :restaurant }
-    it { is_expected.to have_db_column :category }
   end
 
   describe 'Validations' do
@@ -69,8 +67,6 @@ RSpec.describe Dish, type: :model do
     it { is_expected.to validate_presence_of :description }
     it { is_expected.to validate_presence_of :price }
     it { is_expected.to validate_presence_of :pic_url }
-    it { is_expected.to validate_presence_of :restaurant }
-    it { is_expected.to validate_presence_of :category }
   end
 
   describe 'Factory' do
