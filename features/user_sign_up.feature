@@ -37,3 +37,12 @@ Feature: As a user
     And I fill in "Password confirmation" with ""
     And I click "Sign up"
     And I should see the text "Password can't be blank"
+
+  Scenario: User fails to provide valid email
+    Given I navigate to the index page
+    And I click "Sign Up"
+    And I fill in "Email" with "example"
+    And I fill in "Password" with "password"
+    And I fill in "Password confirmation" with "password"
+    And I click "Sign up"
+    And I should see the text "Email is invalid"
