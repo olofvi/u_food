@@ -16,5 +16,4 @@ Feature: View a restaurant page
     Given I click "My Thai"
     Then I should see "My Thai"
     And I should see "Stockholm"
-    Then show me the page
     And I should see "Some hip thai place"

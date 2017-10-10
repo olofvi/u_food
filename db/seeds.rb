@@ -23,7 +23,8 @@ end
   2.times do
       Restaurant.create([{
           name: Faker::StarWars.character,
-          address: Faker::HitchhikersGuideToTheGalaxy.location
+          address: Faker::Address.street_address,
+          description: Faker::HitchhikersGuideToTheGalaxy.quote
                           }])
       rest = Restaurant.last
       res_cat = RestaurantCategory.last
