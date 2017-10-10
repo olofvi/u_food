@@ -14,13 +14,17 @@
 .btn-group
   - @category.each do |section|
     = link_to section.name, restaurant_path(dish_category_id: section.id), class: 'btn btn-secondary'
-
+.br
   - if @current_dish_category
     - @current_dish_category.dishes.each do |item|
+      %p Dish:
       = item.name
+      %p Description:
       = item.description
-      = image_tag item.pic_url
+      %p Price:
       = item.price
       $
+      .br
+      = image_tag item.pic_url
       .br
       = link_to "Add #{item.name} to cart" , add_to_cart_path(item, restaurant_id: @restaurant.id), class: 'btn btn-secondary'

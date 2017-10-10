@@ -11,13 +11,14 @@ Feature: user can can add dish to order
       | name    | address   | restaurant_category |
       | My Thai | Stockholm | Thai                |
     And the following dishes exists
-      | name        | description         | price | pic_url               | restaurant | category |
-      | Sushi rolls | Tasty Japanese food | 10    | https://goo.gl/fH7P5F | Ai         | Main     |
-      | Dumplings   | Tasty Japanese food | 15    | https://goo.gl/qKCyL5 | Ai         | Main     |
+      | name        | description         | price | pic_url               |
+      | Sushi rolls | Tasty Japanese food | 10    | https://goo.gl/fH7P5F |
+      | Dumplings   | Tasty Japanese food | 15    | https://goo.gl/qKCyL5 |
     And I navigate to the index page
     And I click "My Thai"
 
   Scenario: User can add dish to order
+    And I click "Main"
     Then I should see the text "Sushi rolls"
     And I click "Add Sushi rolls to cart"
     Then I should see the text "Sushi rolls added to cart"

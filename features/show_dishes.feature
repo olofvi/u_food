@@ -5,18 +5,22 @@ Feature: user can see dishes and their info
 
   Background:
     Given the following category exists
-      | name     | description      |
+      | name        | description      |
       | Japanese    | Japanese food    |
     Given the following dishes exists
       | name        | description         | price | pic_url                      |
       | Sushi rolls | Tasty Japanese food | 10    | https://goo.gl/images/hpTGCV |
+    Given the following dish category exists
+      | name        |
+      | Main        |
     And the following restaurants exist
       | name    | address   | restaurant_category |
-      | Yappi   | Stockholm | Japanese                |
+      | Yappi   | Stockholm | Japanese            |
     And I navigate to the index page
     And I click "Yappi"
 
   Scenario: user can view dishes
+    Then show me the page
     And I click "Main"
     Then I should see the text "Sushi rolls"
     And I should see the text "Tasty Japanese food"
