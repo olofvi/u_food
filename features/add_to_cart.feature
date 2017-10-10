@@ -7,13 +7,16 @@ Feature: user can can add dish to order
     Given the following category exists
       | name | description |
       | Thai | Thai food   |
+    Given the following dish category exists
+      | name        |
+      | Main        |
     Given the following restaurants exist
       | name    | address   | restaurant_category |  description          |
       | My Thai | Stockholm | Thai                |  Some hip thai place  |
     And the following dishes exists
-      | name        | description         | price | pic_url               |
-      | Sushi rolls | Tasty Japanese food | 10    | https://goo.gl/fH7P5F |
-      | Dumplings   | Tasty Japanese food | 15    | https://goo.gl/qKCyL5 |
+      | name        | description         | price | pic_url               | dish_category |
+      | Sushi rolls | Tasty Japanese food | 10    | https://goo.gl/fH7P5F | Main          |
+      | Dumplings   | Tasty Japanese food | 15    | https://goo.gl/qKCyL5 | Main          |
     And I navigate to the index page
     And I click "My Thai"
 

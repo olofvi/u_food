@@ -68,10 +68,7 @@ ActiveRecord::Schema.define(version: 20171010092947) do
     t.index ["restaurant_category_id"], name: "index_restaurants_on_restaurant_category_id"
   end
 
-<<<<<<< HEAD
   add_foreign_key "dishes", "dish_categories"
-=======
   add_foreign_key "restaurant_categories", "restaurants"
->>>>>>> a50dce28a763716bbe22a492fd952bde9e9a214a
   add_foreign_key "restaurants", "restaurant_categories"
 end
