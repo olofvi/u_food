@@ -16,5 +16,7 @@ Then("I should be on cart page") do
 end
 
 Then("I fill in field {string} with {string}") do |field, input|
-  fill_in field, with: input
+  within_fieldset('') do
+    fill_in field, with: input
+  end
 end

@@ -9,6 +9,7 @@
 %p= @restaurant.address
 %p= @restaurant.description
 - @dishes.each do |dish|
+  %div{id: dish.id}
   %p
     Dish:
     = dish.name
@@ -27,5 +28,5 @@
     $
   %img{alt: dish.name, src: dish.pic_url}/
   %form
-    %input{name: 'Amount', type: 'number', placeholder: 'amount'}/
+    %input{name: 'Amount', type: 'number', placeholder: 'amount', value: '1'}/
   = link_to "Add #{dish.name} to cart" , add_to_cart_path(dish, restaurant_id: @restaurant.id)
