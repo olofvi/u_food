@@ -4,6 +4,6 @@ class Dish < ApplicationRecord
   validates :description, presence: true
   validates :price, presence: true
   validates :pic_url, presence: true
-  validates :restaurant, presence: true
-  validates :category, presence: true
+  validates :restaurant, presence: false
+  validates :category, presence: false
 end
