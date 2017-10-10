@@ -1,3 +1,5 @@
+[![Coverage Status](https://coveralls.io/repos/github/CraftAcademy/ufoods/badge.svg?branch=develop)](https://coveralls.io/github/CraftAcademy/ufoods?branch=develop)
+
 # Ufoods app
 August 2017 Craft Academy Course Project
 
