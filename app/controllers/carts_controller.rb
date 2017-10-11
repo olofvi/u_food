@@ -3,6 +3,7 @@ class CartsController < ApplicationController
   def add
     dish = Dish.find(params[:id])
     quantity = params[:amount].nil? ? 1 : params[:amount]
+    binding.pry
     if session[:cart_id]
       show
     else
