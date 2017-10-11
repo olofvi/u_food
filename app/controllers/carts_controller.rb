@@ -11,7 +11,7 @@ class CartsController < ApplicationController
     end
     @cart.add(dish, dish.price, quantity)
     flash[:notice] = "#{dish.name} added to cart: #{quantity}"
-    redirect_to restaurant_path(params[:restaurant_id])
+    redirect_back(fallback_location: (request.referer || restaurant_path(params[:restaurant_id])))
   end
 
   def show
