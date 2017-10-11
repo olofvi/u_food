@@ -19,15 +19,14 @@ Feature: user can can add dish to order
 
   Scenario: User can add dish to order
     Then I should see the text "Sushi rolls"
-    And show me the page
-    And I fill in field "amount" and id "Sushi rolls" with "2"
+    And I fill in field "amount" and id "Sushi rolls" with "1"
     And I click "Add Sushi rolls to cart"
-    Then I should see the text "Sushi rolls added to cart"
+    Then I should see the text "Sushi rolls added to cart: 1"
     And I should see the text "Cart: 1"
     Then I should see the text "Dumplings"
     And I fill in field "amount" and id "Dumplings" with "2"
     And I click "Add Dumplings to cart"
-    Then I should see the text "Dumplings added to cart"
+    Then I should see the text "Dumplings added to cart: 2"
     And I should see the text "Cart: 3"
     And I click "Show cart"
     Then I should be on cart page
