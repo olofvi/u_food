@@ -23,6 +23,12 @@
   end
 end
 
+2.times do
+  User.create([{
+                   email: Faker::Simpsons.character,
+                   password: Faker::FamilyGuy.quote
+                         }])
+  end
 5.times do
   Dish.create([{
                    name: Faker::Food.dish,
