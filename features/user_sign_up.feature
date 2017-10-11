@@ -13,9 +13,7 @@ Feature: As a user
     And I click "Sign up"
     And I should see the text "Welcome! You have signed up successfully."
     And I should not see link "Sign Up"
-
-
-
+    
   Scenario: User fails to provide email
     Given I navigate to the index page
     And I click "Sign Up"

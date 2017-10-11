@@ -28,5 +28,4 @@ Feature: As a user
     And I fill in "Email" with "examp@examle.com"
     And I fill in "Password" with "password"
     And I click "Sign in"
-    And show me the page
     And I should see the text "Invalid Email or password."
