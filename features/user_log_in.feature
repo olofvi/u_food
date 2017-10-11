@@ -15,4 +15,4 @@ Feature: As a user
     And I fill in "Email" with "example@example.com"
     And I fill in "Password" with "password"
     And I click "Log in"
-    And I should see the text "Welcome, you have logged in succesfully"
+    And I should see the text "Signed in successfully"

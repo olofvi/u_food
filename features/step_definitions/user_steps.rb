@@ -3,7 +3,7 @@ Given(/^I fill in "([^"]*)" with "([^"]*)"$/) do |item, content|
 end
 
 Given("the following user exists") do |table|
-  table.hashes.each do |hash|
-    FactoryGirl.create(:user, hash)
+  table.hashes.each do
+    FactoryGirl.create(:user, password: 'password')
   end
 end
