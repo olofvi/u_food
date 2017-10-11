@@ -8,9 +8,10 @@ Given("the following user exists") do |table|
   end
   end
 
-Given("the following user is signed in") do |table|
-  table.hashes.each do
-    user = FactoryGirl.create(:user)
-    login_as(user, :scope => :user)
-    end
-  end
+Given("I should see link {string}") do |string|
+  expect(page).to have_link string
+end
+
+Given("I should not see link {string}") do |string|
+  expect(page).not_to have_link string
+end
