@@ -6,7 +6,6 @@ class RestaurantsController < ApplicationController
   end
 
   def show
-    #binding.pry
     @restaurant = Restaurant.find(params[:id])
     @category = DishCategory.all
     if params[:dish_category_id].present?
