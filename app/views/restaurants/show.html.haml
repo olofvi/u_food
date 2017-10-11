@@ -28,5 +28,16 @@
       $
     %img{alt: dish.name, src: dish.pic_url}/
     %form
-      %input{name: 'amount', type: 'number', placeholder: 'amount', min: 1, value: '1'}/
+      %input{name: 'amount', type: 'number', placeholder: 'amount', min: 1, value: '1', id: 'amount'}/
+      -#= link_to "Add #{dish.name} to cart", (add_to_cart_path(dish, restaurant_id: @restaurant.id), onclick: "$('#amount').submit()"
+
       = link_to "Add #{dish.name} to cart" , add_to_cart_path(dish, restaurant_id: @restaurant.id)
+
+    -#= form_for url:
+    -#  = label_tag(:q, "amount")
+    -#  = text_field_tag(:q)
+    -#  = submit_tag("Add #{dish.name} to cart")
+
+    -#= form_for :cart, url: add_to_cart_path(dish, restaurant_id: @restaurant.id) do |f|
+    -#  = f.text_field :amount
+    -#  = f.submit "Add #{dish.name} to cart"
