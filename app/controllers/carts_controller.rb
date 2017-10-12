@@ -27,7 +27,6 @@ class CartsController < ApplicationController
 
   def clear_cart
     @cart.clear
-    @restaurant = Restaurant.last
     redirect_to root_path
   end
 
