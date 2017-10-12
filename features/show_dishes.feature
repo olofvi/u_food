@@ -4,18 +4,22 @@ Feature: user can see dishes and their info
   I would like to see a list of dishes and info about them
 
   Background:
-    Given the following category exists
-      | name        | description         |
-      | Japanese    | Japanese food       |
-    And the following dish category exists
-      | name        |
-      | Main        |
-    And the following dishes exists
-      | name        | description         | price               | pic_url                      | dish_category |
-      | Sushi rolls | Tasty Japanese food | 10                  | https://goo.gl/images/hpTGCV | Main          |
-    And the following restaurants exist
-      | name        | address             | restaurant_category |
-      | Yappi       | Stockholm           | Japanese            |
+#    Given the following category exists
+#      | name        | description         |
+#      | Japanese    | Japanese food       |
+#    And the following dish category exists
+#      | name        |
+#      | Main        |
+#    And the following dishes exists
+#      | name        | description         | price               | pic_url                      | dish_category |
+#      | Sushi rolls | Tasty Japanese food | 10                  | https://goo.gl/images/hpTGCV | Main          |
+#    And the following restaurants exist
+#      | name        | address             | restaurant_category |
+#      | Yappi       | Stockholm           | Japanese            |
+    Given the following restaurants exist
+      | name    | address    |  description          | res_category_name | menu_name    |
+      | My Thai | Stockholm  |  Some hip thai place  | Brämhult          | Everyday     |
+
     Then I navigate to the index page
     And I click "Yappi"
 

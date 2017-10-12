@@ -13,6 +13,10 @@ Given("the following dish category exists") do |table|
   end
 end
 
+Given("the following associated dishes exists") do |table|
+  FactoryGirl.create(:dish, hash)
+end
+
 And(/^show me the page$/) do
   save_and_open_page
 end
