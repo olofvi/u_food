@@ -14,6 +14,11 @@ Given("the following user is signed in") do |table|
     login_as(user, scope: :user)
   end
 end
+
+Given("the user is signed out") do
+  logout
+end
+
 Given("I should see link {string}") do |string|
   expect(page).to have_link string
 end

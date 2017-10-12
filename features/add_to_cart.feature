@@ -55,6 +55,8 @@ Feature: user can can add dish to order
     And I should see the text "Total cost: 30.00 $"
 
   Scenario: User should not be able to add to order if not signed in
-    Given I click "Main"
-    Then I should see the text "Dumplings"
-    And I should not see "Add Dumplings to cart"
+    Given the user is signed out
+    Then I click "Main"
+    And I should see the text "Dumplings"
+    And show me the page
+    And I should not see link "Add Dumplings to cart"
