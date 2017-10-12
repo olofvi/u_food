@@ -4,7 +4,13 @@ Feature: user can can add dish to order
   I would like to able to add dish to order
 
   Background:
-    Given the following category exists
+    Given the following user exists
+      | email               | encrypted_password |
+      | example@example.com | password           |
+    And the following user is signed in
+      | email               | encrypted_password |
+      | example@example.com | password           |
+    And the following category exists
       | name        | description |
       | Thai        | Thai food   |
     And the following dish category exists
