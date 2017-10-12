@@ -1,5 +1,22 @@
 require 'rails_helper'
 
 RSpec.describe Menu, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe 'DB table' do
+    it {is_expected.to have_db_column :name}
+  end
+
+  describe 'Validations' do
+    it {is_expected.to validate_presence_of :name}
+  end
+
+  describe 'Associations' do
+    it {is_expected.to have_many :menu_lines}
+    it {is_expected.to have_many(:dishes).through(:menu_lines)}
+  end
+
+  describe 'Factory' do
+    it 'should be valid' do
+      expect(FactoryGirl.create(:menu)).to be_valid
+    end
+  end
 end
