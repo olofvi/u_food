@@ -13,9 +13,12 @@ Given("the following dish category exists") do |table|
   end
 end
 
-Given("the following associated dishes exists") do |table|
-  FactoryGirl.create(:dish, hash)
+Given("the following restaurants with associations exist") do |table|
+  table.hashes.each do |hash|
+    FactoryGirl.create(:restaurant_with_associations, hash)
+  end
 end
+
 
 And(/^show me the page$/) do
   save_and_open_page
