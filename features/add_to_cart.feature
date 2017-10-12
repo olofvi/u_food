@@ -58,5 +58,4 @@ Feature: user can can add dish to order
     Given the user is signed out
     Then I click "Main"
     And I should see the text "Dumplings"
-    And show me the page
     And I should not see link "Add Dumplings to cart"

@@ -4,7 +4,13 @@ Feature: remove item from cart
   I would like to remove a dish from cart
 
   Background:
-    Given the following category exists
+    Given the following user exists
+      | email               | encrypted_password |
+      | example@example.com | password           |
+    And the following user is signed in
+      | email               | encrypted_password |
+      | example@example.com | password           |
+    And the following category exists
       | name | description |
       | Thai | Thai food   |
     And the following dish category exists
