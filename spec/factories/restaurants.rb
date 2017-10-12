@@ -28,8 +28,9 @@ FactoryGirl.define do
       end
 
       after(:create) do |restaurant, evaluator|
+        binding.pry
         create_list(:restaurant_category, 1, name: evaluator.res_category_name, restaurant_ids: restaurant.id)
-        create_list(:menu_with_dishes, 1, name: evaluator.menu_name, restaurant: restaurant)
+        create_list(:menu_with_dishes, 1, name: evaluator.menu_name, restaurant_ids: restaurant.id)
       end
 
     end

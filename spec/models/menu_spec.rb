@@ -12,6 +12,7 @@ RSpec.describe Menu, type: :model do
   describe 'Associations' do
     it {is_expected.to have_many :menu_lines}
     it {is_expected.to have_many(:dishes).through(:menu_lines)}
+    it {is_expected.to belong_to :restaurant}
   end
 
   describe 'Factory' do
