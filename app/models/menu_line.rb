@@ -1,0 +1,2 @@
+class MenuLine < ApplicationRecord
+end
