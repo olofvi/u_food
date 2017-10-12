@@ -25,6 +25,12 @@ class CartsController < ApplicationController
     redirect_back(fallback_location: (request.referer || restaurant_path(params[:restaurant_id])))
   end
 
+  def clear_cart
+    @cart.clear
+    @restaurant = Restaurant.last
+    redirect_to root_path
+  end
+
   def show
     @cart = Cart.find(session[:cart_id])
   end
