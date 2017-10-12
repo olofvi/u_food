@@ -39,3 +39,10 @@ Feature: remove item from cart
     Given I fill in field "remove_amount" and id "Dumplings" with "f"
     And I click "Remove Dumplings"
     Then I should see "Please enter a number"
+
+  Scenario: User clears cart
+    Given I click "Show cart"
+    And I should see the text "Total items: 3"
+    And I click "Clear cart"
+    Then My order should contain "0" item
+    And I should be on the restaurant page
