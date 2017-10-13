@@ -9,7 +9,8 @@ class ApplicationController < ActionController::Base
       session[:cart_id] = @cart.id
       unless current_user.nil?
         user = current_user
-        user.update_attribute(:cart, @cart)
+        user.carts.push @cart
+        user.save
       end
     end
   end

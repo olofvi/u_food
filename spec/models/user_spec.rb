@@ -14,6 +14,6 @@ RSpec.describe User, type: :model do
   end
 
   context `validations` do
-    it {is_expected.to have_one(:cart)}
+    it {is_expected.to have_many(:cart)}
   end
 end
