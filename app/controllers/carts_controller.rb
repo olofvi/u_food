@@ -27,11 +27,13 @@ class CartsController < ApplicationController
 
   def clear_cart
     @cart.clear
-    redirect_to root_path
+    binding.pry
+    redirect_to restaurant_path(params[:restaurant_id])
   end
 
   def show
     @cart = Cart.find(session[:cart_id])
+    @restaurant = Restaurant.find(params[:id])
   end
 
   def an_integer?(item)

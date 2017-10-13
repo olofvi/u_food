@@ -14,6 +14,5 @@ In cart:
   = @cart.total
   $
 - if  @cart.shopping_cart_items.any?
-  = link_to 'Clear cart', cart_clear_cart_path(@cart), class: 'btn btn-primary'
-
-= link_to 'Back', request.referer, class: 'btn btn-primary'
+  = link_to 'Clear cart', cart_clear_cart_path(@cart, restaurant_id: @restaurant.id), class: 'btn btn-primary'
+= link_to 'Home', root_path, class: 'btn btn-primary'
