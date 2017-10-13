@@ -8,11 +8,11 @@ function initiateMap () {
     performGeolocation();
 };
 
-function performGeolocation(lat, lng) {
+function performGeolocation() {
     var latitude;
     var longitude;
-    var testing_env = $('#map').data().testEnv;
-    if (testing_env === false) {
+    var testing_env = document.getElementById("map").dataset.testEnv;
+    if (testing_env === "false") {
         GMaps.geolocate({
             success: function (position) {
                 latitude = position.coords.latitude;
@@ -35,8 +35,17 @@ function performGeolocation(lat, lng) {
             }
         });
     } else {
-        latitude = lat || 59.334591;
-        longitude = lng || 18.063240;
+        console.log('I am in the else block!')
+        latitude = 59.334591;
+        longitude = 18.063240;
         map.setCenter(latitude, longitude);
+        map.addMarker({
+            lat: latitude,
+            lng: longitude,
+            title: 'You are here',
+            infoWindow: {
+                content: '<p>You are here!</p>'
+            }
+        });
     }
 }
