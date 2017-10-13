@@ -12,7 +12,7 @@
   %h1= @restaurant.name
   %p= @restaurant.address
   %p= @restaurant.description
-.br
+.br 
 .btn-group
   - @category.each do |section|
     = link_to section.name, restaurant_path(dish_category_id: section.id), class: 'btn btn-primary'
