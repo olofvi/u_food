@@ -5,4 +5,30 @@ function initiateMap () {
         lat: 57.7089,
         lng: 11.9746
     });
+    performGeolocation();
 };
+
+function performGeolocation(lat, lng) {
+    var latitude;
+    var longitude;
+    var testing_env = $('#map').data().testEnv;
+    if (testing_env === false) {
+        GMaps.geolocate({
+            success: function (position) {
+                latitude = position.coords.latitude;
+                longitude = position.coords.longitude;
+                map.setCenter(latitude, longitude);
+            },
+            error: function (error) {
+                alert('Geolocation failed: ' + error.message);
+            },
+            not_supported: function () {
+                alert('Your browser does not support geolocation');
+            }
+        });
+    } else {
+        latitude = lat || 59.334591;
+        longitude = lng || 18.063240;
+        map.setCenter(latitude, longitude);
+    }
+}
