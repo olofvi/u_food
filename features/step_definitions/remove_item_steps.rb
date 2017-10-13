@@ -10,6 +10,6 @@ Then("My order should contain {string} item") do |item_count|
 end
 
 Then("I should be on the restaurant page") do
-  restaurant = Restaurant.last
-  expect(page).to have_current_path restaurant_path(restaurant)
+  @restaurant = Restaurant.last
+  expect(page).to have_current_path restaurant_path(@restaurant)
 end
