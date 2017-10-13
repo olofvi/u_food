@@ -3,11 +3,7 @@ And(/^(?:I expect a Google map to load|the map has been loaded)$/) do
   expect(page).to have_css '#map .gm-style'
 end
 
-Given("my location is set to {string} lat and {string} lng") do |lat, lng|
-  pending # Write code here that turns the phrase above into concrete actions
-end
-
-Then("the center of the map should be approximately {string} lat and {string} lng") do |lat, lng|
+Then("my location is where the center of the map should approximately be: {string} lat and {string} lng") do |lat, lng|
   ACCEPTED_OFFSET = 0.2
   center_lat = page.evaluate_script('map.getCenter().lat();')
   center_lng = page.evaluate_script('map.getCenter().lng();')

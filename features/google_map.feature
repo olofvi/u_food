@@ -7,5 +7,4 @@ Feature: Show a map
   Scenario: User can see a map
     Given I navigate to the index page
     And the map has been loaded
-    And my location is set to "59.334591" lat and "18.063240" lng
-    Then the center of the map should be approximately "59.334591" lat and "18.063240" lng
+    Then my location is where the center of the map should approximately be: "59.334591" lat and "18.063240" lng

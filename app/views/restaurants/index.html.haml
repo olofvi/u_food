@@ -16,7 +16,3 @@
     %p= restaurant.address
 
 #map{style: 'width: 800px; height: 400px', data: {test: {env: "#{Rails.env.test?}"}}}
-
-%script(src="https://maps.googleapis.com/maps/api/js?libraries=places&callback=initiateMap" async defer)
-= javascript_include_tag 'gmaps'
-= javascript_include_tag 'landing_page'
