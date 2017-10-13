@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171012141213) do
+ActiveRecord::Schema.define(version: 20171013200310) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,8 @@ ActiveRecord::Schema.define(version: 20171012141213) do
   create_table "carts", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_carts_on_user_id"
   end
 
   create_table "dish_categories", force: :cascade do |t|
@@ -46,7 +48,9 @@ ActiveRecord::Schema.define(version: 20171012141213) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "dish_category_id"
+    t.bigint "restaurant_id"
     t.index ["dish_category_id"], name: "index_dishes_on_dish_category_id"
+    t.index ["restaurant_id"], name: "index_dishes_on_restaurant_id"
   end
 
   create_table "menu_lines", force: :cascade do |t|
@@ -98,7 +102,9 @@ ActiveRecord::Schema.define(version: 20171012141213) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "carts", "users"
   add_foreign_key "dishes", "dish_categories"
+  add_foreign_key "dishes", "restaurants"
   add_foreign_key "menus", "restaurants"
   add_foreign_key "restaurants", "restaurant_categories"
 end

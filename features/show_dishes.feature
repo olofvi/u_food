@@ -31,4 +31,4 @@ Feature: user can see dishes and their info
     Then I should see the text "DishName"
     And I should see the text "10"
     And I should see the picture "https://goo.gl/images/hpTGCV"
-    And show me the page
+    #And show me the page
