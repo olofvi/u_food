@@ -37,9 +37,6 @@ function performGeolocation(lat, lng) {
     } else {
         latitude = lat || 59.334591;
         longitude = lng || 18.063240;
-        var myoverlay = new google.maps.OverlayView(); //trying to give pin an ID
-        myoverlay.draw = function () {
-            this.getPanes().markerLayer.id = 'markers';
         map.setCenter(latitude, longitude);
     }
 }
