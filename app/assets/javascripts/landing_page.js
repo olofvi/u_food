@@ -18,6 +18,14 @@ function performGeolocation(lat, lng) {
                 latitude = position.coords.latitude;
                 longitude = position.coords.longitude;
                 map.setCenter(latitude, longitude);
+                map.addMarker({
+                    lat: position.coords.latitude,
+                    lng: position.coords.longitude,
+                    title: 'You are here',
+                    infoWindow: {
+                        content: '<p>You are here!</p>'
+                    }
+                });
             },
             error: function (error) {
                 alert('Geolocation failed: ' + error.message);
@@ -29,6 +37,9 @@ function performGeolocation(lat, lng) {
     } else {
         latitude = lat || 59.334591;
         longitude = lng || 18.063240;
+        var myoverlay = new google.maps.OverlayView(); //trying to give pin an ID
+        myoverlay.draw = function () {
+            this.getPanes().markerLayer.id = 'markers';
         map.setCenter(latitude, longitude);
     }
 }

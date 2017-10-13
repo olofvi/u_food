@@ -10,3 +10,7 @@ Then("my location is where the center of the map should approximately be: {strin
   expect(center_lat).to be_within(ACCEPTED_OFFSET).of(lat.to_f)
   expect(center_lng).to be_within(ACCEPTED_OFFSET).of(lng.to_f)
 end
+
+Then("I should see a pin on the map") do
+  expect(page).to have_selector('#markers img', count: 1)
+end
