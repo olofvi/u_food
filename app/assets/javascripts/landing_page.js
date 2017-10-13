@@ -11,8 +11,8 @@ function initiateMap () {
 function performGeolocation() {
     var latitude;
     var longitude;
-    var testing_env = document.getElementById("map").dataset.testEnv;
-    if (testing_env === "false") {
+    var testing_env = document.getElementById('map').dataset.testEnv;
+    if (testing_env === 'false') {
         GMaps.geolocate({
             success: function (position) {
                 latitude = position.coords.latitude;
