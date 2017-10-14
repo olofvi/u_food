@@ -8,7 +8,6 @@ class RestaurantsController < ApplicationController
   def show
     @restaurant = Restaurant.find(params[:id])
     @menus = @restaurant.menus
-    @dishes = @restaurant.dishes
     @dish_categories = @restaurant.dish_categories.uniq
     if params[:dish_category_id].present?
       @current_dish_category = DishCategory.find(params[:dish_category_id])
