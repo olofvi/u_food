@@ -6,8 +6,8 @@ require 'capybara/poltergeist'
 ActionController::Base.allow_rescue = false
 
 Capybara.register_driver :poltergeist do |app|
-  Capybara::Poltergeist::Driver.new(app, js_errors: false,
-                                    phantomjs_options: ['--ssl-protocol=tlsv1.2', '--ignore-ssl-errors=yes'])
+  Capybara::Poltergeist::Driver.new(app, {js_errors: false,
+                                          phantomjs_options: ['--ssl-protocol=tlsv1.2', '--ignore-ssl-errors=yes']})
 end
 
 # Before do
@@ -15,7 +15,7 @@ end
 # end
 
 Capybara.javascript_driver = :poltergeist
-Capybara.default_max_wait_time = 5
+Capybara.default_max_wait_time = 6
 
 begin
   DatabaseCleaner.strategy = :transaction
