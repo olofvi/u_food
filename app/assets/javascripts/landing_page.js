@@ -34,9 +34,9 @@ function performGeolocation() {
                 alert('Your browser does not support geolocation');
             }
         });
-        var restaurants = $("#restaurants_addresses").data("lat");
-        // var restaurants = <%= array_or_string_for_javascript(@restaurant_list) %>;
-        for (var i = 0; i < restaurants.length; i++){
+        var restaurant = $("#restaurants_addresses").data("lat");
+        // var restaurant = <%= array_or_string_for_javascript(@restaurant_list) %>;
+        for (var i = 0; i < restaurant.length; i++){
             GMaps.geocode({
                 address: restaurant.address,
                 callback: function(results, status) {
