@@ -63,7 +63,7 @@ function displayRestaurantMarkers(map) {
             lng: restaurant.longitude,
             title: restaurant.name,
             infoWindow: {
-                content: '<p>This is a restaurant!</p>'
+                content: 'Restaurant ' + restaurant.name
             }
         });
     });
