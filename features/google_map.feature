@@ -20,6 +20,5 @@ Feature: Show a map
       | Thai    | Thai food    |
     And the following restaurants exist
       | name    | address      | restaurant_category |  description          |
-      | My Thai | Hamngatan 37, 111 53 Stockholm    | Thai                |  Some hip thai place  |
-    And show me the page
+      | My Thai | Hamngatan 37 111 53 Stockholm    | Thai                |  Some hip thai place  |
     Then I should see "2" pins on the map

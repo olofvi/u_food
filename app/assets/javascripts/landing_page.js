@@ -34,8 +34,7 @@ function performGeolocation() {
                 alert('Your browser does not support geolocation');
             }
         });
-        var restaurant = $("#restaurants_addresses").data("lat");
-        // var restaurant = <%= array_or_string_for_javascript(@restaurant_list) %>;
+        var restaurant = $("#restaurants_addresses").data("addresses");
         for (var i = 0; i < restaurant.length; i++){
             GMaps.geocode({
                 address: restaurant.address,
@@ -67,10 +66,8 @@ function performGeolocation() {
                 content: '<p>You are here!</p>'
             }
         });
-        // var restaurant = $("#restaurants_addresses").data("lat");
-        var restaurant = [{name: "Thai", address: "Valhallavägen 49 Stockholm"}];
-        // var restaurant = <%= array_or_string_for_javascript(@restaurant_list) %>;
-        // for (var i = 0; i < restaurant.length; i++){
+        var restaurant = $("#restaurants_addresses").data("addresses");
+        for (var i = 0; i < restaurant.length; i++){
             GMaps.geocode({
                 address: restaurant.address,
                 callback: function(results, status) {
@@ -88,7 +85,7 @@ function performGeolocation() {
                     }
                 }
             });
-        // }
+        }
     }
 
 }
