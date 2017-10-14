@@ -36,7 +36,7 @@ function performGeolocation() {
         });
         var restaurants = $("#restaurants_addresses").data("lat");
         // var restaurants = <%= array_or_string_for_javascript(@restaurant_list) %>;
-        for (var i = 0; i<restaurants.size()){
+        for (var i = 0; i < restaurants.length; i++){
             GMaps.geocode({
                 address: restaurant.address,
                 callback: function(results, status) {
