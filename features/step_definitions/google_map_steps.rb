@@ -3,7 +3,7 @@ And(/^(?:I expect a Google map to load|the map has been loaded)$/) do
   expect(page).to have_css '#map .gm-style'
 end
 
-Given("I should see {string} pins on the map") do |int|
+Given(/^I should see "([^"]*)" pins on the map$/) do |int|
   markers_count = page.evaluate_script('map.markers.length;')
   expect(markers_count).to eq int.to_i
 end
