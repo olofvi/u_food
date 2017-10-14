@@ -34,26 +34,19 @@ function performGeolocation() {
                 alert('Your browser does not support geolocation');
             }
         });
-        var restaurant = $("#restaurants_addresses").data("addresses");
-        for (var i = 0; i < restaurant.length; i++){
-            GMaps.geocode({
-                address: restaurant.address,
-                callback: function(results, status) {
-                    if (status == 'OK') {
-                        var latlng = results[0].geometry.location;
-                        map.setCenter(latlng.lat(), latlng.lng());
-                        map.addMarker({
-                            lat: latlng.lat(),
-                            lng: latlng.lng(),
-                            title: restaurant.name,
-                            infoWindow: {
-                                content: '<p>This is a restaurant!</p>'
-                            }
-                        });
-                    }
+        var restaurants = JSON.parse(document.getElementById('restaurants_addresses').dataset.addresses);
+        restaurants.forEach(function(restaurant) {
+            console.log(restaurant);
+            map.addMarker({
+                lat: restaurant.latitude,
+                lng: restaurant.longitude,
+                title: restaurant.name,
+                infoWindow: {
+                    content: '<p>This is a restaurant!</p>'
                 }
             });
-        }
+        });
+
     } else {
         latitude = 59.334591;
         longitude = 18.063240;
