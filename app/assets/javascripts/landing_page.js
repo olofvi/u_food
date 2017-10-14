@@ -34,24 +34,27 @@ function performGeolocation() {
                 alert('Your browser does not support geolocation');
             }
         });
-        GMaps.geocode({
-            // var restaurant = [{name: "Thai", address: "Valhallavägen 49 Stockholm"}]
-            address: 'valhallavägen 49 stockholm', //restaurant.address,
-            callback: function(results, status) {
-                if (status == 'OK') {
-                    var latlng = results[0].geometry.location;
-                    map.setCenter(latlng.lat(), latlng.lng());
-                    map.addMarker({
-                        lat: latlng.lat(),
-                        lng: latlng.lng(),
-                        title: 'Restaurant', //restaurant.name,
-                        infoWindow: {
-                            content: '<p>This is a restaurant!</p>'
-                        }
-                    });
+        var restaurants = $("#restaurants_addresses").data("lat");
+        // var restaurants = <%= array_or_string_for_javascript(@restaurant_list) %>;
+        for (var i = 0; i<restaurants.size()){
+            GMaps.geocode({
+                address: restaurant.address,
+                callback: function(results, status) {
+                    if (status == 'OK') {
+                        var latlng = results[0].geometry.location;
+                        map.setCenter(latlng.lat(), latlng.lng());
+                        map.addMarker({
+                            lat: latlng.lat(),
+                            lng: latlng.lng(),
+                            title: restaurant.name,
+                            infoWindow: {
+                                content: '<p>This is a restaurant!</p>'
+                            }
+                        });
+                    }
                 }
-            }
-        });
+            });
+        }
     } else {
         latitude = 59.334591;
         longitude = 18.063240;

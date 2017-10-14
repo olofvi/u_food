@@ -3,6 +3,7 @@ class RestaurantsController < ApplicationController
 
   def index
     @categories = RestaurantCategory.all
+    @restaurant_list = Restaurant.all
   end
 
   def show
