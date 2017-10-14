@@ -16,6 +16,7 @@ RSpec.describe Restaurant, type: :model do
 
   context `validations` do
     it { is_expected.to validate_presence_of :address }
+  end
 
   describe 'associations' do
       it { is_expected.to belong_to(:restaurant_category) }
