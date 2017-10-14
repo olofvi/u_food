@@ -1,4 +1,4 @@
-function initiateMap () {
+function initiateMap() {
     map = GMaps({
         div: '#map',
         zoom: 15,
@@ -18,7 +18,7 @@ function performGeolocation() {
                 latitude = position.coords.latitude;
                 longitude = position.coords.longitude;
                 map.setCenter(latitude, longitude);
-                    map.addMarker({
+                map.addMarker({
                     lat: position.coords.latitude,
                     lng: position.coords.longitude,
                     title: 'You are here',
@@ -26,6 +26,7 @@ function performGeolocation() {
                         content: '<p>You are here!</p>'
                     }
                 });
+                displayRestaurantMarkers(map);
             },
             error: function (error) {
                 alert('Geolocation failed: ' + error.message);
@@ -34,18 +35,7 @@ function performGeolocation() {
                 alert('Your browser does not support geolocation');
             }
         });
-        var restaurants = JSON.parse(document.getElementById('restaurants_addresses').dataset.addresses);
-        restaurants.forEach(function(restaurant) {
-            console.log(restaurant);
-            map.addMarker({
-                lat: restaurant.latitude,
-                lng: restaurant.longitude,
-                title: restaurant.name,
-                infoWindow: {
-                    content: '<p>This is a restaurant!</p>'
-                }
-            });
-        });
+
 
     } else {
         latitude = 59.334591;
@@ -59,26 +49,22 @@ function performGeolocation() {
                 content: '<p>You are here!</p>'
             }
         });
-        var restaurant = $("#restaurants_addresses").data("addresses");
-        for (var i = 0; i < restaurant.length; i++){
-            GMaps.geocode({
-                address: restaurant.address,
-                callback: function(results, status) {
-                    if (status == 'OK') {
-                        var latlng = results[0].geometry.location;
-                        map.setCenter(latlng.lat(), latlng.lng());
-                        map.addMarker({
-                            lat: latlng.lat(),
-                            lng: latlng.lng(),
-                            title: restaurant.name,
-                            infoWindow: {
-                                content: '<p>This is a restaurant!</p>'
-                            }
-                        });
-                    }
-                }
-            });
-        }
+        displayRestaurantMarkers(map);
     }
 
+}
+
+function displayRestaurantMarkers(map) {
+    var restaurants = JSON.parse(document.getElementById('restaurants_addresses').dataset.addresses);
+    restaurants.forEach(function (restaurant) {
+        console.log(restaurant);
+        map.addMarker({
+            lat: restaurant.latitude,
+            lng: restaurant.longitude,
+            title: restaurant.name,
+            infoWindow: {
+                content: '<p>This is a restaurant!</p>'
+            }
+        });
+    });
 }
