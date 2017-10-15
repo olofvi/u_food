@@ -31,4 +31,5 @@ I need customers to pay on checkout.
 
   Scenario: I check out and pay with my credit card
     Given I click "Pay with Card"
-    And I fill in appropriate card details
+    And I fill in my card details
+    Then I submit the stripe form

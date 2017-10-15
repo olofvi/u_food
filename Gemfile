@@ -35,6 +35,7 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'launchy'
   gem 'poltergeist'
+  gem 'stripe-ruby-mock', '~> 2.5.0', :require => 'stripe_mock'
 end
 
 group :development do
