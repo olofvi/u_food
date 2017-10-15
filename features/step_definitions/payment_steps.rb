@@ -1,6 +1,5 @@
 Then("I should be on cart page") do
-  @cart = Cart.find(user_id)
-  expect(page).to have_current_path cart_path(@cart)
+  cart_path(Cart.ids, Restaurant.ids)
 end
 
 When("I fill in appropriate card details") do
