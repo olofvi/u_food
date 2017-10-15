@@ -10,7 +10,7 @@ class Restaurant < ApplicationRecord
   def self.for_markers
     all.to_a.map(&:serializable_hash).map do |restaurant|
       {name: restaurant['name'],
-       lattitude: restaurant['latitude'],
+       latitude: restaurant['latitude'],
        longitude: restaurant['longitude']}
     end
   end
