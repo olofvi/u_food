@@ -26,7 +26,8 @@ I need customers to pay on checkout.
     And I click "Add to cart" within id "Sushi rolls"
     And I fill in field "amount" and id "Dumplings" with "2"
     And I click "Add to cart" within id "Dumplings"
-    Then I should be on the 'cart' page
+    And I click "Show cart"
+    Then I should be on cart page
 
   Scenario: I check out and pay with my credit card
     Given I click "Pay with Card"

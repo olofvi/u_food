@@ -1,5 +1,6 @@
-Then("I should be on the {string} page") do |page|
-  carts_path
+Then("I should be on cart page") do
+  @cart = Cart.find(user_id)
+  expect(page).to have_current_path cart_path(@cart)
 end
 
 When("I fill in appropriate card details") do
