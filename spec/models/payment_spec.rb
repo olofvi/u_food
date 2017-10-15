@@ -2,9 +2,9 @@ require 'rails_helper'
 require 'stripe_mock'
 
 describe Cart do
-  let(:stripe_helper) { StripeMock.create_test_helper }
-  before { StripeMock.start }
-  after { StripeMock.stop }
+  let(:stripe_helper) {StripeMock.create_test_helper}
+  before {StripeMock.start}
+  after {StripeMock.stop}
 
   it "creates a stripe customer" do
     customer = Stripe::Customer.create({
