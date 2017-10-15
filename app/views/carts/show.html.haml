@@ -21,5 +21,6 @@ In cart:
   $
 - if  @cart.shopping_cart_items.any?
   = link_to 'Clear cart', cart_clear_cart_path(@cart, restaurant_id: @restaurant.id), class: 'btn btn-primary'
+= link_to 'Pay with Card',
 = link_to 'Home', root_path, class: 'btn btn-primary'
 = link_to 'Back to restaurant', restaurant_path(@restaurant), class: 'btn btn-primary'
