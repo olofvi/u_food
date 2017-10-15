@@ -21,6 +21,7 @@ gem 'devise'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'geocoder'
 gem 'faker'
+gem 'stripe-rails'
 
 
 group :development, :test do
