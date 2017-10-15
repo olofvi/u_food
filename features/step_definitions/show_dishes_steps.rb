@@ -1,5 +1,3 @@
-
-
 Given('the following dishes exists') do |table|
   table.hashes.each do |hash|
     category = find_or_create_dish_category(hash)
