@@ -3,6 +3,8 @@
   %span.navbar-toggler-icon
   #navbarSupportedContent.collapse.navbar-collapse
     %ul#links.navbar-nav.mr-auto
+      %li.nav-item
+        = link_to 'Home', root_path
       - if current_user
         %li.navbar-text
           Logged in as: #{current_user.email}
