@@ -1,4 +1,4 @@
-%nav.navbar.navbar-expand-lg.navbar-light{:style => 'background-color: #ffad33;'}
+%nav.navbar.navbar-expand-lg.navbar-light.fixed{:style => 'background-color: #ffad33;'}
   %a.navbar-brand{:href => '#', :style => 'color: white'} UFoods
   %span.navbar-toggler-icon
   #navbarSupportedContent.collapse.navbar-collapse
@@ -8,8 +8,14 @@
       - if current_user
         %li.navbar-text
           Logged in as: #{current_user.email}
-        %li.nav-item
-          = link_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'nav-link'
+          - if @cart
+            Cart:
+            = @cart.total_unique_items
+            - if @cart.shopping_cart_items.any?
+              %li.nav-item
+                = link_to 'Show cart' , cart_path(@cart, restaurant_id: Restaurant.ids), class: 'nav-link'
+          %li.nav-item
+            = link_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'nav-link'
       - else
         %li.nav-item
           = link_to 'Sign Up', new_user_registration_path, class: 'nav-link'

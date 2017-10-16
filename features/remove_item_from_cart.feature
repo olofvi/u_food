@@ -46,7 +46,7 @@ Feature: remove item from cart
     Then I should see "Please enter a number"
 
   Scenario: User clears cart
-    Given I click "Show cart"
+    And I click "Show cart"
     And I should see the text "Total items: 3"
     And I click "Clear cart"
     Then My order should contain "0" item

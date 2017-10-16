@@ -7,7 +7,6 @@ Feature: As a user
       | email               | password |
       | example@example.com | password |
     And I navigate to the index page
-    # And I click "Sign In"
     And I see the navbar
 
   Scenario: User provides valid credentials
