@@ -8,6 +8,7 @@
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
     %script(src="https://maps.googleapis.com/maps/api/js?key=#{ENV["GOOGLE_API_KEY"]}&libraries=places&callback=initiateMap" async defer)
   %body
+    = render 'partials/navigation'
     .container-fluid
       - if flash
         - flash.each do |name, message|
