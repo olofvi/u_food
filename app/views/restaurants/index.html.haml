@@ -2,12 +2,14 @@
 %p What do you feel like tonight?
 - @categories.each do |category|
   .temp_box
-  %h3= category.name
-  %p= category.description
+    %h3
+      = category.name
+    %p
+      = category.description
   .temp_box2
-  - category.restaurants.each do |restaurant|
-    = link_to restaurant.name, restaurant_path(restaurant)
-    %p= restaurant.address
-
+    - category.restaurants.near(@user_location, 3, units: :km).each do |restaurant|
+      = link_to restaurant.name, restaurant_path(restaurant)
+      %p
+        = restaurant.address
 #map{style: 'width: 800px; height: 400px', data: {test: {env: "#{Rails.env.test?}"}}}
 #restaurants_addresses{data: {addresses: "#{@restaurants.to_json}"}}
