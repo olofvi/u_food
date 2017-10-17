@@ -6,7 +6,6 @@ Feature: Show a map
   @javascript
   Scenario: User can see a map
     When I navigate to the index page
-    Then show me the page
     And the map has been loaded
     Then my location should be approximately: "59.334591" lat and "18.063240" lng
     And I should see "1" pins on the map
