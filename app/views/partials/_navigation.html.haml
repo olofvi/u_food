@@ -1,10 +1,10 @@
 %nav.navbar.navbar-expand-lg.navbar-light.fixed{:style => 'background-color: #ffad33;'}
-  %a.navbar-brand{:href => '#', :style => 'color: white'} UFoods
+  = link_to 'UFoods', root_path, class: 'navbar-brand'
   %span.navbar-toggler-icon
   #navbarSupportedContent.collapse.navbar-collapse
     %ul#links.navbar-nav.mr-auto
-      %li.nav-item
-        = link_to 'Home', root_path, class: 'nav-link'
+      -# %li.nav-item
+      -#   = link_to 'Home', root_path, class: 'nav-link'
       - if current_user
         %li.navbar-text
           Logged in as: #{current_user.email}
