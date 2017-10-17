@@ -32,7 +32,11 @@ class CartsController < ApplicationController
 
   def show
     @cart = Cart.find(session[:cart_id])
-    @restaurant = Restaurant.find(@cart.cart_items.last.item.menus.first.restaurant.id)
+    if !@cart.cart_items.empty?
+      @restaurant = Restaurant.find(@cart.cart_items.last.item.menus.first.restaurant.id)
+    else
+      redirect_to root_path
+    end
   end
 
   def an_integer?(item)
