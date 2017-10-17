@@ -13,7 +13,7 @@
             = @cart.total_unique_items
             - if @cart.shopping_cart_items.any?
               %li.nav-item
-                = link_to 'Show cart' , cart_path(@cart, restaurant_id: Restaurant.ids), class: 'nav-link'
+                = link_to 'Show cart' , cart_path(@cart, restaurant_id: @restaurant.id), class: 'nav-link'
           %li.nav-item
             = link_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'nav-link'
       - else
