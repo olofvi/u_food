@@ -2,6 +2,7 @@ class RestaurantsController < ApplicationController
   before_action :find_cart
 
   def index
+    # binding.pry
     @categories = RestaurantCategory.all
     @restaurants = Restaurant.for_markers
   end
