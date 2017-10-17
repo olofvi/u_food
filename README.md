@@ -85,7 +85,10 @@ We automatically deploy this app with [Heroku](https://www.heroku.com/).
 * [Rails](https://github.com/rails/rails)
 * [Acts_as_a_shopping_cart](https://github.com/crowdint/acts_as_shopping_cart)
 * [Gmaps.js](https://hpneo.github.io/gmaps/)
-
+* [Active Admin](https://github.com/activeadmin/activeadmin)
+* [CanCanCan](https://github.com/CanCanCommunity/cancancan)
+* [Devise](https://github.com/plataformatec/devise)
+* [Bootstrap-sass](https://github.com/twbs/bootstrap-sass)
 
 ## Authors
 * [BasilMawejje](https://github.com/BasilMawejje)
