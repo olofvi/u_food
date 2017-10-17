@@ -1,2 +1,13 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+.navbar-nav > li >a{
+  display: block;
+  padding: 15px;
+  color:white;
+  list-style-type: none;
+}
+
+ul {
+  list-style-type: none
+}

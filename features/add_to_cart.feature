@@ -22,6 +22,7 @@ Feature: user can can add dish to order
       | Dumplings   | Tasty Japanese food | 15    | https://goo.gl/qKCyL5 | Main          |Lunch        |
 
     Then I navigate to the index page
+    And I see the navbar
     And I click "Yappi"
 
   Scenario: User can add dish to order

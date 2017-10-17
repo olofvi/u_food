@@ -26,3 +26,11 @@ end
 Given("I should not see link {string}") do |string|
   expect(page).not_to have_link string
 end
+
+Given("I see the navbar") do
+  expect(page).to have_css('nav.navbar')
+end
+
+Then("I click {string} button") do |button|
+  click_button button
+end
