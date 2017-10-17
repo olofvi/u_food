@@ -12,8 +12,7 @@
             = @cart.total_unique_items
             - if @cart.shopping_cart_items.any?
               %li.nav-item
-                - if !@restaurant.nil?
-                  = link_to 'Show cart' , cart_path(Cart.find(session[:cart_id]), restaurant_id: @restaurant.id),class: 'nav-link'
+                = link_to 'Show cart' , cart_path, class: 'nav-link'
           %li.nav-item
             = link_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'navbar-right'
       - else

@@ -32,7 +32,7 @@ class CartsController < ApplicationController
 
   def show
     @cart = Cart.find(session[:cart_id])
-    @restaurant = Restaurant.find(params[:restaurant_id])
+    @restaurant = Restaurant.find(@cart.cart_items.last.item.menus.first.restaurant.id)
   end
 
   def an_integer?(item)

@@ -31,6 +31,6 @@ Given("I see the navbar") do
   page.should have_css('nav.navbar')
 end
 
-Then("I click {string} button") do |string|
-  click_button('Sign in')
+Then("I click {string} button") do |button|
+  click_button button
 end
