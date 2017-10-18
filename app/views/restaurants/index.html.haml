@@ -2,7 +2,7 @@
   #categories
     %h1
       What do you feel like tonight?
-      = image_tag('wheat', height: '200', width: '100%')
+      = image_tag 'wheat', height: '200', width: '100%'
     .row
       - @categories.each do |category|
         .col-sm-4
@@ -28,3 +28,6 @@
                 = restaurant.address
               %p
                 = restaurant.description
+  .logo
+    Thanks for ordering from us!
+    = image_tag 'ufood-logo', height: '200', align: 'right'
