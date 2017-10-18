@@ -8,6 +8,18 @@
   list-style-type: none;
 }
 
+li.navbar-text {
+  color: #B00100;
+}
+
+.navbar-brand {
+  color: white;
+}
+
+a:hover.navbar-brand {
+  color: #B00100;
+}
+
 ul {
   list-style-type: none
 }
