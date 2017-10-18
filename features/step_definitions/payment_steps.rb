@@ -16,3 +16,8 @@ end
 Then('I submit the stripe form') do
   pending # Write code here that turns the phrase above into concrete actions
 end
+
+Given(/^I click Pay with Card stripe button$/) do
+  sleep(0.1) until page.evaluate_script('$.active') == 0
+  click_button '.stripe-button-el'
+end
