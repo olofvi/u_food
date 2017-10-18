@@ -6,7 +6,7 @@ class Ability
     if admin.super_admin?
       can :manage, :all
     else
-      can :read, :all
+      can :read, :restaurant, admin_user_id: admin.id
       can :manage, Restaurant, admin_user_id: admin.id
 
     end
