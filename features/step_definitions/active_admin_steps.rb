@@ -78,11 +78,12 @@ end
 
 Given("An admin exists {string} with {string} and super_admin {string}") do |email, password, state|
   state == 'true' ? condition = true : condition = false
-  @restaurant_owner = FactoryGirl.create(:admin_user, email: email, password: password, super_admin: condition)
+  FactoryGirl.create(:admin_user, email: email, password: password, super_admin: condition)
 end
 
-Given("I am logged in as a restaurant_owner") do
-  login_as @restaurant_owner, scope: :admin_user
+Given("I am logged in to AA as {string}") do |email|
+  admin = AdminUser.find_by(email: email)
+  login_as admin, scope: :admin_user
 end
 
 Given("{string} has an owner {string}") do |restaurant_name, restaurant_owner_email|
