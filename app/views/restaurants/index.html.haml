@@ -22,6 +22,8 @@
             = link_to restaurant_path(restaurant) do
               #{image_tag("#{restaurant.pic_url}")}
             .caption
+              .category_name
+                = restaurant.restaurant_category.name
               %p
                 = restaurant.address
               %p
