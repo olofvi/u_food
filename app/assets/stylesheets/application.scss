@@ -41,10 +41,41 @@ h3:hover {
   color: #730E15;
 }
 
+h3.restaurant_list {
+  text-align: center;
+  padding-top: 20px;
+}
+
+a {
+  color: #e1a332;
+}
+
+a:hover {
+  color: #730E15;
+}
+
 .footer {
   background-color: #e1a332;
   color: white;
   text-align: center;
   padding-top: 10px;
   padding-bottom: 10px;
+}
+
+#restaurant_pic {
+  align-content: center;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  padding-bottom: 10px;
+}
+
+.col-sm-4 {
+  padding-bottom: 10px;
+}
+
+.thumbnail {
+  border: none;
 }

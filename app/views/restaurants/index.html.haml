@@ -14,14 +14,15 @@
 
   .row
     - @categories.each do |category|
-      .col-sm-4
-        %h4= category.name
-        %p
-          = category.description
-        - category.restaurants.near(@user_location, 3, units: :km).each do |restaurant|
-          %h3
+      - category.restaurants.near(@user_location, 3, units: :km).each do |restaurant|
+        .col-md-4
+          %h3.restaurant_list
             = link_to restaurant.name, restaurant_path(restaurant)
-          %p
-            = restaurant.address
-          %p
-            = restaurant.description
+          .thumbnail
+            = link_to restaurant_path(restaurant) do
+              #{image_tag("#{restaurant.pic_url}")}
+            .caption
+              %p
+                = restaurant.address
+              %p
+                = restaurant.description
