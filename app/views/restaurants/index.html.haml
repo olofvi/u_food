@@ -12,14 +12,15 @@
 
   #map{style: 'width: 100%; height: 400px', data: {test: {env: "#{Rails.env.test?}"}}}
 
-  %h3
-    Restaurants
-  - @categories.each do |category|
-    %h4
-      = category.name
-    %p
-      = category.description
-    - category.restaurants.near(@user_location, 3, units: :km).each do |restaurant|
-      = link_to restaurant.name, restaurant_path(restaurant)
+
+  .row
+    - @categories.each do |category|
+    .col-sm-4
+      %h4
+        = category.name
       %p
-        = restaurant.address
+        = category.description
+      - category.restaurants.near(@user_location, 3, units: :km).each do |restaurant|
+        = link_to restaurant.name, restaurant_path(restaurant)
+        %p
+          = restaurant.address
