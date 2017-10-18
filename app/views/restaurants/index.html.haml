@@ -1,14 +1,14 @@
-%h1 Ufoods
-%p What do you feel like tonight?
-- @categories.each do |category|
-  .temp_box
-    %h3
-      = category.name
-    %p
-      = category.description
-  .temp_box2
-    - category.restaurants.near(@user_location, 3, units: :km).each do |restaurant|
-      = link_to restaurant.name, restaurant_path(restaurant)
+.container
+  %h1 What do you feel like tonight?
+  - @categories.each do |category|
+    .temp_box
+      %h3
+        = category.name
       %p
-        = restaurant.address
-#map{style: 'width: 800px; height: 400px', data: {test: {env: "#{Rails.env.test?}"}}}
+        = category.description
+    .temp_box2
+      - category.restaurants.near(@user_location, 3, units: :km).each do |restaurant|
+        = link_to restaurant.name, restaurant_path(restaurant)
+        %p
+          = restaurant.address
+  #map{style: 'width: 100%; height: 400px', data: {test: {env: "#{Rails.env.test?}"}}}
