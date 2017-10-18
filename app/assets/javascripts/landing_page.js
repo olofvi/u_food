@@ -61,7 +61,7 @@ function displayRestaurantMarkers(map, lat, lng) {
                 lng: restaurant.longitude,
                 title: restaurant.name,
                 infoWindow: {
-                    content: 'Restaurant ' + restaurant.name
+                    content: '<a href="/restaurants/' + restaurant.id + '">' + restaurant.name + '</a>' + '</br>' + restaurant.description
                 }
             });
         });

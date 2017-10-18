@@ -13,7 +13,10 @@ class Restaurant < ApplicationRecord
     all.to_a.map(&:serializable_hash).map do |restaurant|
       {name: restaurant['name'],
        latitude: restaurant['latitude'],
-       longitude: restaurant['longitude']}
+       longitude: restaurant['longitude'],
+       description: restaurant['description'],
+       restaurant_category: restaurant['restaurant_category'],
+       id: restaurant['id']}
     end
   end
 
