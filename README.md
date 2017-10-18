@@ -89,6 +89,7 @@ We automatically deploy this app with [Heroku](https://www.heroku.com/).
 * [CanCanCan](https://github.com/CanCanCommunity/cancancan)
 * [Devise](https://github.com/plataformatec/devise)
 * [Bootstrap-sass](https://github.com/twbs/bootstrap-sass)
+* [Geocoder](https://github.com/alexreisner/geocoder)
 
 ## Authors
 * [BasilMawejje](https://github.com/BasilMawejje)
