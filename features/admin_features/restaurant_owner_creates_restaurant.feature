@@ -15,15 +15,15 @@ Feature: Admin can edits a restaurant
     And I go to the dashboard
     # Then show me the page
 
-  # Scenario: Creating the restaurant
-  #   Given I click "Restaurants"
-  #   Then I click "New Restaurant"
-  #   And I fill in "Name" with "The New Thai Restaurant"
-  #   And I fill in "Address" with "Street 1"
-  #   And I fill in "Description" with "I really cant come up with some boring description"
-  #   And I select "Thai" from restaurant category dropdown
-  #   Then I click "Create Restaurant"
-  #   And I should see "Restaurant was successfully created."
+#   Scenario: Creating the restaurant
+#     Given I click "Restaurants"
+#     Then I click "New Restaurant"
+#     And I fill in "Name" with "The New Thai Restaurant"
+#     And I fill in "Address" with "Street 1"
+#     And I fill in "Description" with "I really cant come up with some boring description"
+#     And I select "Thai" from restaurant category dropdown
+#     Then I click "Create Restaurant"
+#     And I should see "Restaurant was successfully created."
 
   Scenario: Admin updates restaurant
     Given I click "Restaurants"
@@ -34,3 +34,9 @@ Feature: Admin can edits a restaurant
     And I select "Mexican" from restaurant category dropdown
     When I click "Update Restaurant"
     Then I should see "Restaurant was successfully updated."
+
+  Scenario: Admin deletes restaurant
+    Given I click "Restaurants"
+    When I click "Delete" for "My Thai" restaurant
+    #And I click ok on alert box
+    Then I should see "Restaurant was successfully destroyed."
