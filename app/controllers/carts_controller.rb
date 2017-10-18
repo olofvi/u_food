@@ -6,7 +6,7 @@ class CartsController < ApplicationController
     dish = Dish.find(params[:id])
     if an_integer?(params[:amount])
       @cart.add(dish, dish.price, params[:amount].to_i)
-      flash[:success] = "#{dish.name} added to cart: #{params[:amount]}"
+      flash[:notice] = "#{dish.name} added to cart: #{params[:amount]}"
     else
       flash[:warning] = 'Please enter a number'
     end
@@ -18,7 +18,7 @@ class CartsController < ApplicationController
     dish = Dish.find(params[:dish_id])
     if an_integer?(params[:remove_amount])
       @cart.remove(dish, params[:remove_amount].to_i)
-      flash[:success] = "#{params[:remove_amount]} #{dish.name} was removed from your cart"
+      flash[:notice] = "#{params[:remove_amount]} #{dish.name} was removed from your cart"
     else
       flash[:warning] = 'Please enter a number'
     end
