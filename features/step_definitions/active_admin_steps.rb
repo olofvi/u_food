@@ -1,11 +1,3 @@
-Given("An admin exists {string} {string}") do |email, password|
-  @admin = FactoryGirl.create(:admin_user, email: email, password: password)
-end
-
-Given("I am logged in as admin") do
- login_as @admin, scope: :admin_user
-end
-
 When("I go to the dashboard") do
   visit admin_user_session_path
 end
@@ -76,9 +68,11 @@ Then("I click {string} for {string} admin user") do |link, email|
   end
 end
 
-Given("An admin exists {string} with {string} and super_admin {string}") do |email, password, state|
-  state == 'true' ? condition = true : condition = false
-  FactoryGirl.create(:admin_user, email: email, password: password, super_admin: condition)
+Given("The following admins exist") do |table|
+  table.hashes.each do |hash|
+    hash[:super_admin] = hash[:super_admin].to_bool
+    FactoryGirl.create(:admin_user, hash)
+  end
 end
 
 Given("I am logged in to AA as {string}") do |email|
