@@ -7,10 +7,7 @@ class Ability
       can :manage, :all
     else
       can :read, ActiveAdmin::Page, name: "Dashboard"
-      # can :read, :restaurant,
-      can :manage, Restaurant, admin_user_id: admin.id
-      # can :read, :all
-
+      can :manage, Restaurant, admin_user: admin
     end
   end
 end
