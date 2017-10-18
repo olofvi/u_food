@@ -82,7 +82,6 @@ Given("An admin exists {string} with {string} and super_admin {string}") do |ema
 end
 
 Given("I am logged in as a restaurant_owner") do
-  binding.pry
   login_as @restaurant_owner, scope: :admin_user
 end
 
