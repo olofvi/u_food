@@ -36,7 +36,7 @@ RSpec.describe AdminUser, type: :model do
         subject(:ability) {Ability.new(admin)}
 
         it 'can read all' do
-          expect(ability.can?(:read, :all)).to eq true
+          expect(ability.can?(:manage, Restaurant, admin_user: admin)).to eq true
         end
 
         it 'can not manage all' do
