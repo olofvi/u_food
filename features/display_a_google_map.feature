@@ -10,4 +10,3 @@ Feature: Show a map
     Then my location should be approximately: "59.334591" lat and "18.063240" lng
     And I should see "1" pins on the map
     And the marker location should be approximately: "59.334591" lat and "18.063240" lng
-

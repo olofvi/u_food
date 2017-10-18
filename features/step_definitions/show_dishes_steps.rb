@@ -20,7 +20,6 @@ Given('the following restaurants with associations exist') do |table|
   end
 end
 
-
 And(/^show me the page$/) do
   save_and_open_page
 end
