@@ -19,7 +19,3 @@ Given('the following restaurants with associations exist') do |table|
     FactoryGirl.create(:restaurant_with_associations, hash)
   end
 end
-
-And(/^show me the page$/) do
-  save_and_open_page
-end
