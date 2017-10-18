@@ -14,8 +14,8 @@ Feature: Restaurant owner can get payment for order
       | example@example.com | password           |
 
     Given the following restaurants with associations exist
-      | name  | address   | description         | res_category_name | menu_name |
-      | Yappi | Stockholm | Some hip thai place | Japanese          | Lunch     |
+      | name  | address                       | description         | res_category_name | menu_name |
+      | Yappi | Hamngatan 37 111 53 Stockholm | Some hip thai place | Japanese          | Lunch     |
 
     And the following dishes exists
       | name        | description         | price | pic_url               | dish_category | menu_name |
@@ -24,7 +24,7 @@ Feature: Restaurant owner can get payment for order
 
     And I navigate to the index page
     And I click "Yappi"
-    And I click "Main"
+    And I click "Main" category
     Then show me the page
     And I click "Add to cart" within id "Sushi rolls"
     And I fill in field "amount" and id "Dumplings" with "2"

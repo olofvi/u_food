@@ -1,14 +1,19 @@
 %h1 Ufoods
 %p What do you feel like tonight?
-- @categories.each do |category|
-  .temp_box
-    %h3
-      = category.name
-    %p
-      = category.description
-  .temp_box2
-    - category.restaurants.near(@user_location, 3, units: :km).each do |restaurant|
-      = link_to restaurant.name, restaurant_path(restaurant)
+- if @collection.any?
+  - @collection.each do |category, restaurants|
+    .temp_box
+      %h3
+        = category.name
       %p
-        = restaurant.address
+        = category.description
+    .temp_box2
+      - restaurants.each do |restaurant|
+        = link_to restaurant.name, restaurant_path(restaurant)
+        %p
+          = restaurant.address
+- else
+  %h1 There are no restaurants near your location
+
 #map{style: 'width: 800px; height: 400px', data: {test: {env: "#{Rails.env.test?}"}}}
+
