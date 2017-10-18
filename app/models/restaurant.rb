@@ -15,7 +15,6 @@ class Restaurant < ApplicationRecord
        latitude: restaurant['latitude'],
        longitude: restaurant['longitude'],
        description: restaurant['description'],
-       restaurant_category: restaurant['restaurant_category'],
        id: restaurant['id']}
     end
   end
