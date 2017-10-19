@@ -115,6 +115,22 @@ a.btn.btn-primary:hover{
   background-color: #730E15;
 }
 
-.btn.btn-primary {
+.btn-group-justified {
+  padding-top: 25px;
   padding-bottom: 50px;
+}
+
+img{
+  width: 100%;
+}
+
+h2 {
+  color: #730E15;
+  font-size: 30px;
+  padding-left: 20px;
+}
+
+.restaurant_pic {
+  width: 70%;
+  align: center;
 }
