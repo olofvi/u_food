@@ -17,6 +17,17 @@ Feature: Admin can edits a restaurant
     And I am logged in to AA as "mythai_owner@example.com"
     And I go to the dashboard
 
+  Scenario: Admin creates new restaurant
+    Given I click "Restaurants"
+    Then I click "New Restaurant"
+    And I fill in "Name" with "The New Thai Restaurant"
+    And I fill in "Address" with "Street 1"
+    And I fill in "Description" with "I really cant come up with some boring description"
+    And I select "Thai" from restaurant category dropdown
+    Then I click "Create Restaurant"
+    And I should see "Restaurant was successfully created."
+
+
   Scenario: Admin updates restaurant
     Given I click "Restaurants"
     When I click "Edit" for "My Thai" restaurant

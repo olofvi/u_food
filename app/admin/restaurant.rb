@@ -2,6 +2,9 @@ ActiveAdmin.register Restaurant do
 
   permit_params :name, :address, :description, :latitude, :longitude, :restaurant_category, :admin_user
 
+  before_create do |product|
+    product.admin_user = current_admin_user
+  end
 
   index do
     selectable_column
