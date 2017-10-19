@@ -3,9 +3,33 @@
 
 .navbar-nav > li >a{
   display: block;
-  padding: 15px;
+  padding-left: 30px;
+  line-height: 30px;
   color:white;
+  font-size: 20px;
   list-style-type: none;
+}
+
+.navbar-nav > li >a:hover {
+  color: #730E15;
+  text-decoration: none;
+}
+
+li.navbar-text {
+  display: block;
+  color:white;
+  padding-right: 20px;
+  font-size: 20px;
+  list-style-type: none;
+}
+
+.navbar-brand {
+  color: white;
+  font-size: 30px;
+}
+
+a:hover.navbar-brand {
+  color: #730E15;
 }
 
 ul {
