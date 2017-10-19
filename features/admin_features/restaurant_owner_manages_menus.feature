@@ -21,7 +21,7 @@ Feature: Restaurant owner can edits a restaurant
     Given I click "Menus"
     Then I click "New Menu"
     And I fill in "Name" with "Breakfast"
-    And I select "My Mex" from menu category dropdown
+    And I select "My Thai" from menu category dropdown
     Then I click "Create Menu"
     And I should see "Menu was successfully created."
 
@@ -29,7 +29,7 @@ Feature: Restaurant owner can edits a restaurant
     Given I click "Menus"
     Then I click "Edit" for "Lunch" menu
     And I fill in "Name" with "Brunch"
-    And I select "My Mex" from menu category dropdown
+    And I select "My Thai" from menu category dropdown
     When I click "Update Menu"
     Then I should see "Menu was successfully updated."
 
