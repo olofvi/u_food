@@ -28,6 +28,10 @@ Then("I click {string} within id {string}") do |input, object|
   end
 end
 
+Then("I should not see {string}") do |message|
+  expect(page).to have_no_content message
+end
+
 
 And(/^show me the page$/) do
   save_and_open_page
