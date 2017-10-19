@@ -102,3 +102,19 @@ a:hover {
 .logo_pic {
   width: 15%;
 }
+
+a.btn.btn-primary {
+  background-color: #e1a332;
+  color: white;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border: none;
+}
+a.btn.btn-primary:hover{
+  background-color: #730E15;
+}
+
+.btn.btn-primary {
+  padding-bottom: 50px;
+}
