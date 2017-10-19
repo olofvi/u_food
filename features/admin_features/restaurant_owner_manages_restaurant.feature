@@ -27,7 +27,6 @@ Feature: Admin can edits a restaurant
     Then I click "Create Restaurant"
     And I should see "Restaurant was successfully created."
 
-
   Scenario: Admin updates restaurant
     Given I click "Restaurants"
     When I click "Edit" for "My Thai" restaurant
