@@ -7,13 +7,14 @@
         = category.name
       %p
         = category.description
-    .temp_box2
+    .temp_box2#restaurant-list
       - restaurants.each do |restaurant|
         = link_to restaurant.name, restaurant_path(restaurant)
         %p
           = restaurant.address
 - else
-  %h1 There are no restaurants near your location
+  .temp_box2#restaurant-list
+    %h2 Getting your location...
 
 #map{style: 'width: 800px; height: 400px', data: {test: {env: "#{Rails.env.test?}"}}}
 

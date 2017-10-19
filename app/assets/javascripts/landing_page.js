@@ -26,7 +26,7 @@ function performGeolocation() {
                         content: '<p>You are here!</p>'
                     }
                 });
-                displayRestaurantMarkers(map, latitude, longitude);
+                displayRestaurantInProximity(map, latitude, longitude);
             },
             error: function (error) {
                 alert('Geolocation failed: ' + error.message);
@@ -47,14 +47,16 @@ function performGeolocation() {
                 content: '<p>You are here!</p>'
             }
         });
-        displayRestaurantMarkers(map, latitude, longitude);
+        displayRestaurantInProximity(map, latitude, longitude);
     }
 }
 
-function displayRestaurantMarkers(map, lat, lng) {
+function displayRestaurantInProximity(map, lat, lng) {
     var url = '/restaurants?lat=' + lat + '&lng=' + lng;
     $.getJSON(url, function (response) {
         var restaurants = response.restaurants;
+        var grouped = response.grouped;
+
         restaurants.forEach(function (restaurant) {
             map.addMarker({
                 lat: restaurant.latitude,
@@ -65,5 +67,30 @@ function displayRestaurantMarkers(map, lat, lng) {
                 }
             });
         });
+        console.log(grouped);
+        if (Object.getOwnPropertyNames(grouped).length > 0) {
+            $('#restaurant-list').html('');
+            Object.keys(grouped).forEach(function (name) {
+                var id = name.replace(/\s+/g, '-').toLowerCase();
+                $('#restaurant-list').append('<div id="' + id + '">');
+                $('#restaurant-list #' + id).append('<h2>' + name + '</h2>');
+                grouped[name].forEach(function (restaurant) {
+                    $('#restaurant-list #' + id).append('<a href="/restaurants/' + restaurant.id + '"><strong>' + restaurant.name + '</strong></a>');
+                    $('#restaurant-list #' + id).append('<p>' + restaurant.address + '</p>');
+                    $('#restaurant-list #' + id).append('<p> Approximately ' + (restaurant.distance * 100).toFixed() + " meters from your current location" + '</p>');
+                    if (restaurant.description != null) {
+                        $('#restaurant-list #' + id).append('<p> Description ' + restaurant.description + '</p>');
+                    }
+                });
+                $('#restaurant-list').append('</div>');
+
+            });
+
+        } else {
+            //
+            $('#restaurant-list').html('<h2>There are no restaurants near your location</h2>');
+        }
+
+
     })
 }

@@ -3,7 +3,7 @@ Feature:
   As a user,
   In order to find a restaurant
   I would like to see only restaurants close by (3 km)
-  
+
   Scenario: Restaurants only show up when close to the user (3 km)
     Given the following restaurants with associations exist
       | name  | address                       | description         | res_category_name | menu_name |

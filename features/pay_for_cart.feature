@@ -22,18 +22,14 @@ Feature: Restaurant owner can get payment for order
       | Sushi rolls | Tasty Japanese food | 10    | https://goo.gl/fH7P5F | Main          | Lunch     |
       | Dumplings   | Tasty Japanese food | 15    | https://goo.gl/qKCyL5 | Main          | Lunch     |
 
+    And "1" "Sushi rolls" is added to my cart
+    And "2" "Dumplings" is added to my cart
     And I navigate to the index page
-    And I click "Yappi"
-    And I click "Main" category
-    Then show me the page
-    And I click "Add to cart" within id "Sushi rolls"
-    And I fill in field "amount" and id "Dumplings" with "2"
-    And I click "Add to cart" within id "Dumplings"
     And I click "Show cart"
-    #Then I should be on cart page
 
   Scenario: I check out and pay with my credit card
-    Then show me the page
     Given I click Pay with Card stripe button
-    And I fill in my card details
-    Then I submit the stripe form
+    And I fill in my card details on the stripe form
+    And I submit the stripe form
+    Then I should be on the payment confirmation page
+    #And I should see the text "Thanks, you paid 300"

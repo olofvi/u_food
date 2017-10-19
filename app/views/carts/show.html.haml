@@ -1,7 +1,7 @@
 In cart:
 - @cart.shopping_cart_items.each do |dish|
   %p
-    %div{id: dish.item.name}
+    %div{id: "dish-#{dish.item.id}"}
       = dish.quantity
       = dish.item.name
       = dish.price

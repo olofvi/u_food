@@ -2,6 +2,7 @@ require 'coveralls'
 Coveralls.wear_merged!('rails')
 require 'cucumber/rails'
 require 'capybara/poltergeist'
+require 'rack_session_access/capybara'
 
 ActionController::Base.allow_rescue = false
 

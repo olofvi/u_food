@@ -22,7 +22,7 @@ gem 'devise'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'geocoder'
 gem 'faker'
-gem 'stripe'
+gem 'stripe-rails'
 gem 'cancancan'
 
 
@@ -38,6 +38,7 @@ group :development, :test do
   gem 'launchy'
   gem 'poltergeist'
   gem 'stripe-ruby-mock', '~> 2.5.0', require: 'stripe_mock'
+  gem 'rack_session_access'
 end
 
 group :development do
