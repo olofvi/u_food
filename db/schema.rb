@@ -115,6 +115,8 @@ ActiveRecord::Schema.define(version: 20171018131437) do
     t.float "latitude"
     t.float "longitude"
     t.string "pic_url"
+    t.bigint "admin_user_id"
+    t.index ["admin_user_id"], name: "index_restaurants_on_admin_user_id"
     t.index ["restaurant_category_id"], name: "index_restaurants_on_restaurant_category_id"
   end
 
@@ -138,5 +140,6 @@ ActiveRecord::Schema.define(version: 20171018131437) do
   add_foreign_key "carts", "users"
   add_foreign_key "dishes", "dish_categories"
   add_foreign_key "menus", "restaurants"
+  add_foreign_key "restaurants", "admin_users"
   add_foreign_key "restaurants", "restaurant_categories"
 end

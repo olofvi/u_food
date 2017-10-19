@@ -25,3 +25,7 @@ Then("I click {string} within id {string}") do |input, id|
     click_link_or_button input
   end
 end
+
+Then("I should not see {string}") do |message|
+  expect(page).to have_no_content message
+end
