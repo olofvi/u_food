@@ -39,3 +39,7 @@ Feature: Restaurant owner can edits a restaurant
     Then I click "Delete" for "Lunch" menu
 #    And I click ok on alert box
     Then I should see "Menu was successfully destroyed."
+
+  Scenario: Restaurant owner cannot see restaurants he does not own
+    Given I click "Menus"
+    Then I should not see "My Mex"

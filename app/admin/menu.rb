@@ -9,4 +9,17 @@ ActiveAdmin.register Menu do
     column :restaurant_id, sortable: :restaurant_id
     actions
   end
+
+  filter :name
+  #filter :admin_user, collection: proc {(AdminUser.all).map{|c| [c.email, c.id]}}, if: proc { authorized? :manage }
+  filter :restaurant_id
+
+  form do |f|
+    f.inputs do
+      f.input :name
+      f.input :restaurant_id, as: :select, collection: proc {(Menu.all).map{|c| [c.name, c.id]}}
+    end
+    f.actions
+  end
 end
+
