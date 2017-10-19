@@ -1,14 +1,33 @@
-%h1 Ufoods
-%p What do you feel like tonight?
-- @categories.each do |category|
-  .temp_box
-    %h3
-      = category.name
-    %p
-      = category.description
-  .temp_box2
-    - category.restaurants.near(@user_location, 3, units: :km).each do |restaurant|
-      = link_to restaurant.name, restaurant_path(restaurant)
-      %p
-        = restaurant.address
-#map{style: 'width: 800px; height: 400px', data: {test: {env: "#{Rails.env.test?}"}}}
+.container
+  #categories
+    %h1
+      What do you feel like tonight?
+    = image_tag 'wheat', class: 'style_front_image'
+    .row
+      - @categories.each do |category|
+        .col-sm-4.text-center
+          %h3
+            = link_to category.name, root_path(category_id: category.id), class: 'btn btn-primary'
+          = category.description
+  .row
+    - if @current_category
+      - @current_category_restaurants.near(@user_location, 3, units: :km).each do |restaurant|
+        .col-md-4
+          %h3.restaurant_list
+            = link_to restaurant.name, restaurant_path(restaurant)
+          .thumbnail
+            = link_to restaurant_path(restaurant) do
+              #{image_tag("#{restaurant.pic_url}")}
+            .caption
+              .category_name
+                = restaurant.restaurant_category.name
+              %p
+                = restaurant.address
+              %p
+                = restaurant.description
+
+  #map{style: 'width: 100%; height: 400px', data: {test: {env: "#{Rails.env.test?}"}}}
+
+  .logo
+    Thanks for ordering from us!
+    = image_tag 'ufood-logo', class: 'logo_pic'

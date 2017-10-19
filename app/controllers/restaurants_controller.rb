@@ -13,6 +13,10 @@ class RestaurantsController < ApplicationController
         render json: {restaurants: @restaurants}
       end
     end
+    if params[:category_id].present?
+      @current_category = RestaurantCategory.find(params[:category_id])
+      @current_category_restaurants = @current_category.restaurants
+    end
   end
 
   def show
