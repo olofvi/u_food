@@ -14,7 +14,7 @@
 
   .row
     - @categories.each do |category|
-      - category.restaurants.near(@user_location, 3, units: :km).each do |restaurant|
+      - category.restaurants.near(@user_location, 10000, units: :km).each do |restaurant|
         .col-md-4
           %h3.restaurant_list
             = link_to restaurant.name, restaurant_path(restaurant)
