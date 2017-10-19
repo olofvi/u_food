@@ -114,8 +114,8 @@ ActiveRecord::Schema.define(version: 20171018131437) do
     t.text "description"
     t.float "latitude"
     t.float "longitude"
-    t.bigint "admin_user_id"
     t.string "pic_url"
+    t.bigint "admin_user_id"
     t.index ["admin_user_id"], name: "index_restaurants_on_admin_user_id"
     t.index ["restaurant_category_id"], name: "index_restaurants_on_restaurant_category_id"
   end
