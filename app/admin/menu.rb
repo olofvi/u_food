@@ -11,15 +11,14 @@ ActiveAdmin.register Menu do
   end
 
   filter :name
-  #filter :admin_user, collection: proc {(AdminUser.all).map{|c| [c.email, c.id]}}, if: proc { authorized? :manage }
+  # filter :admin_user, collection: proc {(AdminUser.all).map{|c| [c.email, c.id]}}, if: proc { authorized? :manage }
   filter :restaurant_id
 
   form do |f|
     f.inputs do
       f.input :name
-      f.input :restaurant_id, as: :select, collection: proc {(Menu.all).map{|c| [c.name, c.id]}}
+      f.input :restaurant_id, as: :select, collection: Restaurant.all.select { |t| [t.name] if current_admin_user.restaurants.ids.any? {|id| id == t.id }}
     end
     f.actions
   end
 end
-
