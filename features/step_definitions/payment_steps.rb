@@ -34,9 +34,7 @@ And(/^"([^"]*)" "([^"]*)" is added to my cart$/) do |count, dish_name|
   dish = Dish.find_by(name: dish_name)
   @cart = @cart || @user.carts.create
   @cart.add(dish, count.to_i)
-  #binding.pry
   page.set_rack_session(cart_id: @cart.id)
-  #session[:cart_id] = session[:cart_id] || @cart.id
 end
 
 Then(/^I should be on the payment confirmation page$/) do

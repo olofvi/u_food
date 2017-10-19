@@ -32,4 +32,4 @@ Feature: Restaurant owner can get payment for order
     And I fill in my card details on the stripe form
     And I submit the stripe form
     Then I should be on the payment confirmation page
-    #And I should see the text "Thanks, you paid 300"
+    And I should see the text "Thanks, you paid 300"

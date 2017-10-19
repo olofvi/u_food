@@ -77,7 +77,7 @@ function displayRestaurantInProximity(map, lat, lng) {
                 grouped[name].forEach(function (restaurant) {
                     $('#restaurant-list #' + id).append('<a href="/restaurants/' + restaurant.id + '"><strong>' + restaurant.name + '</strong></a>');
                     $('#restaurant-list #' + id).append('<p>' + restaurant.address + '</p>');
-                    $('#restaurant-list #' + id).append('<p> Approximately ' + (restaurant.distance * 100).toFixed() + " meters from your current location" + '</p>');
+                    $('#restaurant-list #' + id).append('<p> Approximately ' + (restaurant.distance * 1000).toFixed() + " meters from your current location" + '</p>');
                     if (restaurant.description != null) {
                         $('#restaurant-list #' + id).append('<p> Description ' + restaurant.description + '</p>');
                     }

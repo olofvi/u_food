@@ -18,8 +18,8 @@ class ChargesController < ApplicationController
         description: 'Best Slow Food order',
         currency: 'sek'
     )
-
-    redirect_to carts_path(@cart)
+    
+    render :create
   rescue Stripe::CardError => e
     flash[:error] = e.message
     redirect_to new_charge_path
