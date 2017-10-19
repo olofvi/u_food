@@ -23,7 +23,6 @@ Feature: user can can add dish to order
 
     Then I navigate to the index page
     And I see the navbar
-    And show me the page
     And I click "Japanese"
     And I click "Yappi"
 
