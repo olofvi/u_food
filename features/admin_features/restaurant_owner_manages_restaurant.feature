@@ -1,5 +1,5 @@
-Feature: Admin can edits a restaurant
-  As an Admin
+Feature: Restaurant owner can edits a restaurant
+  As a Restaurant owner
   In order to update a restaurant
   I  would like to be able to edit the restaurant
 
@@ -17,7 +17,7 @@ Feature: Admin can edits a restaurant
     And I am logged in to AA as "mythai_owner@example.com"
     And I go to the dashboard
 
-  Scenario: Admin creates new restaurant
+  Scenario: Restaurant owner creates new restaurant
     Given I click "Restaurants"
     Then I click "New Restaurant"
     And I fill in "Name" with "The New Thai Restaurant"
@@ -27,7 +27,7 @@ Feature: Admin can edits a restaurant
     Then I click "Create Restaurant"
     And I should see "Restaurant was successfully created."
 
-  Scenario: Admin updates restaurant
+  Scenario: Restaurant owner updates restaurant
     Given I click "Restaurants"
     When I click "Edit" for "My Thai" restaurant
     And I fill in "Name" with "The Old Thai Restaurant"
@@ -37,11 +37,11 @@ Feature: Admin can edits a restaurant
     When I click "Update Restaurant"
     Then I should see "Restaurant was successfully updated."
 
-  Scenario: Admin deletes restaurant
+  Scenario: Restaurant owner deletes restaurant
     Given I click "Restaurants"
     When I click "Delete" for "My Thai" restaurant
     Then I should see "Restaurant was successfully destroyed."
 
-  Scenario: Admin cannot see restaurants he does not own
+  Scenario: Restaurant owner cannot see restaurants he does not own
     Given I click "Restaurants"
     Then I should not see "My Mex"
