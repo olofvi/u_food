@@ -24,6 +24,7 @@ Feature: remove item from cart
 
     And I navigate to the index page
     And I see the navbar
+    And I click "Japanese"
     And I click "Yappi"
     And I click "Main"
     And I click "Add to cart" within id "Sushi rolls"
