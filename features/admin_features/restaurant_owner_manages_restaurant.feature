@@ -30,5 +30,8 @@ Feature: Admin can edits a restaurant
   Scenario: Admin deletes restaurant
     Given I click "Restaurants"
     When I click "Delete" for "My Thai" restaurant
-    #And I click ok on alert box
     Then I should see "Restaurant was successfully destroyed."
+
+  Scenario: Admin cannot see restaurants he does not own
+    Given I click "Restaurants"
+    Then I should not see "My Mex"
