@@ -13,11 +13,11 @@ ActiveAdmin.register Restaurant do
   index do
     selectable_column
     id_column
-    column :name
-    column :address
-    column :restaurant_category
-    column :admin_user if authorized? :manage
-    column :description
+    column :name, sortable: :name
+    column :address, sortable: :address
+    column :restaurant_category, sortable: :restaurant_category
+    column :admin_user, sortable: :admin_user if authorized? :manage
+    column :description, sortable: :description
     column :latitude
     column :longitude
     actions
@@ -27,5 +27,6 @@ ActiveAdmin.register Restaurant do
   filter :address
   filter :restaurant_category
   filter :admin_user
+  filter :description
 
 end
