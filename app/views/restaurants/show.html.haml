@@ -5,10 +5,12 @@
       .restaurant_pic
         = image_tag("#{@restaurant.pic_url}")
     .col-md-7
-      %h3.address
-        = link_to @restaurant.address, ('https://www.google.com/maps/search/?api=1&query=' + @restaurant.latitude.to_s + ',' + @restaurant.longitude.to_s)
-
-      %h2= @restaurant.description
+      %h2.address
+        = link_to @restaurant.address, ('https://www.google.com/maps/search/?api=1&query=' + @restaurant.latitude.to_s + ',' + @restaurant.longitude.to_s), target: :_blank
+      %h2
+        = @restaurant.description
+      %h2.color
+        Please choose a menu below.
   .btn-group-justified
     - @dish_categories.each do |section|
       = link_to section.name, restaurant_path(dish_category_id: section.id), class: 'btn btn-primary'

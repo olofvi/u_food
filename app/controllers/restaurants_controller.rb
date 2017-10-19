@@ -9,7 +9,7 @@ class RestaurantsController < ApplicationController
         @categories = RestaurantCategory.all
       end
       format.json do
-        @restaurants = Restaurant.near(@user_location, 10000, units: :km).for_markers
+        @restaurants = Restaurant.near(@user_location, 3, units: :km).for_markers
         render json: {restaurants: @restaurants}
       end
     end

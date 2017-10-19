@@ -109,7 +109,8 @@ a.btn.btn-primary {
   text-align: center;
   padding-top: 10px;
   padding-bottom: 10px;
-  border: none;
+  font-size: 20px;
+  border-color: white;
 }
 a.btn.btn-primary:hover{
   background-color: #730E15;
@@ -154,16 +155,12 @@ h2 {
 }
 
 .restaurant_pic {
-  width: 70%;
+  width: 80%;
   margin: 0 auto;
+  padding-bottom: 20px;
 }
 
-.price {
-  color: #730E15;
-  font-weight: bold;
-}
-
-h3.address {
+h2.address {
   padding-left: 20px;
   padding-right: 20px;
   padding-top: 0px;
@@ -171,5 +168,18 @@ h3.address {
 }
 
 .caption.description {
-  height: 120px;
+  height: 130px;
+  position: relative;
+}
+
+.caption.description .price {
+  color: #730E15;
+  position: absolute;
+  bottom: 0;
+  font-weight: bold;
+}
+
+.color {
+  padding-top: 20px;
+  color: #e1a332;
 }
