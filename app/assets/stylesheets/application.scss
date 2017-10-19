@@ -36,7 +36,7 @@ ul {
   list-style-type: none
 }
 
-h1 {
+h1.logo {
   text-align: center;
   color: #730E15;
   font-size: 60px;
@@ -115,6 +115,28 @@ a.btn.btn-primary:hover{
   background-color: #730E15;
 }
 
+input.btn.btn-primary {
+  background-color: #e1a332;
+  color: white;
+  width: 150px;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border: none;
+}
+
+.button {
+  padding: 10px;
+}
+
+input.btn.btn-primary:hover {
+  background-color: #730E15;
+}
+
+input {
+  width: 50px;
+}
+
 .btn-group-justified {
   padding-top: 25px;
   padding-bottom: 50px;
@@ -128,9 +150,26 @@ h2 {
   color: #730E15;
   font-size: 30px;
   padding-left: 20px;
+  padding-right: 20px;
 }
 
 .restaurant_pic {
   width: 70%;
   margin: 0 auto;
+}
+
+.price {
+  color: #730E15;
+  font-weight: bold;
+}
+
+h3.address {
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 0px;
+  margin-top: 0px;
+}
+
+.caption.description {
+  height: 120px;
 }
