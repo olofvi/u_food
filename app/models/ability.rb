@@ -11,7 +11,7 @@ class Ability
       can :create, Restaurant
       can :manage, Menu, restaurant_id: admin.restaurants.ids
       can :create, Menu
-      can :manage, Dish,  restaurant_id: admin.restaurants.ids
+      can :manage, Dish, restaurant_id: admin.restaurants.ids
       can :create, Dish
     end
   end

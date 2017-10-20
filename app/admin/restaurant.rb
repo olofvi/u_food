@@ -6,10 +6,6 @@ ActiveAdmin.register Restaurant do
     restaurant.admin_user = current_admin_user
   end
 
-  controller do
-    load_and_authorize_resource :menus
-    load_and_authorize_resource :dishes, :through => :menus
-  end
   index do
     selectable_column
     id_column
