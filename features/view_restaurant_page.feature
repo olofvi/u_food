@@ -15,7 +15,8 @@ Feature: View a restaurant page
     Then I navigate to the index page
 
   Scenario: User can view a restaurant page
-    Given I click "My Thai"
+    Given I click "Thai"
+    And I click "My Thai"
     Then I should see "My Thai"
     And I should see "Stockholm"
     And I should see "Some hip thai place"

@@ -101,17 +101,21 @@ a:hover {
 
 .logo_pic {
   width: 15%;
+  padding-top: 40px;
 }
 
 a.btn.btn-primary {
   background-color: #e1a332;
+  border: none;
+  width: 50%;
+  font-size: 20px;
   color: white;
   text-align: center;
   padding-top: 10px;
   padding-bottom: 10px;
-  font-size: 20px;
   border-color: white;
 }
+
 a.btn.btn-primary:hover{
   background-color: #730E15;
 }
