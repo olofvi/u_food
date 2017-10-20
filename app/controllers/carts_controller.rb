@@ -31,6 +31,11 @@ class CartsController < ApplicationController
   end
 
   def show
+    if params[:street]
+      @total_cost = @cart.total + 5
+    else
+      @total_cost = @cart.total
+    end
     @cart = Cart.find(session[:cart_id])
     if !@cart.cart_items.empty?
       @restaurant = Restaurant.find(@cart.cart_items.last.item.menus.first.restaurant.id)
