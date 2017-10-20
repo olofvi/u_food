@@ -11,7 +11,8 @@ class Ability
       can :create, Restaurant
       can :manage, Menu, restaurant_id: admin.restaurants.ids
       can :create, Menu
-      can :manage, Dish,  # Here we need a condition to select the dishes that belong to the restaurant
+      can :manage, Dish,  restaurant_id: admin.restaurants.ids
+      can :create, Dish
     end
   end
 end
