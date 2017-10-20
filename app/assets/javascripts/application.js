@@ -13,7 +13,6 @@
 //= require rails-ujs
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require gmap
 //= require landing_page
 ///= require_tree .
