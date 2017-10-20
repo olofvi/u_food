@@ -134,7 +134,7 @@ input.btn.btn-primary:hover {
   background-color: #730E15;
 }
 
-input {
+input#remove_amount, input#amount {
   width: 50px;
 }
 
@@ -186,4 +186,33 @@ h2.address {
 
 .col-md-4 {
   padding: 10px;
+}
+
+.reveal-if-active {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transform: scale(0.8);
+  transition: 0.5s;
+
+  input[type="radio"]:checked ~ & {
+    opacity: 1;
+    min-height: 220px;
+    overflow: visible;
+    padding: 10px 20px;
+    transform: scale(1);
+  }
+
+  input {
+    width: 100%;
+  }
+}
+
+.delivery {
+  color: #730E15;
+  padding: 10px;
+
+  .delivery_button {
+  padding-top: 20px;
+  }
 }
