@@ -17,8 +17,8 @@ ActiveAdmin.register Dish do
   filter :name
   filter :description
   filter :price
-  filter :restaurant_id, as: :select, collection: Restaurant.all.select {|t| [t.name]}
-  filter :menus, as: :select, collection: Menu.all.select {|t| [t.name]}
+  filter :restaurant, as: :select, collection: proc{ current_admin_user.restaurants }
+  filter :menus, as: :select, collection: Menu.all.select {|t| [t.name] }
   filter :dish_category_id, as: :select, collection: DishCategory.all.select {|t| [t.name]}
 
   form do |f|
@@ -31,8 +31,8 @@ ActiveAdmin.register Dish do
       end
       f.input :menu_lines, label: "Menu", as: :select, collection: Menu.all.select {|t| [t.name]}
       f.input :dish_category_id, as: :select, collection: DishCategory.all.select {|t| [t.name]}
-      f.input :price, as: :number
-      f.input :pic_url
+      f.input :price, label: "Price in $"
+      f.input :pic_url, label: "Picture URL"
       f.input :description
     end
     f.actions

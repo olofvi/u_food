@@ -6,12 +6,12 @@ ActiveAdmin.register Menu do
     selectable_column
     id_column
     column :name, sortable: :name
-    column :restaurant_id, sortable: :restaurant_id
+    column :restaurant, sortable: :restaurant
     actions
   end
 
   filter :name
-  filter :restaurant_id
+  filter :restaurant, as: :select, collection: proc{ current_admin_user.restaurants }
 
   form do |f|
     f.inputs do
