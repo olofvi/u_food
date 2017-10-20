@@ -1,7 +1,7 @@
-Feature: Restaurant owner can edits a restaurant
+Feature: Restaurant owner can edit his menu
   As a Restaurant owner
   In order to update a restaurant
-  I  would like to be able to edit the restaurant
+  I  would like to be able to update his menus
 
   Background:
     Given The following admins exist
