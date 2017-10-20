@@ -76,10 +76,12 @@ function displayRestaurantInProximity(map, lat, lng) {
             $('#restaurant-list').html('');
             Object.keys(grouped).forEach(function (name) {
                 var id = name.replace(/\s+/g, '-').toLowerCase();
-                $('#restaurant-list').append('<div id="' + id + '">');
+                $('#restaurant-list').append('<div class="col-md-4" id="' + id + '">');
                 $('#restaurant-list #' + id).append('<h2>' + name + '</h2>');
                 grouped[name].forEach(function (restaurant) {
+                    $('#restaurant-list #' + id).append('<h3 class="restaurant_list">');
                     $('#restaurant-list #' + id).append('<a href="/restaurants/' + restaurant.id + '"><strong>' + restaurant.name + '</strong></a>');
+                    $('#restaurant-list #' + id).append('</h3>');
                     $('#restaurant-list #' + id).append('<p>' + restaurant.address + '</p>');
                     $('#restaurant-list #' + id).append('<p> Approximately ' + (restaurant.distance * 1000).toFixed() + " meters from your current location" + '</p>');
                     if (restaurant.description != null) {

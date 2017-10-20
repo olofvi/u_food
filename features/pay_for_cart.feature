@@ -25,6 +25,7 @@ Feature: Restaurant owner can get payment for order
     And "1" "Sushi rolls" is added to my cart
     And "2" "Dumplings" is added to my cart
     And I navigate to the index page
+    Then show me the page
     And I click "Show cart"
 
   Scenario: I check out and pay with my credit card
