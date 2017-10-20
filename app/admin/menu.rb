@@ -11,7 +11,6 @@ ActiveAdmin.register Menu do
   end
 
   filter :name
-  # filter :admin_user, collection: proc {(AdminUser.all).map{|c| [c.email, c.id]}}, if: proc { authorized? :manage }
   filter :restaurant_id
 
   form do |f|

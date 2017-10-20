@@ -12,12 +12,12 @@ Feature: Restaurant owner can edits a restaurant
     And the following restaurants with associations exist
       | name    | address   | description         | res_category_name | menu_name | restaurant_owner         |
       | My Thai | Stockholm | Some hip thai place | Thai              | Lunch     | mythai_owner@example.com |
-      | My Mex  | Stockholm | Mexican tacos       | Mexican           | Dinner    | mymex_owner@example.com  |
+      | My Mex  | Stockholm | Mexican tacos       | Mexican           | Lunch    | mymex_owner@example.com  |
 
     And I am logged in to AA as "mythai_owner@example.com"
     And I go to the dashboard
 
-  Scenario: Restaurant owner adds new menu
+  Scenario: My Thai owner adds new menu
     Given I click "Menus"
     Then I click "New Menu"
     And I fill in "Name" with "Breakfast"
@@ -25,7 +25,7 @@ Feature: Restaurant owner can edits a restaurant
     Then I click "Create Menu"
     And I should see "Menu was successfully created."
 
-  Scenario: Restaurant owner updates menu
+  Scenario: My Thai owner updates menu
     Given I click "Menus"
     Then I click "Edit" for "Lunch" menu
     And I fill in "Name" with "Brunch"
@@ -34,12 +34,24 @@ Feature: Restaurant owner can edits a restaurant
     Then I should see "Menu was successfully updated."
 
   @javascript
-  Scenario: Restaurant owner deletes menu
+  Scenario: My Thai owner deletes menu
     Given I click "Menus"
     Then I click "Delete" for "Lunch" menu
 #    And I click ok on alert box
     Then I should see "Menu was successfully destroyed."
 
-  Scenario: Restaurant owner cannot see restaurants he does not own
+  Scenario: My Thai owner cannot see restaurants he does not own
     Given I click "Menus"
     Then I should not see "My Mex"
+
+  Scenario: My Mex owner updates menu
+    Given I click "Menus"
+    Then I click "Delete" for "Lunch" menu
+    And restaurant owner logs out
+    Then I am logged in to AA as "mymex_owner@example.com"
+    And I click "Menus"
+    Then I click "Edit" for "Lunch" menu
+    And I fill in "Name" with "Brunch"
+    And I select "My Mex" from menu category dropdown
+    When I click "Update Menu"
+    Then I should see "Menu was successfully updated."
