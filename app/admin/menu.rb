@@ -17,9 +17,9 @@ ActiveAdmin.register Menu do
     f.inputs do
       f.input :name
       if current_admin_user.super_admin?
-        f.input :restaurant_id, as: :select, collection: Restaurant.all.select { |t| [t.name] }
+        f.input :restaurant_id, as: :select, collection: Restaurant.all.select { |r| [r.name] }
       else
-        f.input :restaurant_id, as: :select, collection: Restaurant.all.select { |t| [t.name] if current_admin_user.restaurants.ids.any? {|id| id == t.id } }
+        f.input :restaurant_id, as: :select, collection: Restaurant.all.select { |r| [r.name] if current_admin_user.restaurants.ids.any? {|id| id == r.id } }
       end
     end
     f.actions
