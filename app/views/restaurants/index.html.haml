@@ -8,8 +8,9 @@
         - if category.restaurants.near(@user_location, @range, units: :km).any?
           .col-sm-4.text-center
             %h3
-              = link_to category.name, root_path(category_id: category.id, anchor: 'restaurants'), class: 'btn btn-primary'
+              = link_to category.name, root_path(range: @range, category_id: category.id, anchor: 'restaurants'), class: 'btn btn-primary'
             = category.description
+  = @range
   #restaurants
     .row
       - if @current_category
@@ -32,9 +33,9 @@
 
   = form_tag root_path, method: :get do
     = radio_button_tag 'range', 'short'
-    3 km
-    = radio_button_tag 'range', 'medium'
     10 km
+    = radio_button_tag 'range', 'medium'
+    30 km
     = radio_button_tag 'range', 'large'
     Unlimited
     %br
