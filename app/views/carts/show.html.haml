@@ -32,22 +32,13 @@
       %br
       .delivery
         = form_tag cart_path, method: :get do
-          = radio_button_tag 'delivery', 'delivery', 'checked'
+          = radio_button_tag 'delivery', 'delivery'
           Delivery (5$)
-          -#.reveal-if-active
-          -#  First name:
-          -#  = text_field_tag 'firstname', nil, placeholder: 'First name', required: true
-          -#  Last name:
-          -#  = text_field_tag 'lastname', nil, placeholder: 'Last name', required: true
-          -#  Delivery Address:
-          -#  = text_field_tag 'street', nil, placeholder: 'Street Address & Number', required: true
-          -#  = text_field_tag 'post_code', nil, placeholder: 'Post Code', required: true
-          -#  = text_field_tag 'city', nil, placeholder: 'City', required: true
           = radio_button_tag 'delivery', 'pickup'
           Pickup (free)
           %br
-        .delivery_button
-          = submit_tag 'Save', class: 'btn btn-primary'
+          .delivery_button
+            = submit_tag 'Save', class: 'btn btn-primary'
 
     .col-md-4
       = image_tag 'ufood-logo.png'
