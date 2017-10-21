@@ -55,7 +55,11 @@ function performGeolocation() {
 
 function displayRestaurantMarkers(map, lat, lng) {
     var range = getParameterByName('range');
-    var url = '/restaurants?lat=' + lat + '&lng=' + lng + '&range=' + range;
+    var url;
+    if (range == null){
+         url = '/restaurants?lat=' + lat + '&lng=' + lng;}
+    else {
+     url = '/restaurants?lat=' + lat + '&lng=' + lng + '&range=' + range;}
     var pinImage = new google.maps.MarkerImage('http://maps.google.com/mapfiles/ms/icons/orange-dot.png');
     $.getJSON(url, function (response) {
         var restaurants = response.restaurants;

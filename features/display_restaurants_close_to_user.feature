@@ -1,7 +1,7 @@
 Feature:
   As a user,
   In order to find a restaurant
-  I would like to see only restaurants close by (3 km)
+  I would like to see restaurants depending on what I set the range to
 
   Background:
     Given the following restaurants with associations exist
@@ -30,7 +30,6 @@ Feature:
     And I click "Japanese"
     Then I should see the text "Yappi"
     And I should not see the text "Nappi"
-    And show me the page
     When the map has been loaded
     Then I should see "3" pins on the map
 
@@ -40,6 +39,9 @@ Feature:
     And I click "Choose Range"
     And I click "Japanese"
     Then I should see the text "Yappi"
+    And I should see the text "Happi"
     And I should see the text "Nappi"
+    And I should see the text "Zappi"
+    And I should see the text "Lappi"
     When the map has been loaded
-    Then I should see "4" pins on the map
+    Then I should see "6" pins on the map
