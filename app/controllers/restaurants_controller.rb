@@ -4,15 +4,17 @@ class RestaurantsController < ApplicationController
   DEFAULT_IP_LOCATION_STHLM = '130.237.186.207'
 
   def index
-    @range = 3
      case params[:range]
-      when 'short'
+       when nil
+         @range = 3
+       when 'short'
         @range = 3
       when 'medium'
         @range = 10
       when 'large'
         @range = 40076
-    end
+     end
+    binding.pry
     respond_to do |format|
       format.html do
         @categories = RestaurantCategory.all
