@@ -32,7 +32,7 @@ class CartsController < ApplicationController
 
   def show
     if params[:street]
-      @total_cost = @cart.total + 5
+      @total_cost = @cart.total.to_i + 5
     else
       @total_cost = @cart.total
     end
