@@ -37,7 +37,7 @@ Feature: user can can add dish to order
     Then I should see the text "1"
     And I should see the text "Sushi rolls"
     And I should see the text "Total items: 1"
-    And I should see the text "Total cost: 10.00 $"
+    And I should see the text "Total cost: 10 $"
 
   Scenario: User adds multiple items to cart
     Given I click "Main"
@@ -50,7 +50,7 @@ Feature: user can can add dish to order
     Then I should see the text "2"
     And I should see the text "Dumplings"
     And I should see the text "Total items: 2"
-    And I should see the text "Total cost: 30.00 $"
+    And I should see the text "Total cost: 30 $"
 
   Scenario: User should not be able to add to order if not signed in
     Given the user is signed out
