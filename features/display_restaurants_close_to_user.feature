@@ -23,6 +23,7 @@ Feature:
     When the map has been loaded
     Then I should see "3" pins on the map
 
+  @javascript
   Scenario: Restaurants only show up when at medium range to the user (10 km)
     Given I navigate to the index page
     Given I choose "range_medium"
@@ -33,6 +34,7 @@ Feature:
     When the map has been loaded
     Then I should see "3" pins on the map
 
+  @javascript
   Scenario: All restaurants show up on page
     Given I navigate to the index page
     Given I choose "range_large"
