@@ -31,5 +31,8 @@
   #map{style: 'width: 100%; height: 400px', data: {test: {env: "#{Rails.env.test?}"}}}
 
   .logo
-    Thanks for ordering from us!
-    = image_tag 'ufood-logo', class: 'logo_pic.png'
+    .row
+      .col-md-10
+        Thanks for ordering from us!
+      .col-md-2
+        = image_tag 'ufood-logo', class: 'logo_pic.png'
