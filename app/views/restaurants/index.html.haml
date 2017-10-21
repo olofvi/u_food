@@ -31,10 +31,14 @@
   #map{style: 'width: 100%; height: 400px', data: {test: {env: "#{Rails.env.test?}"}}}
 
   = form_tag root_path, method: :get do
-    = radio_button_tag 'range', 'short'
+    = radio_button_tag 'range', 'km3'
     3 km
-    = radio_button_tag 'range', 'medium'
+    = radio_button_tag 'range', 'km5'
+    5 km
+    = radio_button_tag 'range', 'km10'
     10 km
+    = radio_button_tag 'range', 'km20'
+    20 km
     = radio_button_tag 'range', 'large'
     Unlimited
     %br
