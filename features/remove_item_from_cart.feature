@@ -42,19 +42,19 @@ Feature: remove item from cart
     And My order should contain "1" item
 
   Scenario: User gives wrong type of input
-    Given I fill in field "remove_amount" and id "Dumplings" with "f"
+    Given I fill in field "remove_amount" and id "Dumplings" with ""
     And I click "Remove from cart" within id "Dumplings"
     Then I should see "Please enter a number"
 
   Scenario: User clears cart
-    Given I click "3"
+    Given I click "3" in navbar
     And I should see the text "Total items: 3"
     And I click "Clear cart"
     Then My order should contain "0" item
     Then I should be on the restaurant page
 
   Scenario: User clicks remove item on cart page
-    Given I click "3"
+    Given I click "3" in navbar
     And I click "Remove from cart" within id "Sushi rolls"
     Then I should see "Sushi rolls was removed from your cart"
     And My order should contain "2" item

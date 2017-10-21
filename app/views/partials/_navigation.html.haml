@@ -10,7 +10,7 @@
           %li.nav-item
           - if @cart
             - if @cart.shopping_cart_items.any?
-              %li.nav-item
+              %li.nav-item#cart-link
                 = link_to cart_path(@cart) do
                   .glyphicon.glyphicon-shopping-cart
                   = @cart.total_unique_items

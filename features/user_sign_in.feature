@@ -1,3 +1,4 @@
+@javascript
 Feature: As a user
   In order to use the application
   I should be able to sign in to my account

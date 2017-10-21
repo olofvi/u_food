@@ -18,3 +18,7 @@
 //= require landing_page
 ///= require_tree .
 
+document.addEventListener("turbolinks:load", function() {
+    initiateMap();
+});
+

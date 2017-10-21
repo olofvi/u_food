@@ -7,14 +7,10 @@ require 'rack_session_access/capybara'
 ActionController::Base.allow_rescue = false
 
 Capybara.register_driver :poltergeist do |app|
-  Capybara::Poltergeist::Driver.new(app, js_errors: false,
-                                          phantomjs_options: ['--ssl-protocol=tlsv1.2', '--ignore-ssl-errors=yes'])
+  Capybara::Poltergeist::Driver.new(app,{ js_errors: false, phantomjs_options: ['--ssl-protocol=tlsv1.2', '--ignore-ssl-errors=yes']})
 end
 
-# Before do
-#   Aws.config[:s3] = {stub_responses: true}
-# end
-
+Capybara.current_driver = :poltergeist
 Capybara.javascript_driver = :poltergeist
 Capybara.default_max_wait_time = 6
 
@@ -25,10 +21,8 @@ rescue NameError
         '(in the :test group) if you wish to use it.'
 end
 
-Cucumber::Rails::Database.javascript_strategy = :truncation
 
-require 'capybara/poltergeist'
-Capybara.register_driver :poltergeist do |app|
-  Capybara::Poltergeist::Driver.new(app, js_error: false)
-end
-Capybara.javascript_driver = :poltergeist
+
+Cucumber::Rails::Database.javascript_strategy = :truncation
+ActiveRecord::Base.shared_connection = ActiveRecord::Base.connection
+

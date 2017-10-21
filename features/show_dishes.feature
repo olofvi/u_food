@@ -1,3 +1,4 @@
+@javascript
 Feature: user can see dishes and their info
   As a user
   In order to get food

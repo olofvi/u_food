@@ -1,16 +1,18 @@
+@javascript
 Feature: View a restaurant page
   As a User
   In order to see a restaurant page
   I should be able to go to the restaurant page
 
   Background:
-    Given the following restaurant category exists
-      | name | description |
-      | Thai | Thai food   |
+    Given the following restaurants with associations exist
+      | name    | address                       | description         | res_category_name | menu_name |
+      | My Thai | Hamngatan 37 111 53 Stockholm | Some hip thai place | Japanese          | Lunch     |
 
-    And the following restaurants exist
-      | name    | address   | restaurant_category | description         |
-      | My Thai | Stockholm | Thai                | Some hip thai place |
+    And the following dishes exists
+      | name        | description         | price | pic_url               | dish_category | menu_name |
+      | Sushi rolls | Tasty Japanese food | 10    | https://goo.gl/fH7P5F | Main          | Lunch     |
+      | Dumplings   | Tasty Japanese food | 15    | https://goo.gl/qKCyL5 | Main          | Lunch     |
 
     Then I navigate to the index page
 

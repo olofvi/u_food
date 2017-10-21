@@ -71,7 +71,7 @@ function displayRestaurantInProximity(map, lat, lng) {
                 }
             });
         });
-        console.log(grouped);
+        //console.log(grouped);
         if (Object.getOwnPropertyNames(grouped).length > 0) {
             $('#restaurant-list').html('');
             Object.keys(grouped).forEach(function (name) {
@@ -79,14 +79,8 @@ function displayRestaurantInProximity(map, lat, lng) {
                 $('#restaurant-list').append('<div class="col-md-4" id="' + id + '">');
                 $('#restaurant-list #' + id).append('<h2>' + name + '</h2>');
                 grouped[name].forEach(function (restaurant) {
-                    $('#restaurant-list #' + id).append('<h3 class="restaurant_list">');
-                    $('#restaurant-list #' + id).append('<a href="/restaurants/' + restaurant.id + '"><strong>' + restaurant.name + '</strong></a>');
-                    $('#restaurant-list #' + id).append('</h3>');
-                    $('#restaurant-list #' + id).append('<p>' + restaurant.address + '</p>');
-                    $('#restaurant-list #' + id).append('<p> Approximately ' + (restaurant.distance * 1000).toFixed() + " meters from your current location" + '</p>');
-                    if (restaurant.description != null) {
-                        $('#restaurant-list #' + id).append('<p> Description ' + restaurant.description + '</p>');
-                    }
+                    var content = buildListItem(restaurant);
+                    $('#restaurant-list #' + id).append(content);
                 });
                 $('#restaurant-list').append('</div>');
 
@@ -96,7 +90,21 @@ function displayRestaurantInProximity(map, lat, lng) {
             //
             $('#restaurant-list').html('<h2>There are no restaurants near your location</h2>');
         }
-
-
     })
+}
+
+function buildListItem(restaurant) {
+    var content = '<h3 class="restaurant_list">'
+    content = content + '<a href="/restaurants/' + restaurant.id + '"><strong>' + restaurant.name + '</strong></a>';
+    content = content + '</h3>';
+    if (restaurant.pic_url != null) {
+        content = content + '<img src="' + restaurant.pic_url + '">';
+    }
+    content = content + '<p>' + restaurant.address + '</p>';
+    content = content + '<p> Approximately ' + (restaurant.distance * 1000).toFixed() + " meters from your current location" + '</p>'
+    if (restaurant.description != null) {
+        content = content + '<p> Description ' + restaurant.description + '</p>';
+    }
+
+    return content;
 }

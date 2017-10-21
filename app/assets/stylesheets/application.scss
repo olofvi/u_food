@@ -36,7 +36,7 @@ ul {
   list-style-type: none
 }
 
-h1 {
+h1.logo {
   text-align: center;
   color: #730E15;
   font-size: 60px;
@@ -101,4 +101,89 @@ a:hover {
 
 .logo_pic {
   width: 15%;
+}
+
+a.btn.btn-primary {
+  background-color: #e1a332;
+  color: white;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 20px;
+  border-color: white;
+}
+a.btn.btn-primary:hover{
+  background-color: #730E15;
+}
+
+input.btn.btn-primary {
+  background-color: #e1a332;
+  color: white;
+  width: 150px;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border: none;
+}
+
+.button {
+  padding: 10px;
+}
+
+input.btn.btn-primary:hover {
+  background-color: #730E15;
+}
+
+input {
+  width: 50px;
+}
+
+.btn-group-justified {
+  padding-top: 25px;
+  padding-bottom: 50px;
+}
+
+img{
+  width: 100%;
+}
+
+h2 {
+  color: #730E15;
+  font-size: 30px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.restaurant_pic {
+  width: 80%;
+  margin: 0 auto;
+  padding-bottom: 20px;
+}
+
+h2.address {
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 0px;
+  margin-top: 0px;
+}
+
+.caption.description {
+  height: 130px;
+  position: relative;
+}
+
+.caption.description .price {
+  color: #730E15;
+  position: absolute;
+  bottom: 0;
+  font-weight: bold;
+}
+
+.color {
+  padding-top: 20px;
+  color: #e1a332;
+}
+
+.col-md-4 {
+  padding: 10px;
 }

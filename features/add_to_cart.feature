@@ -4,14 +4,6 @@ Feature: user can can add dish to order
   I would like to able to add dish to order
 
   Background:
-    Given the following user exists
-      | email               | encrypted_password |
-      | example@example.com | password           |
-
-    And the following user is signed in
-      | email               | encrypted_password |
-      | example@example.com | password           |
-
     Given the following restaurants with associations exist
       | name    | address    |  description          | res_category_name | menu_name    |
       | Yappi   | Stockholm  |  Some hip thai place  | Japanese          | Lunch        |
@@ -21,8 +13,15 @@ Feature: user can can add dish to order
       | Sushi rolls | Tasty Japanese food | 10    | https://goo.gl/fH7P5F | Main          |Lunch        |
       | Dumplings   | Tasty Japanese food | 15    | https://goo.gl/qKCyL5 | Main          |Lunch        |
 
-    Then I navigate to the index page
-    And I see the navbar
+    Given the following user exists
+      | email               | encrypted_password |
+      | example@example.com | password           |
+
+    And the following user is signed in
+      | email               | encrypted_password |
+      | example@example.com | password           |
+
+    And I navigate to the index page
     And I click "Yappi"
 
   Scenario: User can add dish to order
@@ -32,7 +31,7 @@ Feature: user can can add dish to order
     And I click "Add to cart" within id "Sushi rolls"
     Then I should see the text "Sushi rolls added to cart: 1"
     And My order should contain "1" item
-    And I click "1"
+    And I click "1" in navbar
     Then I should see the text "1"
     And I should see the text "Sushi rolls"
     And I should see the text "Total items: 1"

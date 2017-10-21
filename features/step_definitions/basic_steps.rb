@@ -36,3 +36,16 @@ end
 And(/^show me the page$/) do
   save_and_open_page
 end
+
+And(/^show me an image of the page$/) do
+  save_and_open_screenshot
+end
+
+
+And(/^I click "([^"]*)" in navbar$/) do |link_text|
+  within '#cart-link' do
+    find('a', text:link_text).trigger('click')
+  end
+  sleep 2
+  #binding.pry
+end

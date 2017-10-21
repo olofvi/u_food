@@ -37,6 +37,7 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'launchy'
   gem 'poltergeist'
+  gem 'phantomjs', require: 'phantomjs/poltergeist'
   gem 'stripe-ruby-mock', '~> 2.5.0', require: 'stripe_mock'
   gem 'rack_session_access'
 end

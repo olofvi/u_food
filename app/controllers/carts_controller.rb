@@ -4,7 +4,7 @@ class CartsController < ApplicationController
 
   def add
     dish = Dish.find(params[:id])
-    if an_integer?(params[:amount])
+    if params[:amount].empty?
       @cart.add(dish, dish.price, params[:amount].to_i)
       flash[:notice] = "#{dish.name} added to cart: #{params[:amount]}"
     else
