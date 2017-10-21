@@ -4,17 +4,21 @@
   = image_tag 'wheat.png', class: 'style_front_image'
   .row
     #categories
-      %h2.choice Choose a category
+      - if @exist_any_restaurant
+        %h2.choice Choose a category
       - @categories.each do |category|
         - if category.restaurants.near(@user_location, @range, units: :km).any?
           .col-sm-4.text-center
             %h3
               = link_to category.name, root_path(range: @range, category_id: category.id, anchor: 'categories'), class: 'btn btn-primary'
             = category.description
+      - if !@exist_any_restaurant
+        %h2.choice There are no restaurants within range. Choose another range below!
   #restaurants
     .row
       - if @current_category
-        %h2.choice Choose a restaurant
+        - if @exist_any_restaurant
+          %h2.choice Choose a restaurant
         - @current_category_restaurants.near(@user_location, @range, units: :km).each do |restaurant|
           .col-md-4
             %h3.restaurant_list
