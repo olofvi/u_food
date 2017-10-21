@@ -9,7 +9,7 @@ Feature:
       | Yappi | Hamngatan 37 111 53 Stockholm         | Some hip thai place | Japanese          | Lunch     |
       | Happi | Metargatan 5 116 66 Stockholm         | Some hip food place | Japanese          | Lunch     |
       | Nappi | Virkesvägen 45 120 30 Stockholm       | Some bad food place | Japanese          | Lunch     |
-      | Lappi | Kärrtorpsvägen 48 121 55 Johannesbrov | Some bad food place | Japanese          | Lunch     |
+      | Lappi | KStorgatan 33, 151 36 Södertälje      | Some bad food place | Japanese          | Lunch     |
       | Tappi | Skogåsleden 6 142 42 Skogås           | Some bad food place | Japanese          | Lunch     |
       | Pappi | Holtermansgatan 6 412 96 Gothenburg   | Some bad food place | Japanese          | Lunch     |
 
@@ -53,7 +53,7 @@ Feature:
     And I click "Choose Range"
     And I click "Japanese"
     Then I should see the text "Tappi"
-    And I should not see the text "pappi"
+    And I should not see the text "Pappi"
     When the map has been loaded
     Then I should see "5" pins on the map
 
@@ -67,8 +67,8 @@ Feature:
     Then I should see the text "Yappi"
     And I should see the text "Happi"
     And I should see the text "Nappi"
-    And I should see the text "Zappi"
+    And I should see the text "Tappi"
     And I should see the text "Lappi"
-    And I should see the text "pappi"
+    And I should see the text "Pappi"
     When the map has been loaded
-    Then I should see "6" pins on the map
+    Then I should see "7" pins on the map
