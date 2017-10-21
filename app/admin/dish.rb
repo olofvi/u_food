@@ -25,7 +25,7 @@ ActiveAdmin.register Dish do
   # binding.pry
   # filter :menu_line, as: :select, collection: MenuLine.all.select{ |ml| [ml.menu_id] if proc{ current_admin_user.restaurants.each { |r| r.menus.ids.any? { |id| id == ml.menu_id} }}}
 
-  filter :dish_category_id, as: :select, collection: DishCategory.all.select {|dc| [dc.name]}
+  filter :dish_category_id, as: :select, collection: proc {DishCategory.all.select {|dc| [dc.name]}}
 
   form do |f|
     f.inputs do
