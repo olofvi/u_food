@@ -25,9 +25,7 @@ Feature: user can can add dish to order
     And I see the navbar
     And I click "Japanese"
     And I click "Yappi"
-
-  Scenario: User can add dish to order
-    Given I click "Main"
+    And I click "Main"
     Then I should see the text "Sushi rolls"
     And I fill in field "amount" and id "Sushi rolls" with "1"
     And I click "Add to cart" within id "Sushi rolls"
@@ -39,21 +37,21 @@ Feature: user can can add dish to order
     And I should see the text "Total items: 1"
     And I should see the text "Total cost: 10 $"
 
-  Scenario: User adds multiple items to cart
-    Given I click "Main"
-    Then I should see the text "Dumplings"
-    And I fill in field "amount" and id "Dumplings" with "2"
-    And I click "Add to cart" within id "Dumplings"
-    Then I should see the text "Dumplings added to cart: 2"
-    And My order should contain "2" item
-    And I click "2"
-    Then I should see the text "2"
-    And I should see the text "Dumplings"
-    And I should see the text "Total items: 2"
-    And I should see the text "Total cost: 30 $"
+    Scenario: User can choose pickup
+      Given I choose "delivery_pickup"
+      And I click "Save"
+      Then I should see the text "Total cost: 10 $"
 
-  Scenario: User should not be able to add to order if not signed in
-    Given the user is signed out
-    Then I click "Main"
-    And I should see the text "Dumplings"
-    And I should not see link "Add Dumplings to cart"
+    Scenario: User can choose delivery
+      Given I choose "delivery_delivery"
+      And I click "Save"
+      Then I should see the text "Total cost: 15 $"
+
+    Scenario: User can switch between options
+      Given I choose "delivery_delivery"
+      And I click "Save"
+      Then I should see the text "Total cost: 15 $ You choose: delivery"
+      When I choose "delivery_pickup"
+      And I click "Save"
+      Then I should see the text "Total cost: 10 $ You choose: pickup"
+

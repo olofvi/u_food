@@ -2,7 +2,7 @@
   #categories
     %h1.logo
       What do you feel like tonight?
-    = image_tag 'wheat', class: 'style_front_image'
+    = image_tag 'wheat.png', class: 'style_front_image'
     .row
       - @categories.each do |category|
         - if category.restaurants.near(@user_location, @range, units: :km).any?
@@ -42,5 +42,8 @@
       = submit_tag 'Choose Range', class: 'btn btn-primary'
 
   .logo
-    Thanks for ordering from us!
-    = image_tag 'ufood-logo', class: 'logo_pic'
+    .row
+      .col-md-10
+        Thanks for ordering from us!
+      .col-md-2
+        = image_tag 'ufood-logo', class: 'logo_pic.png'
