@@ -1,0 +1,7 @@
+<div class="container-fluid">
+  <%= simple_form_for([@restaurant, @restaurant.reviews.build]) do |f| %>
+      <%= f.input :rating %>
+      <%= f.input :comment %>
+      <%= f.button :submit %>
+  <% end %>
+</div>
