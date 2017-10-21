@@ -4,18 +4,6 @@ class RestaurantsController < ApplicationController
   DEFAULT_IP_LOCATION_STHLM = '130.237.186.207'
 
   def index
-    # case params[:range]
-    #   when nil
-    #     @range = 3
-    #   when 'short'
-    #     @range = 3
-    #   when 'medium'
-    #     @range = 10
-    #   when 'large'
-    #     @range = 40076
-    #   else
-    #     @range = params[:range]
-    # end
     case params[:range]
       when nil
         @range = 3
@@ -32,6 +20,7 @@ class RestaurantsController < ApplicationController
       else
         @range = params[:range]
     end
+    @exist_any_restaurant = Restaurant.near(@user_location, @range, units: :km).any?
     respond_to do |format|
       format.html do
         @categories = RestaurantCategory.all
