@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   devise_for :users
   root controller: :restaurants, action: :index
-  resources :restaurants
+  resources :restaurants do
+    resources :reviews
+  end
   resources :dishes
   resources :carts do
     get :remove_item
