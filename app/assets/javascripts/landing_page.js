@@ -54,7 +54,8 @@ function performGeolocation() {
 }
 
 function displayRestaurantMarkers(map, lat, lng) {
-    var url = '/restaurants?lat=' + lat + '&lng=' + lng;
+    var range = getParameterByName('range');
+    var url = '/restaurants?lat=' + lat + '&lng=' + lng + '&range=' + range;
     var pinImage = new google.maps.MarkerImage('http://maps.google.com/mapfiles/ms/icons/orange-dot.png');
     $.getJSON(url, function (response) {
         var restaurants = response.restaurants;
@@ -70,4 +71,15 @@ function displayRestaurantMarkers(map, lat, lng) {
             });
         });
     })
+}
+
+//got this from stackoverflow :)
+function getParameterByName(name, url) {
+    if (!url) url = window.location.href;
+    name = name.replace(/[\[\]]/g, "\\$&");
+    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
 }

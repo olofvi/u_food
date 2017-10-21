@@ -30,6 +30,7 @@ Feature:
     And I click "Japanese"
     Then I should see the text "Yappi"
     And I should not see the text "Nappi"
+    And show me the page
     When the map has been loaded
     Then I should see "3" pins on the map
 
