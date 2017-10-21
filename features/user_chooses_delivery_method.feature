@@ -50,8 +50,8 @@ Feature: user can can add dish to order
     Scenario: User can switch between options
       Given I choose "delivery_delivery"
       And I click "Save"
-      Then I should see the text "Total cost: 15 $ Delivery method: delivery"
+      Then I should see the text "Total cost: 15 $ You choose: delivery"
       When I choose "delivery_pickup"
       And I click "Save"
-      Then I should see the text "Total cost: 10 $ Delivery method: pickup"
+      Then I should see the text "Total cost: 10 $ You choose: pickup"
 
