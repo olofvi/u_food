@@ -1,7 +1,7 @@
 function initiateMap() {
     map = GMaps({
         div: '#map',
-        zoom: 15,
+        zoom: 12,
         lat: 59.334591,
         lng: 18.063240
     });

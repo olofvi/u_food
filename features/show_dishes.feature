@@ -10,6 +10,7 @@ Feature: user can see dishes and their info
       | Yappi   | Stockholm  |  Some hip thai place  | Japanese          | Lunch        |
 
     Then I navigate to the index page
+    And I click "Japanese"
     And I click "Yappi"
 
   Scenario: the restaurant's dish categories are displayed
