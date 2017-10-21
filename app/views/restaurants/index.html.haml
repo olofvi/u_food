@@ -2,7 +2,7 @@
   #categories
     %h1.logo
       What do you feel like tonight?
-    = image_tag 'wheat', class: 'style_front_image'
+    = image_tag 'wheat.png', class: 'style_front_image'
     .row
       - @categories.each do |category|
         - if category.restaurants.near(@user_location, 3, units: :km).any?
@@ -31,5 +31,8 @@
   #map{style: 'width: 100%; height: 400px', data: {test: {env: "#{Rails.env.test?}"}}}
 
   .logo
-    Thanks for ordering from us!
-    = image_tag 'ufood-logo', class: 'logo_pic'
+    .row
+      .col-md-10
+        Thanks for ordering from us!
+      .col-md-2
+        = image_tag 'ufood-logo', class: 'logo_pic.png'
