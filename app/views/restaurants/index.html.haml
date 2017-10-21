@@ -10,7 +10,6 @@
             %h3
               = link_to category.name, root_path(range: @range, category_id: category.id, anchor: 'restaurants'), class: 'btn btn-primary'
             = category.description
-  = @range
   #restaurants
     .row
       - if @current_category
