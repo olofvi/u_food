@@ -5,13 +5,13 @@ Feature:
 
   Background:
     Given the following restaurants with associations exist
-      | name  | address                               | description         | res_category_name | menu_name |
-      | Yappi | Hamngatan 37 111 53 Stockholm         | Some hip thai place | Japanese          | Lunch     |
-      | Happi | Metargatan 5 116 66 Stockholm         | Some hip food place | Japanese          | Lunch     |
-      | Nappi | Virkesvägen 45 120 30 Stockholm       | Some bad food place | Japanese          | Lunch     |
-      | Lappi | KStorgatan 33, 151 36 Södertälje      | Some bad food place | Japanese          | Lunch     |
-      | Tappi | Skogåsleden 6 142 42 Skogås           | Some bad food place | Japanese          | Lunch     |
-      | Pappi | Holtermansgatan 6 412 96 Gothenburg   | Some bad food place | Japanese          | Lunch     |
+      | name  | address                             | description         | res_category_name | menu_name |
+      | Yappi | Hamngatan 37 111 53 Stockholm       | Some hip thai place | Japanese          | Lunch     |
+      | Happi | Metargatan 5 116 66 Stockholm       | Some hip food place | Japanese          | Lunch     |
+      | Nappi | Virkesvägen 45 120 30 Stockholm     | Some bad food place | Japanese          | Lunch     |
+      | Lappi | KStorgatan 33, 151 36 Södertälje    | Some bad food place | Japanese          | Lunch     |
+      | Tappi | Kullstigen 26 142 30 Skogås         | Some bad food place | Japanese          | Lunch     |
+      | Pappi | Holtermansgatan 6 412 96 Gothenburg | Some bad food place | Japanese          | Lunch     |
 
   @javascript
   Scenario: Restaurants only show up when close to the user (3 km)
