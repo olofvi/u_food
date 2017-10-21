@@ -35,19 +35,15 @@ Feature: user can can add dish to order
     Then I should see the text "1"
     And I should see the text "Sushi rolls"
     And I should see the text "Total items: 1"
-    And I should see the text "Total cost: 10.00 $"
-
-    Scenario: User can choose delivery
-      Given I choose "delivery_delivery"
-      And I fill in "firstname" with "Firstname"
-      And I fill in "lastname" with "Lastname"
-      And I fill in "street" with "Someroad 1"
-      And I fill in "post_code" with "111 11"
-      And I fill in "city" with "Somecity"
-      And I click "Save"
-      Then I should see the text "Total cost: 15.00 $"
+    And I should see the text "Total cost: 10 $"
 
     Scenario: User can choose pickup
       Given I choose "delivery_pickup"
       And I click "Save"
-      Then I should see the text "Total cost: 10.00 $"
+      Then I should see the text "Total cost: 10 $"
+
+    Scenario: User can choose delivery
+      Given I choose "delivery_delivery"
+      And I click "Save"
+      Then I should see the text "Total cost: 15 $"
+

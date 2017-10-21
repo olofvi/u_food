@@ -31,10 +31,10 @@ class CartsController < ApplicationController
   end
 
   def show
-    if params[:delivery_delivery]
+    if params[:delivery] == 'delivery'
       @total_cost = @cart.total.to_i + 5
     else
-      @total_cost = @cart.total
+      @total_cost = @cart.total.to_i
     end
     @cart = Cart.find(session[:cart_id])
     if !@cart.cart_items.empty?
