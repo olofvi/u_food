@@ -15,22 +15,34 @@
               = hidden_field_tag :restaurant_id, @restaurant.id
               = number_field_tag :remove_amount, 1, min: 1
               = submit_tag 'Remove from cart', class: 'btn btn-primary'
-      - if  @cart.shopping_cart_items.any?
-        = link_to 'Clear cart', cart_clear_cart_path(@cart, restaurant_id: @restaurant.id), class: 'btn btn-primary'
-      = link_to 'Back to restaurant', restaurant_path(@restaurant), class: 'btn btn-primary'
+      .delivery_button
+        - if  @cart.shopping_cart_items.any?
+          = link_to 'Clear cart', cart_clear_cart_path(@cart, restaurant_id: @restaurant.id), class: 'btn btn-primary'
+      .delivery_button
+        %br
+        = link_to 'Back to restaurant', restaurant_path(@restaurant), class: 'btn btn-primary'
 
     .col-md-4
       %h2
         Checkout
-      %h2
+      %h3
         Total items:
         = @cart.total_unique_items
-      %h2
+      %h3
+        Item cost:
+        = @cart.total.to_i
+        $
+      - if @shipping_cost
+        %h3
+          Shipping cost:
+          = @shipping_cost
+          $
+      %h3
         Total cost:
         = @total_cost
         $
-      %h2
-        Delivery method:
+      %h3
+        You choose:
         = @delivery_method
       %br
       .delivery
@@ -41,7 +53,7 @@
           Pickup (free)
           %br
           .delivery_button
-            = submit_tag 'Save', class: 'btn btn-primary'
+            = submit_tag 'Save delivery option', class: 'btn btn-primary'
 
     .col-md-4
       = image_tag 'ufood-logo.png'

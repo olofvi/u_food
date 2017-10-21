@@ -108,7 +108,19 @@ a:hover {
 a.btn.btn-primary {
   background-color: #e1a332;
   border: none;
-  width: 50%;
+  width: 70%;
+  font-size: 20px;
+  color: white;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-color: white;
+}
+
+input.btn.btn-primary {
+  background-color: #e1a332;
+  border: none;
+  width: 70%;
   font-size: 20px;
   color: white;
   text-align: center;
@@ -124,7 +136,7 @@ a.btn.btn-primary:hover{
 input.btn.btn-primary {
   background-color: #e1a332;
   color: white;
-  width: 150px;
+  width: 60%;
   text-align: center;
   padding-top: 10px;
   padding-bottom: 10px;
@@ -218,6 +230,6 @@ h2.address {
   padding: 10px;
 
   .delivery_button {
-  padding-top: 20px;
+    padding-top: 20px;
   }
 }

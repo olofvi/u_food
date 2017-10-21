@@ -32,7 +32,8 @@ class CartsController < ApplicationController
 
   def show
     if params[:delivery] == 'delivery'
-      @total_cost = @cart.total.to_i + 5
+      @shipping_cost = 5
+      @total_cost = @cart.total.to_i + @shipping_cost
       @delivery_method = 'delivery'
     else
       @total_cost = @cart.total.to_i
