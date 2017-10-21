@@ -31,17 +31,18 @@
                   = restaurant.description
   .range
     = form_tag root_path, method: :get do
-      = radio_button_tag 'range', 'short', 'checked'
+      = radio_button_tag 'range', 'km3', 'checked'
       3 km
-      = radio_button_tag 'range', 'medium'
+      = radio_button_tag 'range', 'km5'
+      5 km
+      = radio_button_tag 'range', 'km10'
       10 km
+      = radio_button_tag 'range', 'km20'
+      20 km
       = radio_button_tag 'range', 'large'
       Unlimited
       = submit_tag 'Choose Range', class: 'btn btn-primary range-button'
   #map{style: 'width: 100%; height: 400px', data: {test: {env: "#{Rails.env.test?}"}}}
-
-
-
   .logo
     .row
       .col-md-10
