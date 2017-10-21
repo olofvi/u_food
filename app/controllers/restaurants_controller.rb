@@ -8,9 +8,9 @@ class RestaurantsController < ApplicationController
       when nil
         @range = 3
       when 'short'
-        @range = 10
+        @range = 3
       when 'medium'
-        @range = 30
+        @range = 10
       when 'large'
         @range = 40076
       else

@@ -15,9 +15,9 @@ Feature:
   @javascript
   Scenario: Restaurants only show up when close to the user (3 km)
     Given I navigate to the index page
-    And I click "Japanese"
-    Given I choose "range_short"
+    And I choose "range_short"
     And I click "Choose Range"
+    And I click "Japanese"
     Then I should see the text "Yappi"
     And I should not see the text "Nappi"
     When the map has been loaded
