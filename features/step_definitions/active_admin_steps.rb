@@ -90,6 +90,3 @@ Given("{string} has an owner {string}") do |restaurant_name, restaurant_owner_em
   restaurant.update_attributes(admin_user: restaurant_owner)
 end
 
-Given("I choose {string}") do |radio_button|
-  choose(radio_button)
-end

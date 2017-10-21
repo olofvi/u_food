@@ -15,6 +15,7 @@ Feature:
   Scenario: Restaurants only show up when close to the user (3 km)
     Given I navigate to the index page
     And I click "Japanese"
+    Given I choose "short"
     Then I should see the text "Yappi"
     And I should not see the text "Nappi"
     When the map has been loaded
@@ -22,7 +23,7 @@ Feature:
 
   Scenario: Restaurants only show up when at medium range to the user (10 km)
     Given I navigate to the index page
-    Given I choose "10 km"
+    Given I choose "medium"
     And I click "Japanese"
     Then I should see the text "Yappi"
     And I should not see the text "Nappi"
@@ -31,7 +32,7 @@ Feature:
 
   Scenario: All restaurants show up on page
     Given I navigate to the index page
-    Given I choose "Unlimited"
+    Given I choose "large"
     And I click "Japanese"
     Then I should see the text "Yappi"
     And I should see the text "Nappi"

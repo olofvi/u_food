@@ -29,3 +29,7 @@ end
 Then("I should not see {string}") do |message|
   expect(page).to have_no_content message
 end
+
+Given("I choose {string}") do |radio_button|
+  choose(radio_button)
+end
