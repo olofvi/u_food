@@ -89,3 +89,4 @@ Given("{string} has an owner {string}") do |restaurant_name, restaurant_owner_em
   restaurant_owner = AdminUser.find_by(email: restaurant_owner_email)
   restaurant.update_attributes(admin_user: restaurant_owner)
 end
+
