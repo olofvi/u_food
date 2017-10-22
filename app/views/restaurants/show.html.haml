@@ -47,3 +47,12 @@
   %h2
     .button
       = link_to 'Add Review', new_restaurant_review_path(@restaurant)
+
+:javascript
+  $('.review-rating').raty({
+    readOnly: true,
+    score: function() {
+      return $(this).attr('data-score');
+    },
+    path: '/assets/'
+  });
