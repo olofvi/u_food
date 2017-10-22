@@ -1,4 +1,5 @@
 [![Coverage Status](https://coveralls.io/repos/github/CraftAcademy/u_food/badge.svg?branch=develop)](https://coveralls.io/github/CraftAcademy/u_food?branch=develop)
+[![Build Status](https://semaphoreci.com/api/v1/craftacademy/u_food/branches/restaurant_owner_res_category/badge.svg)](https://semaphoreci.com/craftacademy/u_food)
 
 # Ufoods app
 August 2017 Craft Academy Course Project
@@ -8,6 +9,12 @@ You sign up by creating an account with an email and password.
 After logging in you will be allowed to choose a restaurant and order food with delivery.
 A user sees restaurants within their proximity which they can choose by category e.g Thai, Mexican, etc.
 A user can view menus of a restaurant and can add dish to cart.
+
+## Website
+
+------------
+https://ufoods.herokuapp.com/
+
 
 ## Getting Started
 Change the current working directory to the location where you want the cloned directory to be made.
