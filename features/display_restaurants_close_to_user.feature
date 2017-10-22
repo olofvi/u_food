@@ -11,6 +11,7 @@ Feature:
       | Happi | Hamngatan 27 111 53 Stockholm | Some hip food place | Japanese          | Lunch     |
       | Nappi | Kungsgatan 45 702 24 Orebro   | Some bad food place | Japanese          | Lunch     |
     And I navigate to the index page
+    And I click "Japanese"
     Then I should see the text "Yappi"
     And I should not see the text "Nappi"
     When the map has been loaded

@@ -92,6 +92,7 @@ a:hover {
   font-size: 60px;
   color: #e1a332;
   text-align: center;
+  padding-top: 20px;
 }
 
 .style_front_image {
@@ -101,17 +102,33 @@ a:hover {
 
 .logo_pic {
   width: 15%;
+  padding-top: 40px;
 }
 
 a.btn.btn-primary {
   background-color: #e1a332;
+  border: none;
+  width: 70%;
+  font-size: 20px;
   color: white;
   text-align: center;
   padding-top: 10px;
   padding-bottom: 10px;
-  font-size: 20px;
   border-color: white;
 }
+
+input.btn.btn-primary {
+  background-color: #e1a332;
+  border: none;
+  width: 70%;
+  font-size: 20px;
+  color: white;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-color: white;
+}
+
 a.btn.btn-primary:hover{
   background-color: #730E15;
 }
@@ -119,7 +136,7 @@ a.btn.btn-primary:hover{
 input.btn.btn-primary {
   background-color: #e1a332;
   color: white;
-  width: 150px;
+  width: 60%;
   text-align: center;
   padding-top: 10px;
   padding-bottom: 10px;
@@ -134,7 +151,7 @@ input.btn.btn-primary:hover {
   background-color: #730E15;
 }
 
-input {
+input#remove_amount, input#amount {
   width: 50px;
 }
 
@@ -186,4 +203,33 @@ h2.address {
 
 .col-md-4 {
   padding: 10px;
+}
+
+.reveal-if-active {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transform: scale(0.8);
+  transition: 0.5s;
+
+  input[type="radio"]:checked ~ & {
+    opacity: 1;
+    min-height: 220px;
+    overflow: visible;
+    padding: 10px 20px;
+    transform: scale(1);
+  }
+
+  input {
+    width: 100%;
+  }
+}
+
+.delivery {
+  color: #730E15;
+  padding: 10px;
+
+  .delivery_button {
+    padding-top: 20px;
+  }
 }

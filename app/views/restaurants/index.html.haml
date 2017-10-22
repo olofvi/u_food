@@ -2,32 +2,37 @@
   #categories
     %h1.logo
       What do you feel like tonight?
-    = image_tag 'wheat', class: 'style_front_image'
+    = image_tag 'wheat.png', class: 'style_front_image'
     .row
       - @categories.each do |category|
-        .col-sm-4
-          %h3
-            = category.name
-          = category.description
+        - if category.restaurants.near(@user_location, 3, units: :km).any?
+          .col-sm-4.text-center
+            %h3
+              = link_to category.name, root_path(category_id: category.id, anchor: 'restaurants'), class: 'btn btn-primary'
+            = category.description
+  #restaurants
+    .row
+      - if @current_category
+        - @current_category_restaurants.near(@user_location, 3, units: :km).each do |restaurant|
+          .col-md-4
+            %h3.restaurant_list
+              = link_to restaurant.name, restaurant_path(restaurant)
+            .thumbnail
+              = link_to restaurant_path(restaurant) do
+                #{image_tag("#{restaurant.pic_url}")}
+              .caption
+                .category_name
+                  = restaurant.restaurant_category.name
+                %p
+                  = restaurant.address
+                %p
+                  = restaurant.description
 
   #map{style: 'width: 100%; height: 400px', data: {test: {env: "#{Rails.env.test?}"}}}
 
-  .row
-    - @categories.each do |category|
-      - category.restaurants.near(@user_location, 3, units: :km).each do |restaurant|
-        .col-md-4
-          %h3.restaurant_list
-            = link_to restaurant.name, restaurant_path(restaurant)
-          .thumbnail
-            = link_to restaurant_path(restaurant) do
-              #{image_tag("#{restaurant.pic_url}")}
-            .caption
-              .category_name
-                = restaurant.restaurant_category.name
-              %p
-                = restaurant.address
-              %p
-                = restaurant.description
   .logo
-    Thanks for ordering from us!
-    = image_tag 'ufood-logo', class: 'logo_pic'
+    .row
+      .col-md-10
+        Thanks for ordering from us!
+      .col-md-2
+        = image_tag 'ufood-logo.png'

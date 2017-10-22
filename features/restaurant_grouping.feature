@@ -16,5 +16,6 @@ Feature: User can select restaurant by category
 
   Scenario: User can see restaurant by category
     Given I navigate to the index page
+    And I click "Thai"
     Then I should see "My Thai"
     And I should see "Stockholm"
