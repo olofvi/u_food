@@ -46,8 +46,9 @@
                         = hidden_field_tag :restaurant_id, @restaurant.id
                         = number_field_tag :remove_amount, 1, min: 1
                         = submit_tag 'Remove from cart', class: 'btn btn-primary'
-                    - else
-                      = submit_tag 'Log in to order', disabled: true, class: 'btn btn-primary' 
+                - else
+                  = submit_tag 'Log in to order', disabled: true, class: 'btn btn-primary'
+
 
   = render @restaurant.reviews
   %h2

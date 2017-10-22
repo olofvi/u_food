@@ -234,14 +234,6 @@ h2.address {
   }
 }
 
-.review-rating img {
-  width: 2%;
-}
-
-#rating-form img {
-  width: 2%;
-}
-
 input.btn.btn-primary.range-button {
   background-color: #e1a332;
   border: none;
@@ -291,6 +283,14 @@ input[type='radio']:checked:after {
 h2.choice {
   color: #e1a332;
   text-align: center;
+}
+
+.review-rating img {
+  width: 2%;
+}
+
+#rating-form img {
+  width: 2%;
 }
 
 #sign_up {
