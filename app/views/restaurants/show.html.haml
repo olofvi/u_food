@@ -9,12 +9,16 @@
         = link_to @restaurant.address, ('https://www.google.com/maps/search/?api=1&query=' + @restaurant.latitude.to_s + ',' + @restaurant.longitude.to_s), target: :_blank
       %h2
         = @restaurant.description
-      %h2.color
-        Please choose a menu below.
+  - if @restaurant.menus.any?
+    %h2.choice
+      Choose a menu
   .btn-group-justified
     - @dish_categories.each do |section|
       = link_to section.name, restaurant_path(dish_category_id: section.id), class: 'btn btn-primary'
   - if @current_dish_category
+    - if @restaurant.dish_categories.any?
+      %h2.choice
+        Choose a dish
     .row
       - @current_category_dishes.each do |dish|
         .col-md-4
@@ -42,3 +46,5 @@
                         = hidden_field_tag :restaurant_id, @restaurant.id
                         = number_field_tag :remove_amount, 1, min: 1
                         = submit_tag 'Remove from cart', class: 'btn btn-primary'
+                - else
+                  = submit_tag 'Log in to order', disabled: true, class: 'btn btn-primary'

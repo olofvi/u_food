@@ -11,6 +11,8 @@ class Ability
       can :create, Restaurant
       can :manage, Menu, restaurant_id: admin.restaurants.ids
       can :create, Menu
+      can [:read, :create], RestaurantCategory
+      cannot [:destroy, :update], RestaurantCategory
     end
   end
 end

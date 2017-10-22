@@ -19,5 +19,4 @@ class Restaurant < ApplicationRecord
        id: restaurant['id']}
     end
   end
-
 end
