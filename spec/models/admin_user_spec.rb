@@ -35,12 +35,16 @@ RSpec.describe AdminUser, type: :model do
         let(:admin) {FactoryGirl.create(:admin_user, super_admin: false)}
         subject(:ability) {Ability.new(admin)}
 
-        it 'can read all' do
+        it 'can manage his restaurant' do
           expect(ability.can?(:manage, Restaurant, admin_user: admin)).to eq true
+          expect(ability.can?(:create, Restaurant)).to eq true
+          expect(ability.can?(      :manage, Menu, restaurant_id: admin.restaurants.ids)).to eq true
+          expect(ability.can?(      :create, Menu)).to eq true
         end
 
         it 'can not manage all' do
           expect(ability.can?(:manage, :all)).to eq false
+          expect(ability.cannot?([:destroy, :update], RestaurantCategory)).to eq true
         end
       end
     end
