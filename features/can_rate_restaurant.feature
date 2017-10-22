@@ -22,5 +22,6 @@ Feature: User can rate restaurant
 
   Scenario: User can rate restaurant on scale 1-5
     Given I click "Add Review"
+    Then show me the page
     And I give Yappi a rating of 4
     And I add comment "decent restaurant"
