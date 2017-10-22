@@ -45,3 +45,11 @@ Feature: Restaurant owner can edits a restaurant
   Scenario: Restaurant owner cannot see restaurants he does not own
     Given I click "Restaurants"
     Then I should not see "My Mex"
+
+  Scenario: Restaurant owner creates new restaurant category
+    Given I click "Restaurants Category"
+    Then I click "New Restaurant category"
+    And I fill in "Name" with "Icelandic"
+    And I fill in "Description" with "I really cant come up with some boring description"
+    Then I click "Create Restaurant category"
+    And I should see "Restaurant category was successfully created."
