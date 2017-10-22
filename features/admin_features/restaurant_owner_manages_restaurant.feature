@@ -47,9 +47,14 @@ Feature: Restaurant owner can edits a restaurant
     Then I should not see "My Mex"
 
   Scenario: Restaurant owner creates new restaurant category
-    Given I click "Restaurants Category"
-    Then I click "New Restaurant category"
+    Given I click "Restaurant Categories"
+    Then I click "New Restaurant Category"
     And I fill in "Name" with "Icelandic"
     And I fill in "Description" with "I really cant come up with some boring description"
     Then I click "Create Restaurant category"
     And I should see "Restaurant category was successfully created."
+
+  Scenario: Restaurant owner can not edit restaurant categories
+    Then I click "Restaurant Categories"
+   Then I should not see "Edit"
+   Then I should not see "Delete"
