@@ -43,7 +43,6 @@ ActiveRecord::Schema.define(version: 20171021143952) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "super_admin", default: false
-    t.boolean "admin", default: false
     t.index ["email"], name: "index_admin_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
   end
@@ -81,9 +80,7 @@ ActiveRecord::Schema.define(version: 20171021143952) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "dish_category_id"
-    t.bigint "restaurant_id"
     t.index ["dish_category_id"], name: "index_dishes_on_dish_category_id"
-    t.index ["restaurant_id"], name: "index_dishes_on_restaurant_id"
   end
 
   create_table "menu_lines", force: :cascade do |t|
@@ -151,7 +148,6 @@ ActiveRecord::Schema.define(version: 20171021143952) do
 
   add_foreign_key "carts", "users"
   add_foreign_key "dishes", "dish_categories"
-  add_foreign_key "dishes", "restaurants"
   add_foreign_key "menus", "restaurants"
   add_foreign_key "restaurants", "admin_users"
   add_foreign_key "restaurants", "restaurant_categories"
