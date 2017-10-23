@@ -23,6 +23,7 @@ gem 'bootstrap-sass', '~> 3.3.6'
 gem 'geocoder'
 gem 'faker'
 gem 'cancancan'
+gem 'simple_form'
 gem 'stripe-rails'
 
 

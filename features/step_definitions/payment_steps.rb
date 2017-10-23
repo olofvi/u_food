@@ -13,7 +13,7 @@ When(/^I submit the stripe form$/) do
   within_frame @stripe_iframe do
     page.execute_script("$('button').click();")
   end
-  sleep(7)
+  sleep(10)
 end
 
 Given(/^I click Pay with Card stripe button$/) do

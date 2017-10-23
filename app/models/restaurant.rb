@@ -4,6 +4,7 @@ class Restaurant < ApplicationRecord
   has_many :menus, dependent: :destroy
   has_many :dishes, through: :menus
   has_many :dish_categories, through: :dishes
+  has_many :reviews
 
   geocoded_by :address
 

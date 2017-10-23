@@ -48,3 +48,19 @@
                         = submit_tag 'Remove from cart', class: 'btn btn-primary'
                 - else
                   = submit_tag 'Log in to order', disabled: true, class: 'btn btn-primary'
+
+
+  = render @restaurant.reviews
+  - if user_signed_in?
+    %h2
+      .button
+        = link_to 'Add Review', new_restaurant_review_path(@restaurant)
+
+:javascript
+  $('.review-rating').raty({
+    readOnly: true,
+    score: function() {
+      return $(this).attr('data-score');
+    },
+    path: '/assets/'
+  });
