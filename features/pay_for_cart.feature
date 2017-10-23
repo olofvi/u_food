@@ -28,7 +28,6 @@ Feature: Restaurant owner can get payment for order
     And I click "2"
 
   Scenario: I check out and pay with my credit card
-    Then show me an image of the page
     Given I click Pay with Card stripe button
     And I fill in my card details on the stripe form
     And I submit the stripe form

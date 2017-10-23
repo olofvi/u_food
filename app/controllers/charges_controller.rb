@@ -14,10 +14,15 @@ class ChargesController < ApplicationController
         description: 'Best Slow Food order',
         currency: 'sek'
     )
-
+    # TODO: Mark cart as payed
+    # TODO: Clear session from cart_id
+    # TODO: Render the thank you page (create.html.haml)
   rescue Stripe::CardError => e
     flash[:error] = e.message
+    # TODO: This error should redirect back to cart page
     redirect_to new_charge_path
+
+    #TODO: Handle other errors that might occur (no funds, etc..)
   end
 
 end
