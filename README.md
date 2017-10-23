@@ -1,10 +1,14 @@
 [![Coverage Status](https://coveralls.io/repos/github/CraftAcademy/u_food/badge.svg?branch=develop)](https://coveralls.io/github/CraftAcademy/u_food?branch=develop)
 [![Build Status](https://semaphoreci.com/api/v1/craftacademy/u_food/branches/restaurant_owner_res_category/badge.svg)](https://semaphoreci.com/craftacademy/u_food)
+[![Heroku](https://heroku-badge.herokuapp.com/?app=ufoods)](https://ufoods.herokuapp.com/)
 
 # Ufoods app
 August 2017 Craft Academy Course Project
 
 An app which allows users to order food from various restaurants nearby.
+
+## Website
+https://ufoods.herokuapp.com/
 
 ## Using the site
 #### As a customer:
@@ -18,12 +22,6 @@ Visit the [admin login site](https://ufoods.herokuapp.com/admin/login). You can 
 
 #### As a superadmin:
 Visit the [admin login site](https://ufoods.herokuapp.com/admin/login). You can perform CRUD actions on all objects in the system. You are the one that registers Restaurant Owners and Restaurants.
-
-## Website
-
-------------
-https://ufoods.herokuapp.com/
-
 
 ## Getting Started
 Change the current working directory to the location where you want the cloned directory to be made.
