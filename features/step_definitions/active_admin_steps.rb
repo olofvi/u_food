@@ -95,7 +95,6 @@ Then("I select {string} from dish dropdown") do |option|
 end
 
 Then("I select {string} from menu line list") do |option|
-  # select option, from: "dish[menu_lines_ids][]"
   within(:css, "#dish_menu_line_ids") do
     select option
   end
