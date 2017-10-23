@@ -4,12 +4,14 @@ class RestaurantsController < ApplicationController
   DEFAULT_IP_LOCATION_STHLM = '130.237.186.207'
 
   def index
+    radio_button
+    @exist_any_restaurant = Restaurant.near(@user_location, @range, units: :km).any?
     respond_to do |format|
       format.html do
         @categories = RestaurantCategory.all
       end
       format.json do
-        @restaurants = Restaurant.near(@user_location, 3, units: :km).for_markers
+        @restaurants = Restaurant.near(@user_location, @range, units: :km).for_markers
         render json: {restaurants: @restaurants}
       end
     end
@@ -40,6 +42,25 @@ class RestaurantsController < ApplicationController
       @user_location = Geocoder.coordinates(DEFAULT_IP_LOCATION_STHLM)
     else
       @user_location = request.location.coordinates
+    end
+  end
+
+  def radio_button
+    case params[:range]
+      when nil
+        @range = 3
+      when 'km3'
+        @range = 3
+      when 'km5'
+        @range = 5
+      when 'km10'
+        @range = 10
+      when 'km20'
+        @range = 20
+      when 'large'
+        @range = 40076
+      else
+        @range = params[:range]
     end
   end
 end
