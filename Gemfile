@@ -24,6 +24,7 @@ gem 'geocoder'
 gem 'faker'
 gem 'cancancan'
 gem 'simple_form'
+gem 'stripe-rails'
 
 
 group :development, :test do
@@ -37,6 +38,8 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'launchy'
   gem 'poltergeist'
+  gem 'rack_session_access'
+  gem 'stripe-ruby-mock', require: 'stripe_mock'
 end
 
 group :development do

@@ -33,3 +33,7 @@ end
 Given("I choose {string}") do |radio_button|
   choose(radio_button)
 end
+
+Then(/^show me an image of the page$/) do
+  save_and_open_screenshot
+end
