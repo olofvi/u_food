@@ -3,11 +3,20 @@
 # Ufoods app
 August 2017 Craft Academy Course Project
 
-We created an app which allows users to order a food in a various restaurants nearby.
-You sign up by creating an account with an email and password.
-After logging in you will be allowed to choose a restaurant and order food with delivery.
-A user sees restaurants within their proximity which they can choose by category e.g Thai, Mexican, etc.
-A user can view menus of a restaurant and can add dish to cart.
+An app which allows users to order food from various restaurants nearby.
+
+## Using the site
+#### As a customer:
+Visit the [Ufoods site](https://ufoods.herokuapp.com/).
+You will see restaurants nearby as markers on a map, and you may choose what range you want to search for restaurants in.
+You can choose a restaurant category, then a restaurant, then a menu, and then you can view different dishes.
+You sign up by creating an account with an email and password. After logging in you will be allowed to add dishes to order. On checkout you can choose delivery and pay with [Stripe](https://stripe.com/).
+
+#### As a restaurant owner:
+Visit the [admin login site](https://ufoods.herokuapp.com/admin/login). You can sign up and get your restaurant registered. Once you've done that you can add info, menus and dishes.
+
+#### As a superadmin:
+Visit the [admin login site](https://ufoods.herokuapp.com/admin/login). You can perform CRUD actions on all objects in the system. You are the one that registers Restaurant Owners and Restaurants.
 
 ## Getting Started
 Change the current working directory to the location where you want the cloned directory to be made.
@@ -79,7 +88,7 @@ end
 
 
 ## Deployment
-We automatically deploy this app with [Heroku](https://www.heroku.com/).
+We automatically deploy this app with [Heroku](https://www.heroku.com/) through [Github](https://github.com/) and [Semaphore](https://semaphoreci.com/).
 
 ## Built With
 
