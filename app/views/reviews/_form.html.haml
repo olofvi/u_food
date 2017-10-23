@@ -1,10 +1,12 @@
 .container-fluid
-  = simple_form_for([@restaurant, @restaurant.reviews.build]) do |f|
-    #rating-form
-      %label Rating
-    = f.hidden_field :rating
-    = f.input :comment
-    = f.button :submit
+  .review
+    .col-md-6.col-md-offset-3
+      = simple_form_for([@restaurant, @restaurant.reviews.build]) do |f|
+        #rating-form
+          %label Rating
+        = f.hidden_field :rating
+        = f.input :comment
+        = f.button :submit, class: 'btn btn-primary btn-sm'
 
 :javascript
   $('#rating-form').raty({
