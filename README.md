@@ -1,7 +1,6 @@
 [![Coverage Status](https://coveralls.io/repos/github/CraftAcademy/u_food/badge.svg?branch=develop)](https://coveralls.io/github/CraftAcademy/u_food?branch=develop)
 [![Build Status](https://semaphoreci.com/api/v1/craftacademy/u_food/branches/develop/shields_badge.svg)](https://semaphoreci.com/craftacademy/u_food)
 [![Heroku](http://heroku-badge.herokuapp.com/?app=ufoods&svg=1)](https://ufoods.herokuapp.com/)
-[![Heroku](https://heroku-badge.herokuapp.com/?app=ufoods)](https://ufoods.herokuapp.com/)
 
 # Ufoods app
 August 2017 Craft Academy Course Project
