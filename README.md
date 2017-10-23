@@ -1,5 +1,5 @@
 [![Coverage Status](https://coveralls.io/repos/github/CraftAcademy/u_food/badge.svg?branch=develop)](https://coveralls.io/github/CraftAcademy/u_food?branch=develop)
-[![Build Status](https://semaphoreci.com/api/v1/craftacademy/u_food/branches/restaurant_owner_res_category/badge.svg)](https://semaphoreci.com/craftacademy/u_food)
+[![Build Status](https://semaphoreci.com/api/v1/craftacademy/u_food/branches/develop/shields_badge.svg)](https://semaphoreci.com/craftacademy/u_food)
 [![Heroku](https://heroku-badge.herokuapp.com/?app=ufoods)](https://ufoods.herokuapp.com/)
 
 # Ufoods app
@@ -130,12 +130,12 @@ We automatically deploy this app with [Heroku](https://www.heroku.com/) through 
 * [Olofvi](https://github.com/olofvi)
 * [Sajaas](https://github.com/Sajaas)
 
-### License
+## License
 MIT license
 
-### Acknowledgments
-The entire project is comprised of open source code so a huge **THANKS!** to the open source community. 
-Built with help from the coaches and some cool gems. Thanks a lot! Coaches:
+## Acknowledgments
+The entire project is comprised of open source code so a huge **THANKS** to the open source community. 
+Built with help from the coaches and some cool gems.
 * [Tochman](https://github.com/tochman)
 * [Diraoulo](https://github.com/diraulo)
 * [Faraznaeem](https://github.com/faraznaeem)
