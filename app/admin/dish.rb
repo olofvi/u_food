@@ -18,13 +18,7 @@ ActiveAdmin.register Dish do
   filter :description
   filter :price
   filter :restaurant, as: :select, collection: proc{ current_admin_user.restaurants }
-
-  # filter :menus, as: :select, collection: Menu.all.each { |m| [m.name] if proc{ current_admin_user.restaurants.each { |r| r.menus.each { |rm| rm.restaurant_id == m.restaurant_id }}}}
-
-  # filter :menus, as: :select, collection: Menu.all.each { |m| [m.name] if proc{ current_admin_user.restaurants.each { |r| r.id == m.restaurant_id }}}
-  # binding.pry
-  # filter :menu_line, as: :select, collection: MenuLine.all.select{ |ml| [ml.menu_id] if proc{ current_admin_user.restaurants.each { |r| r.menus.ids.any? { |id| id == ml.menu_id} }}}
-
+  filter :menu
   filter :dish_category_id, as: :select, collection: proc {DishCategory.all.select {|dc| [dc.name]}}
 
   form do |f|
