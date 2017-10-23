@@ -26,3 +26,11 @@ rescue NameError
 end
 
 Cucumber::Rails::Database.javascript_strategy = :truncation
+
+Before '@stripe' do
+  StripeMock.start
+end
+
+After '@stripe' do
+  StripeMock.stop
+end

@@ -38,6 +38,7 @@ group :development, :test do
   gem 'launchy'
   gem 'poltergeist'
   gem 'rack_session_access'
+  gem 'stripe-ruby-mock', require: 'stripe_mock'
 end
 
 group :development do

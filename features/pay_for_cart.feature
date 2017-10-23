@@ -1,4 +1,4 @@
-@javascript
+@javascript @stripe
 Feature: Restaurant owner can get payment for order
   As a restaurant owner
   in order to get some money
