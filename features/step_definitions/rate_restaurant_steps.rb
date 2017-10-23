@@ -7,6 +7,5 @@ Given("I add comment {string}") do |string|
 end
 
 Then("I click {string} stars") do |string|
-  #find("img[@alt='4']").click
-  page.execute_script("raty('5')")
+  find("img[@alt='4']").trigger('click')
 end
