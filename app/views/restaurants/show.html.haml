@@ -51,9 +51,10 @@
 
 
   = render @restaurant.reviews
-  %h2
-    .button
-      = link_to 'Add Review', new_restaurant_review_path(@restaurant)
+  - if user_signed_in?
+    %h2
+      .button
+        = link_to 'Add Review', new_restaurant_review_path(@restaurant)
 
 :javascript
   $('.review-rating').raty({

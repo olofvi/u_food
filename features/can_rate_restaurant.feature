@@ -27,5 +27,4 @@ Feature: User can rate restaurant
     And I add comment "Decent restaurant"
     And I click "Create Review" button
     Then I should see the text "Decent restaurant"
-    Then show me an image of the page
     And the last rating for "Yappi" should be "4"

@@ -1,0 +1,18 @@
+.container-fluid
+  = simple_form_for([@restaurant, @restaurant.reviews.build]) do |f|
+    #rating-form
+      %label Rating
+    = f.hidden_field :rating
+    = f.input :comment
+    = f.button :submit
+
+:javascript
+  $('#rating-form').raty({
+      path: '/assets/',
+      scoreName: 'review[rating]'
+  });
+
+  $('#new_review').submit(function () {
+      // your code here
+      $("#review_rating").val($('#rating-form').raty('score'));
+  });
