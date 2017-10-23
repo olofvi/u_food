@@ -20,9 +20,10 @@ Feature: User can rate restaurant
     And I click "Japanese"
     And I click "Yappi"
 
-  #@javascript
+  @javascript
   Scenario: User can rate restaurant on scale 1-5
     Given I click "Add Review"
+    Then show me the page
     Then I click "4" stars
     And I add comment "Decent restaurant"
     And I should see the text "Decent restaurant"

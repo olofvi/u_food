@@ -7,5 +7,6 @@ Given("I add comment {string}") do |string|
 end
 
 Then("I click {string} stars") do |string|
+binding.pry
   find("img[@alt='4']").trigger('click')
 end
