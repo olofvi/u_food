@@ -25,9 +25,8 @@ gem 'faker'
 gem 'cancancan'
 gem 'simple_form'
 gem 'stripe-rails'
-gem 'dotenv-rails'
-gem 'aws-sdk'
-gem 'paperclip'
+gem 'aws-sdk', '~> 2.10', '>= 2.10.27'
+gem 'paperclip', '~> 5.0.0'
 
 
 group :development, :test do

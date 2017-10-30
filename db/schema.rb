@@ -117,7 +117,10 @@ ActiveRecord::Schema.define(version: 20171030145356) do
     t.float "latitude"
     t.float "longitude"
     t.bigint "admin_user_id"
-    t.string "image"
+    t.string "image_file_name"
+    t.string "image_content_type"
+    t.integer "image_file_size"
+    t.datetime "image_updated_at"
     t.index ["admin_user_id"], name: "index_restaurants_on_admin_user_id"
     t.index ["restaurant_category_id"], name: "index_restaurants_on_restaurant_category_id"
   end
