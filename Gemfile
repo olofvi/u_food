@@ -27,6 +27,7 @@ gem 'simple_form'
 gem 'stripe-rails'
 gem 'dotenv-rails'
 gem 'aws-sdk'
+gem 'paperclip'
 
 
 group :development, :test do
