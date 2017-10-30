@@ -25,6 +25,7 @@ gem 'faker'
 gem 'cancancan'
 gem 'simple_form'
 gem 'stripe-rails'
+gem 'dotenv-rails'
 
 
 group :development, :test do
