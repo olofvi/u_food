@@ -26,6 +26,7 @@ gem 'cancancan'
 gem 'simple_form'
 gem 'stripe-rails'
 gem 'dotenv-rails'
+gem 'aws-sdk'
 
 
 group :development, :test do
