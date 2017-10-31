@@ -22,7 +22,6 @@ Feature: Admin can administer restaurants
     And I fill in "Name" with "The New Thai Restaurant"
     And I fill in "Address" with "Street 1"
     And I fill in "Description" with "I really cant come up with some boring description"
-    Then show me the page
     And I add image "restaurant.jpeg"
     And I select "Thai" from restaurant category dropdown
     Then I click "Create Restaurant"
