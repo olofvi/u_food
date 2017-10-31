@@ -27,6 +27,10 @@ Feature: Admin can administer restaurants
     Then I click "Create Restaurant"
     And I should see "Restaurant was successfully created."
     And I should see "restaurant.jpeg" image
+    And I should see the text "The New Thai Restaurant"
+    And I should see the text "Street 1"
+    And I should see the text "I really cant come up with some boring description"
+    Then show me the page
 
   Scenario: Admin updates restaurant
     Given I click "Restaurants"

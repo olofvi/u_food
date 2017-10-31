@@ -37,6 +37,9 @@ ActiveAdmin.register Restaurant do
   end
   show do
     attributes_table do
+      row :name
+      row :description
+      row :address
       row :image do |ad|
         image_tag ad.image.url
       end
