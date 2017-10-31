@@ -21,4 +21,3 @@ Feature: View a restaurant page
     And I should see "Stockholm"
     And I should see "Some hip thai place"
     And I should see "restaurant.jpeg" image
-    Then show me the page
