@@ -32,7 +32,6 @@ Feature: Admin can administer restaurants
     Given I click "Restaurants"
     When I click "Edit" for "My Thai" restaurant
     And I fill in "Name" with "The Old Thai Restaurant"
-    Then show me the page
     And I fill in "Address" with "Street 78"
     And I fill in "Description" with "To many descriptions to fill out"
     And I select "Mexican" from restaurant category dropdown
