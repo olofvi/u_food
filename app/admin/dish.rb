@@ -1,6 +1,6 @@
 ActiveAdmin.register Dish do
 
-  permit_params :name, :description, :price, :pic_url, :dish_category_id, :restaurant_id
+  permit_params :name, :description, :price, :image, :dish_category_id, :restaurant_id
 
   index do
     selectable_column
@@ -10,7 +10,7 @@ ActiveAdmin.register Dish do
     column :price, sortable: :price
     column :dish_category, sortable: :dish_category, as: :select, collection: DishCategory.all.select {|t| [t.name]}
     column :restaurant, sortable: :restaurant
-    column :pic_url, sortable: :pic_url
+    column :image, sortable: :image
     actions
   end
 
@@ -32,7 +32,7 @@ ActiveAdmin.register Dish do
       f.input :menu_lines, label: "Menu", as: :select, collection: Menu.all.select {|m| [m.name] }
       f.input :dish_category_id, as: :select, collection: DishCategory.all.select {|dc| [dc.name]}
       f.input :price, label: "Price in $"
-      f.input :pic_url, label: "Picture URL"
+      f.input :image, label: "Image URL"
       f.input :description
     end
     f.actions
