@@ -14,8 +14,8 @@ class Restaurant < ApplicationRecord
                         s3_region: ENV['AWS_REGION'],
                         url: ':s3_domain_url',
                         s3_host_name: "s3-#{ENV['AWS_REGION']}.amazonaws.com"
-                    }
-
+                    },
+                    default_url: "/#{Rails.root}public/default_pic.jpg"
 
   validates_attachment :image,
                        content_type:
